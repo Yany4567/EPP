@@ -18,6 +18,7 @@
 		C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E01CC2681E00E44DDC /* BaseViewController.m */; };
 		C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C61E11CC2681E00E44DDC /* BaseViewController.xib */; };
 		C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E81CC2705400E44DDC /* HomePageListModel.m */; };
+		C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		C29C61E61CC2695F00E44DDC /* ConstantsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
 		C29C61E71CC2705400E44DDC /* HomePageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageListModel.h; sourceTree = "<group>"; };
 		C29C61E81CC2705400E44DDC /* HomePageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListModel.m; sourceTree = "<group>"; };
+		C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListModel.h; sourceTree = "<group>"; };
+		C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 			children = (
 				C29C61E71CC2705400E44DDC /* HomePageListModel.h */,
 				C29C61E81CC2705400E44DDC /* HomePageListModel.m */,
+				C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */,
+				C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
 				C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */,
+				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
