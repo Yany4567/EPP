@@ -53,4 +53,12 @@
 
 #define HWRESERVATION  @"http://api.lanrenzhoumo.com/wh/common/leo_detail?leo_id=1355286404&session_id=0000423d7ecd75af788f3763566472ed27f06e&v=4"
 
+// 收藏button接口
+
+#define HWCOLLECTIONBUTTON @"http://api.lanrenzhoumo.com/user/common/add_user_collect"
+
+
+// 取消收藏接口
+#define HWCANCEL       @"http://api.lanrenzhoumo.com/user/common/delete_user_collect"
+
 #endif /* UrlHeadersDefine_h */

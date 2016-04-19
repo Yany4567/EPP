@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5C051DF43FBE9D3EE0CFD6B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB5C1A782FE78C3F3F7FCFD /* libPods.a */; };
+		C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8F21CC37A45002C2FB9 /* GroupListCell.m */; };
+		C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8F51CC37A58002C2FB9 /* HomePageCell.m */; };
+		C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */; };
+		C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */; };
+		C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */; };
+		C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */; };
+		C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */; };
+		C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7B1CC4D7BB00A0CD0B /* heart.png */; };
+		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
+		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
 		C29C61B51CC25D8900E44DDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B41CC25D8900E44DDC /* main.m */; };
 		C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B71CC25D8900E44DDC /* AppDelegate.m */; };
 		C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61BA1CC25D8900E44DDC /* ViewController.m */; };
@@ -25,6 +35,20 @@
 		0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6DB5C1A782FE78C3F3F7FCFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C203A8F11CC37A45002C2FB9 /* GroupListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListCell.h; sourceTree = "<group>"; };
+		C203A8F21CC37A45002C2FB9 /* GroupListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListCell.m; sourceTree = "<group>"; };
+		C203A8F41CC37A58002C2FB9 /* HomePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCell.h; sourceTree = "<group>"; };
+		C203A8F51CC37A58002C2FB9 /* HomePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCell.m; sourceTree = "<group>"; };
+		C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupListCell.xib; sourceTree = "<group>"; };
+		C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		C203A8FD1CC3A181002C2FB9 /* HomePageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageListViewController.h; sourceTree = "<group>"; };
+		C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListViewController.m; sourceTree = "<group>"; };
+		C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageListViewController.xib; sourceTree = "<group>"; };
+		C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetWorkRequestManager.h; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.h; sourceTree = "<group>"; };
+		C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetWorkRequestManager.m; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.m; sourceTree = "<group>"; };
+		C286BB7B1CC4D7BB00A0CD0B /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
+		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
 		C29C61B01CC25D8900E44DDC /* HiWeedend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeedend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29C61B41CC25D8900E44DDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C29C61B61CC25D8900E44DDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +154,8 @@
 		C29C61CB1CC25FD400E44DDC /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
+				C2C348FF1CC5CEF700082B9D /* Select */,
+				C2C349031CC5CEF700082B9D /* ShowClass */,
 				C29C61CC1CC25FD400E44DDC /* Details */,
 				C29C61D01CC25FD400E44DDC /* Menu */,
 				C29C61D11CC25FD400E44DDC /* Search */,
@@ -239,6 +265,9 @@
 		C29C61D81CC25FD400E44DDC /* ViewConrollers */ = {
 			isa = PBXGroup;
 			children = (
+				C203A8FD1CC3A181002C2FB9 /* HomePageListViewController.h */,
+				C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */,
+				C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -246,6 +275,12 @@
 		C29C61D91CC25FD400E44DDC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C203A8F11CC37A45002C2FB9 /* GroupListCell.h */,
+				C203A8F21CC37A45002C2FB9 /* GroupListCell.m */,
+				C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */,
+				C203A8F41CC37A58002C2FB9 /* HomePageCell.h */,
+				C203A8F51CC37A58002C2FB9 /* HomePageCell.m */,
+				C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +288,9 @@
 		C29C61DA1CC25FD400E44DDC /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C286BB7F1CC4DCDE00A0CD0B /* 666.png */,
+				C286BB7B1CC4D7BB00A0CD0B /* heart.png */,
+				C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -260,11 +298,51 @@
 		C29C61DB1CC25FD400E44DDC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */,
+				C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */,
 				C29C61E41CC268F900E44DDC /* PrefixHeader.pch */,
 				C29C61E51CC2694D00E44DDC /* UrlHeadersDefine.h */,
 				C29C61E61CC2695F00E44DDC /* ConstantsDefine.h */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		C2C348FF1CC5CEF700082B9D /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				C2C349001CC5CEF700082B9D /* CityAndClassFile */,
+				C2C349021CC5CEF700082B9D /* MapSearch */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		C2C349001CC5CEF700082B9D /* CityAndClassFile */ = {
+			isa = PBXGroup;
+			children = (
+				C2C349011CC5CEF700082B9D /* CityClassViewController */,
+			);
+			path = CityAndClassFile;
+			sourceTree = "<group>";
+		};
+		C2C349011CC5CEF700082B9D /* CityClassViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityClassViewController;
+			sourceTree = "<group>";
+		};
+		C2C349021CC5CEF700082B9D /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		C2C349031CC5CEF700082B9D /* ShowClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowClass;
 			sourceTree = "<group>";
 		};
 		D37304D336AA05F3D7704BB0 /* Pods */ = {
@@ -336,10 +414,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
+				C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */,
+				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
 				C29C61C31CC25D8900E44DDC /* LaunchScreen.storyboard in Resources */,
 				C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */,
 				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
+				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
+				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
+				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +487,11 @@
 				C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
+				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
+				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
+				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
+				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +605,7 @@
 			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/EPB/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
@@ -529,6 +618,7 @@
 			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/EPB/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
