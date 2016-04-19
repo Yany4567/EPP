@@ -171,8 +171,8 @@
 //    cell.collectedButton = (UIButton *)sender;
     NSInteger inter = sender.tag;
     HomePageListModel *model =  self.pageListArray[inter];
-    HomePageCell *cell = [[HomePageCell alloc]init];
-    cell = [sender viewWithTag:sender.tag];
+    HomePageCell *cell =  (HomePageCell *)[[sender superview] superview];
+    //cell = [sender viewWithTag:sender.tag];
     
     
     
@@ -215,27 +215,6 @@
         cell.isTap = YES;
         }
     }
-//        }else{
-//            self.isTap = YES;
-//            self.index = 0;
-//            [NetWorkRequestManager requestWithType:POST urlString:HWCOLLECTIONBUTTON parDic:@{@"colects":[NSString stringWithFormat:@"%ld", model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
-//                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//                NSLog(@"%@",dic[@"result"]);
-//                
-//            } error:^(NSError *error) {
-//                NSLog(@"失败");
-//                
-//                
-//            }];
-//            self.index = sender.tag;
-//            NSString *string1 = [self mystring:@"  " stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.collected_num + 1] and:@"人收藏  "];
-//            [sender setTitle:string1 forState:(UIControlStateNormal)];
-//            self.isTap = NO;
-//        }
-//        
-//        
-//    }
-    
     
     
 
