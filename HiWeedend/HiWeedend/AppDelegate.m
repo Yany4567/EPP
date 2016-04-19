@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HomePageListViewController.h"
+#import "DrawerViewController.h"
+#import "MenuViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,12 +19,35 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[HomePageListViewController alloc]init]];
     
-    // Override point for customization after application launch.
+    //主页显示功能
+//    HomePageListViewController*homeVC=[[HomePageListViewController alloc]init];
+//    UINavigationController*navController=[[UINavigationController alloc]initWithRootViewController:homeVC];
+//    
+//    //创建抽屉对象
+//    DrawerViewController*rootController=[[DrawerViewController alloc]initWithRootViewController:navController];
+//    //创建菜单对象
+//    MenuViewController*leftVC=[[MenuViewController alloc]init];
+//    rootController.leftViewController = leftVC;
+//    //将抽屉对象设置为window 主视图
+//    self.window.rootViewController =rootController;
+//    self.window.backgroundColor=[UIColor whiteColor];
+    
+
+
+   HomePageListViewController *readVC =  [[HomePageListViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:readVC];
+    //  创建抽屉对象
+    DrawerViewController *rootController = [[DrawerViewController alloc] initWithRootViewController:navController];
+    _drawerController = rootController;
+    //  创建菜单对象
+    MenuViewController *leftController = [[MenuViewController alloc] init];
+    rootController.leftViewController = leftController;
+    //  将抽屉对象设置成window的主视图控制器
+    self.window.rootViewController = rootController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
     return YES;
 }
 

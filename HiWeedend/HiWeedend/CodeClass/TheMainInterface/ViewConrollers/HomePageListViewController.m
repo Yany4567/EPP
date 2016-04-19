@@ -16,6 +16,7 @@
 #import "HomePageCell.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "UIActivityIndicatorView+AFNetworking.h"
+#import "MapAndKindViewController.h"
 
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate>
 // 初始化一个数组
@@ -66,14 +67,14 @@
     
         [NetWorkRequestManager requestWithType:GET urlString:HWHOMEPAGE parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-        NSLog(@"+++++++++++++%@",contentDic);
+//        NSLog(@"+++++++++++++%@",contentDic);
             NSArray *array = contentDic[@"result"];
             for (NSDictionary *dic in array) {
                 HomePageListModel *model = [[HomePageListModel alloc]init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.pageListArray addObject:model];
                 
-                NSLog(@"#########%@",model);
+//                NSLog(@"#########%@",model);
                 
                 
                 
@@ -101,6 +102,24 @@
     [self.listTable registerNib:[UINib nibWithNibName:@"HomePageCell" bundle:nil] forCellReuseIdentifier:@"HomePageCell"];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"666.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+   // self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"+" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+    
+    
+    
+}
+
+-(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
+    
+    MapAndKindViewController*map=[[MapAndKindViewController alloc]init];
+    
+    UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
+    
+    
+    //[self.navigationController pushViewController:naV animated:YES];
+
+  [self.navigationController presentViewController:naV animated:YES completion:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
