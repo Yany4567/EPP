@@ -46,6 +46,9 @@
 		C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C61E11CC2681E00E44DDC /* BaseViewController.xib */; };
 		C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E81CC2705400E44DDC /* HomePageListModel.m */; };
 		C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */; };
+		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
+		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
+		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +116,12 @@
 		C29C61E81CC2705400E44DDC /* HomePageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListModel.m; sourceTree = "<group>"; };
 		C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListModel.h; sourceTree = "<group>"; };
 		C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListModel.m; sourceTree = "<group>"; };
+		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
+		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
+		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
+		C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryTableViewController.m; sourceTree = "<group>"; };
+		C2EA1CCC1CC72896006DA1CC /* secondaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryTableViewCell.h; sourceTree = "<group>"; };
+		C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +355,8 @@
 		C29C61D31CC25FD400E44DDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */,
+				C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +364,8 @@
 		C29C61D41CC25FD400E44DDC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */,
+				C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -360,6 +373,8 @@
 		C29C61D51CC25FD400E44DDC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CCC1CC72896006DA1CC /* secondaryTableViewCell.h */,
+				C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -616,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
+				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
 				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
 				C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */,
@@ -626,7 +642,9 @@
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
+				C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */,
 				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
+				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
 				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
@@ -746,7 +764,7 @@
 			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
@@ -759,7 +777,7 @@
 			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
