@@ -18,6 +18,7 @@
 		C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7B1CC4D7BB00A0CD0B /* heart.png */; };
 		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
 		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
+		C28A3E701CC86C2100EDF9F5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28A3E6F1CC86C2100EDF9F5 /* Info.plist */; };
 		C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291593F1CC5D8BF009FB972 /* DrawerViewController.m */; };
 		C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159411CC5D8BF009FB972 /* MenuViewController.m */; };
 		C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159421CC5D8BF009FB972 /* MenuViewController.xib */; };
@@ -49,6 +50,9 @@
 		C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB96AB1CC77DF500090282 /* CoreLocation.framework */; };
 		C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */; };
 		C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C349051CC61BF500082B9D /* AppDelegate.m */; };
+		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
+		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
+		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +73,7 @@
 		C286BB7B1CC4D7BB00A0CD0B /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
 		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
+		C28A3E6F1CC86C2100EDF9F5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C291593E1CC5D8BF009FB972 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
 		C291593F1CC5D8BF009FB972 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
 		C29159401CC5D8BF009FB972 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -101,7 +106,6 @@
 		C29C61BD1CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C29C61BF1CC25D8900E44DDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C29C61C21CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C29C61C41CC25D8900E44DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C29C61DC1CC267F900E44DDC /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		C29C61DD1CC267F900E44DDC /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		C29C61DF1CC2681E00E44DDC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -121,6 +125,12 @@
 		C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWithGET.m; sourceTree = "<group>"; };
 		C2C349041CC61BF500082B9D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HiWeedend/Appdelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C2C349051CC61BF500082B9D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HiWeedend/Appdelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
+		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
+		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
+		C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryTableViewController.m; sourceTree = "<group>"; };
+		C2EA1CCC1CC72896006DA1CC /* secondaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryTableViewCell.h; sourceTree = "<group>"; };
+		C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +257,7 @@
 				C29C61BC1CC25D8900E44DDC /* Main.storyboard */,
 				C29C61BF1CC25D8900E44DDC /* Assets.xcassets */,
 				C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */,
-				C29C61C41CC25D8900E44DDC /* Info.plist */,
+				C28A3E6F1CC86C2100EDF9F5 /* Info.plist */,
 				C29C61B31CC25D8900E44DDC /* Supporting Files */,
 			);
 			path = HiWeedend;
@@ -356,6 +366,8 @@
 		C29C61D31CC25FD400E44DDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */,
+				C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +375,8 @@
 		C29C61D41CC25FD400E44DDC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */,
+				C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -370,6 +384,8 @@
 		C29C61D51CC25FD400E44DDC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA1CCC1CC72896006DA1CC /* secondaryTableViewCell.h */,
+				C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +542,7 @@
 				TargetAttributes = {
 					C29C61AF1CC25D8900E44DDC = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = TA5737D738;
 					};
 				};
 			};
@@ -560,6 +577,7 @@
 				C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */,
 				C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */,
 				C29C61C31CC25D8900E44DDC /* LaunchScreen.storyboard in Resources */,
+				C28A3E701CC86C2100EDF9F5 /* Info.plist in Resources */,
 				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
 				C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */,
 				C291596D1CC5F082009FB972 /* 1.png in Resources */,
@@ -631,6 +649,7 @@
 			files = (
 				C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */,
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
+				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
 				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
@@ -641,7 +660,9 @@
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
+				C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */,
 				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
+				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
 				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
@@ -764,14 +785,15 @@
 			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou01.123123123asdasd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -780,14 +802,15 @@
 			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou01.123123123asdasd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

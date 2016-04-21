@@ -274,7 +274,13 @@
     
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SecondaryTableViewController *secVC = [[SecondaryTableViewController alloc]init];
+    
+    [self.navigationController pushViewController:secVC animated:YES];
+    
+}
 
 /*
 #pragma mark - Navigation
