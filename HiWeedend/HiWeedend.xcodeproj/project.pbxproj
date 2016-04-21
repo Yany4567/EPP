@@ -36,7 +36,6 @@
 		C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159701CC5F15A009FB972 /* MapAndKindViewController.m */; };
 		C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */; };
 		C29C61B51CC25D8900E44DDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B41CC25D8900E44DDC /* main.m */; };
-		C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B71CC25D8900E44DDC /* AppDelegate.m */; };
 		C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61BA1CC25D8900E44DDC /* ViewController.m */; };
 		C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29C61BC1CC25D8900E44DDC /* Main.storyboard */; };
 		C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29C61BF1CC25D8900E44DDC /* Assets.xcassets */; };
@@ -46,6 +45,10 @@
 		C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C61E11CC2681E00E44DDC /* BaseViewController.xib */; };
 		C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E81CC2705400E44DDC /* HomePageListModel.m */; };
 		C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */; };
+		C2BB96AA1CC77C4E00090282 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96A91CC77C4E00090282 /* LocationModel.m */; };
+		C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB96AB1CC77DF500090282 /* CoreLocation.framework */; };
+		C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */; };
+		C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C349051CC61BF500082B9D /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,8 +96,6 @@
 		C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapAndKindViewController.xib; sourceTree = "<group>"; };
 		C29C61B01CC25D8900E44DDC /* HiWeedend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeedend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29C61B41CC25D8900E44DDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C29C61B61CC25D8900E44DDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
-		C29C61B71CC25D8900E44DDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		C29C61B91CC25D8900E44DDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C29C61BA1CC25D8900E44DDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C29C61BD1CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +114,13 @@
 		C29C61E81CC2705400E44DDC /* HomePageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListModel.m; sourceTree = "<group>"; };
 		C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListModel.h; sourceTree = "<group>"; };
 		C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListModel.m; sourceTree = "<group>"; };
+		C2BB96A81CC77C4E00090282 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
+		C2BB96A91CC77C4E00090282 /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationModel.m; sourceTree = "<group>"; };
+		C2BB96AB1CC77DF500090282 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C2BB96AD1CC7B60A00090282 /* RequestWithGET.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestWithGET.h; sourceTree = "<group>"; };
+		C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWithGET.m; sourceTree = "<group>"; };
+		C2C349041CC61BF500082B9D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HiWeedend/Appdelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		C2C349051CC61BF500082B9D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HiWeedend/Appdelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */,
 				5C051DF43FBE9D3EE0CFD6B1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +139,7 @@
 		61D86DC245D413278FFC80E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2BB96AB1CC77DF500090282 /* CoreLocation.framework */,
 				6DB5C1A782FE78C3F3F7FCFD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -138,8 +148,8 @@
 		C291593D1CC5D87D009FB972 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
-				C29C61B61CC25D8900E44DDC /* AppDelegate.h */,
-				C29C61B71CC25D8900E44DDC /* AppDelegate.m */,
+				C2C349041CC61BF500082B9D /* AppDelegate.h */,
+				C2C349051CC61BF500082B9D /* AppDelegate.m */,
 			);
 			name = Appdelegate;
 			path = Tools/Appdelegate;
@@ -381,6 +391,8 @@
 				C29C61E81CC2705400E44DDC /* HomePageListModel.m */,
 				C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */,
 				C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */,
+				C2BB96A81CC77C4E00090282 /* LocationModel.h */,
+				C2BB96A91CC77C4E00090282 /* LocationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +439,8 @@
 				C29C61E41CC268F900E44DDC /* PrefixHeader.pch */,
 				C29C61E51CC2694D00E44DDC /* UrlHeadersDefine.h */,
 				C29C61E61CC2695F00E44DDC /* ConstantsDefine.h */,
+				C2BB96AD1CC7B60A00090282 /* RequestWithGET.h */,
+				C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -615,14 +629,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */,
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
 				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
-				C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
 				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
 				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
+				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
@@ -631,6 +646,7 @@
 				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
 				C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */,
+				C2BB96AA1CC77C4E00090282 /* LocationModel.m in Sources */,
 				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
 				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
@@ -698,6 +714,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -735,6 +752,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -746,11 +764,14 @@
 			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
 			};
 			name = Debug;
 		};
@@ -759,11 +780,14 @@
 			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeedend/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = HiWeedend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a09f93e8-2582-4e9c-bf4e-b7643fadd0d0";
 			};
 			name = Release;
 		};
