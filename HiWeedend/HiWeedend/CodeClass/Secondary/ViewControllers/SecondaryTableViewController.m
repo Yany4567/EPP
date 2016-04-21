@@ -7,8 +7,12 @@
 //
 
 #import "SecondaryTableViewController.h"
+#import "secondaryTableViewCell.h"
+#import "secondaryModel.h"
+@interface SecondaryTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@interface SecondaryTableViewController ()
+@property(nonatomic,strong)NSMutableArray *dataArray;
+
 
 @end
 
@@ -16,13 +20,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.tableView registerClass:[secondaryTableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self requestData];
+    
 }
+
+//数组懒加载
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+
+- (void)requestData{
+    _dataArray = [NSMutableArray array];
+    [NetWorkRequestManager requestWithType:GET urlString:HWFIRSTIMAGE parDic:nil finish:^(NSData *data) {
+        
+        NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+        
+        NSArray *array = dic[@"result"];
+        for (NSDictionary *dict in array) {
+            
+            secondaryModel *model = [[secondaryModel alloc]init];
+            [model setValuesForKeysWithDictionary:dict];
+            [_dataArray addObject:model];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } error:^(NSError *error) {
+        NSLog(@"____________%@",error);
+    }];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,23 +72,39 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return self.dataArray.count;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 350;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    secondaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    secondaryModel *model = self.dataArray[indexPath.row];
+    
+    [cell.front_image_QD sd_setImageWithURL:[NSURL URLWithString:[model.front_cover_image_list firstObject]]];
+    
+    cell.titleLab.text = model.title;
+    cell.poiLab.text = model.poi;
+    cell.categoryLab.text = model.category;
+    cell.time_infoLab.text = model.time_info;
+//    cell.want_statusLab.text = model.want_status;
+    NSString *str = [NSString stringWithFormat:@"¥:%ld",(long)model.price_info];
+    cell.price_infoLab.text = str;
+//    cell.distanceLab.text = model.distance;
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

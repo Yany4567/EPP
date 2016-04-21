@@ -18,11 +18,13 @@
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "MapAndKindViewController.h"
 
+#import "SecondaryTableViewController.h"
+
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate>
 // 初始化一个数组
 @property(nonatomic,strong)NSMutableArray *pageListArray;
 
-@property(nonatomic,strong)NSMutableArray*idArray;
+
 
 
 @property(nonatomic,strong)NSMutableArray *groupListArray;
@@ -63,7 +65,7 @@
 //    
     
     
-    _idArray=[NSMutableArray array];
+
     
         [NetWorkRequestManager requestWithType:GET urlString:HWHOMEPAGE parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
@@ -254,7 +256,13 @@
     return 400;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SecondaryTableViewController *secVC = [[SecondaryTableViewController alloc]init];
+    
+    [self.navigationController pushViewController:secVC animated:YES];
+    
+}
 
 /*
 #pragma mark - Navigation
