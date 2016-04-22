@@ -17,6 +17,9 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "MapAndKindViewController.h"
+//#import "PassdataManger.h"
+//#import "DataBaseHomeModelDB.h"
+
 
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate>
 // 初始化一个数组
@@ -52,6 +55,10 @@
 }
 // 解析数据
 -(void)requestData{
+    
+    
+    
+    
     
   //  AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
    
@@ -92,6 +99,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+// NSString*str=  [PassdataManger defaultManger].passArray[0];
+//    NSLog(@"%@",str);
+//    
+    
+    
+    
     //self.isTap = YES;
     //[AFNetworkActivityIndicatorManager  sharedManager].enabled = YES;
     [self requestData];
@@ -102,12 +116,17 @@
     [self.listTable registerNib:[UINib nibWithNibName:@"HomePageCell" bundle:nil] forCellReuseIdentifier:@"HomePageCell"];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"666.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+//    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"ser1.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ser1.png"] landscapeImagePhone:[UIImage imageNamed:@"666.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+    
    // self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"+" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
     
     
+    NSLog(@"%@",NSHomeDirectory());
+    
     
 }
+//跳转到地图页面
 
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
     

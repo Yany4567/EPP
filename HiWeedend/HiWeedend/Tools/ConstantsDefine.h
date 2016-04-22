@@ -10,4 +10,23 @@
 #define ConstantsDefine_h
 
 
+
+
+#define  kWidth [UIScreen mainScreen].bounds.size.width
+
+#define  kHeight [UIScreen mainScreen].bounds.size.height
+
+//钥匙串ID
+#define keyChainKEY @"KeyChainObject"
+#define keyName @"kUserNameKey"
+
+#define kEY @"passwordAndNamePhone"
+
+#pragma mark ==============sqlite==========
+
+#define SqliteName @"hiweek.sqlite"
+
+#define HomeListTabel @"HomeListTabel"
+
+
 #endif /* ConstantsDefine_h */

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SelsectHobbyCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="255" height="230"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="o33-cP-pjC">
+                        <rect key="frame" x="49" y="40" width="156" height="122"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="o33-cP-pjC" secondAttribute="trailing" id="L9r-UP-xcw"/>
+                <constraint firstItem="o33-cP-pjC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ba1-1G-skl"/>
+                <constraint firstAttribute="bottom" secondItem="o33-cP-pjC" secondAttribute="bottom" id="cVs-22-iSk"/>
+                <constraint firstItem="o33-cP-pjC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dIx-xJ-ln2"/>
+            </constraints>
+            <size key="customSize" width="255" height="230"/>
+            <point key="canvasLocation" x="563.5" y="199"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.png" width="66" height="66"/>
+    </resources>
+</document>

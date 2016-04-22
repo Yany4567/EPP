@@ -15,6 +15,7 @@
 #import "SelectBookViewController.h"
 #import "CollectActionViewController.h"
 #import "SettingViewController.h"
+#import "LoginViewController.h"
 
 @interface MenuViewController () {
     NSMutableArray *list;  //  菜单列表数据源
@@ -34,11 +35,13 @@
     list = [[NSMutableArray alloc]init];
     //例子
     [list addObject:@"首页"];
+    
     [list addObject:@"修改个人资料"];
     [list addObject:@"选择我的兴趣爱好标签"];
     [list addObject:@"查看我的预定"];
     [list addObject:@"收藏活动"];
-   [list addObject:@"设置"];
+    [list addObject:@"设置"];
+    [list addObject:@"登录"];
 
 }
 
@@ -98,18 +101,24 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootController:navController animated:YES];
         
-    } else if(indexPath.row == 3){ //设置良品为抽屉的根视图
+    } else if(indexPath.row == 3){
        SelectBookViewController *controller = [[SelectBookViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootController:navController animated:YES];
-    }else if(indexPath.row == 4){ //设置良品为抽屉的根视图
+    }else if(indexPath.row == 4){
         CollectActionViewController *controller = [[CollectActionViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootController:navController animated:YES];
-    }else if(indexPath.row == 5){ //设置良品为抽屉的根视图
+    }else if(indexPath.row == 5){
        SettingViewController *controller = [[SettingViewController  alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootController:navController animated:YES];
+    }else{
+    
+     LoginViewController *controller = [[LoginViewController  alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootController:navController animated:YES];
+    
     }
 }
 
