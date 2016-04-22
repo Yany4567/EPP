@@ -21,6 +21,10 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+#import "SecondaryTableViewController.h"
+#import "DatailsViewController.h"
+
+
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 // 初始化一个数组
 @property(nonatomic,strong)NSMutableArray *pageListArray;
@@ -101,9 +105,11 @@
 // 解析数据
 -(void)requestData{
     LocationModel *model1 = [self.locationArray lastObject];
-    NSString *city = [NSString stringWithFormat:@"%ld",model1.cityId];
-    NSLog(@"%@",[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]);
-        [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+//    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
+//    NSLog(@"%@",[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]);
+  //  http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3
+    //[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]
+        [NetWorkRequestManager requestWithType:GET urlString:@"http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3" parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
         NSLog(@"+++++++++++++%@",contentDic);
             NSArray *array = contentDic[@"result"];
@@ -134,7 +140,7 @@
     [self getlocation];
     _locationManager.delegate = self;
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self requestLocation];
+       [self requestData];
 //    });
     self.listTable.delegate = self;
     self.listTable.dataSource = self;
@@ -163,7 +169,7 @@
     self.longitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
     self.latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
     [_locationManager stopUpdatingLocation];
-    [self requestLocation];
+//[self requestLocation];
     NSLog(@"精度%f",location.coordinate.longitude);
     NSLog(@"纬度%f",location.coordinate.latitude);
     
@@ -210,7 +216,7 @@
         // 添加点击事件
         cell2.collectedButton.tag = indexPath.row;
         [cell2.collectedButton addTarget:self action:@selector(cokkectedAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        cell2.priceLabel.text =[self mystring:@"  ¥" stringByAppding:[NSString stringWithFormat:@"%ld",model.price] and:@"  "];
+        cell2.priceLabel.text =[self mystring:@"  ¥" stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.price] and:@"  "];
         cell2.priceLabel.layer.borderWidth = 0.5;
         cell2.priceLabel.layer.cornerRadius = 5;
         // 记录button的状态
@@ -226,6 +232,7 @@
         cell1.nameLabel.layer.borderWidth = 0.5;
         return cell1;
     }
+    
 }
 // 判断button点击的状态
 -(void)cokkectedAction:(UIButton *)sender{
@@ -233,7 +240,7 @@
     HomePageCell *cell =  (HomePageCell *)[[sender superview] superview];
     // 判断cell上button的状态
     if (cell.isTap) {
-        [NetWorkRequestManager requestWithType:POST urlString:HWCOLLECTIONBUTTON parDic:@{@"colects":[NSString stringWithFormat:@"%ld", model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
+        [NetWorkRequestManager requestWithType:POST urlString:HWCOLLECTIONBUTTON parDic:@{@"colects":[NSString stringWithFormat:@"%ld", (long)model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"%@",dic[@"result"]);
         } error:^(NSError *error) {
@@ -243,7 +250,7 @@
         [sender setTitle:string1 forState:(UIControlStateNormal)];
         cell.isTap = NO;
     }else{
-        [NetWorkRequestManager requestWithType:POST urlString:HWCANCEL parDic:@{@"colects":[NSString stringWithFormat:@"%ld", model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
+        [NetWorkRequestManager requestWithType:POST urlString:HWCANCEL parDic:@{@"colects":[NSString stringWithFormat:@"%ld", (long)model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"%@",dic[@"result"]);
             
@@ -257,10 +264,23 @@
         }
     }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"sdfasfd1231232312312312312232131231");
-//    
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DatailsViewController *dataVC = [[DatailsViewController alloc]init];
+    SecondaryTableViewController *secondVC = [[SecondaryTableViewController alloc]init];
+    
+    HomePageListModel *model = self.pageListArray[indexPath.row];
+    
+    if ([model.jump_data isEqualToString:@""]) {
+         dataVC.HpmeModel = model;
+        [self.navigationController pushViewController:dataVC animated:YES];
+    }else{
+       
+        
+        [self.navigationController pushViewController:secondVC animated:YES];
+    }
+    
+    
+}
 
 // 给label的前后加空格
 -(NSString *)mystring:(NSString *)myString stringByAppding:(NSString *)modelStr and:(NSString *)andString{
@@ -274,10 +294,6 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-        
-}
 
 /*
 #pragma mark - Navigation

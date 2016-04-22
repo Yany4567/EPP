@@ -19,6 +19,14 @@
 		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
 		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
 		C28A3E701CC86C2100EDF9F5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28A3E6F1CC86C2100EDF9F5 /* Info.plist */; };
+		C28A3E731CC87FD200EDF9F5 /* DetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A3E721CC87FD200EDF9F5 /* DetailsModel.m */; };
+		C28A3E771CC8802700EDF9F5 /* DatailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A3E751CC8802700EDF9F5 /* DatailsViewController.m */; };
+		C28A3E781CC8802700EDF9F5 /* DatailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A3E761CC8802700EDF9F5 /* DatailsViewController.xib */; };
+		C28A3E801CC8F04D00EDF9F5 /* DescriptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A3E7F1CC8F04D00EDF9F5 /* DescriptionModel.m */; };
+		C28A3E911CC8FA8800EDF9F5 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A3E8F1CC8FA8800EDF9F5 /* ContentCell.m */; };
+		C28A3E921CC8FA8800EDF9F5 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A3E901CC8FA8800EDF9F5 /* ContentCell.xib */; };
+		C28A3E961CC8FA9A00EDF9F5 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A3E941CC8FA9A00EDF9F5 /* ImageCell.m */; };
+		C28A3E971CC8FA9A00EDF9F5 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A3E951CC8FA9A00EDF9F5 /* ImageCell.xib */; };
 		C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291593F1CC5D8BF009FB972 /* DrawerViewController.m */; };
 		C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159411CC5D8BF009FB972 /* MenuViewController.m */; };
 		C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159421CC5D8BF009FB972 /* MenuViewController.xib */; };
@@ -53,6 +61,10 @@
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
 		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
+		C2EA1FB81CC9B2C500C7F3F6 /* HaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1FB71CC9B2C500C7F3F6 /* HaderView.m */; };
+		C2EA1FBA1CC9B37300C7F3F6 /* HaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EA1FB91CC9B37300C7F3F6 /* HaderView.xib */; };
+		C2EA1FE01CCA282A00C7F3F6 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1FDF1CCA282A00C7F3F6 /* FooterView.m */; };
+		C2EA1FE21CCA28EB00C7F3F6 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EA1FE11CCA28EB00C7F3F6 /* FooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +86,19 @@
 		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
 		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
 		C28A3E6F1CC86C2100EDF9F5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28A3E711CC87FD200EDF9F5 /* DetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsModel.h; sourceTree = "<group>"; };
+		C28A3E721CC87FD200EDF9F5 /* DetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsModel.m; sourceTree = "<group>"; };
+		C28A3E741CC8802700EDF9F5 /* DatailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailsViewController.h; sourceTree = "<group>"; };
+		C28A3E751CC8802700EDF9F5 /* DatailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailsViewController.m; sourceTree = "<group>"; };
+		C28A3E761CC8802700EDF9F5 /* DatailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailsViewController.xib; sourceTree = "<group>"; };
+		C28A3E7E1CC8F04D00EDF9F5 /* DescriptionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionModel.h; sourceTree = "<group>"; };
+		C28A3E7F1CC8F04D00EDF9F5 /* DescriptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionModel.m; sourceTree = "<group>"; };
+		C28A3E8E1CC8FA8800EDF9F5 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		C28A3E8F1CC8FA8800EDF9F5 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
+		C28A3E901CC8FA8800EDF9F5 /* ContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
+		C28A3E931CC8FA9A00EDF9F5 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		C28A3E941CC8FA9A00EDF9F5 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		C28A3E951CC8FA9A00EDF9F5 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		C291593E1CC5D8BF009FB972 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
 		C291593F1CC5D8BF009FB972 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
 		C29159401CC5D8BF009FB972 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -131,6 +156,12 @@
 		C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryTableViewController.m; sourceTree = "<group>"; };
 		C2EA1CCC1CC72896006DA1CC /* secondaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryTableViewCell.h; sourceTree = "<group>"; };
 		C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryTableViewCell.m; sourceTree = "<group>"; };
+		C2EA1FB61CC9B2C500C7F3F6 /* HaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaderView.h; sourceTree = "<group>"; };
+		C2EA1FB71CC9B2C500C7F3F6 /* HaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaderView.m; sourceTree = "<group>"; };
+		C2EA1FB91CC9B37300C7F3F6 /* HaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HaderView.xib; sourceTree = "<group>"; };
+		C2EA1FDE1CCA282A00C7F3F6 /* FooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterView.h; sourceTree = "<group>"; };
+		C2EA1FDF1CCA282A00C7F3F6 /* FooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterView.m; sourceTree = "<group>"; };
+		C2EA1FE11CCA28EB00C7F3F6 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +347,10 @@
 		C29C61CD1CC25FD400E44DDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C28A3E711CC87FD200EDF9F5 /* DetailsModel.h */,
+				C28A3E721CC87FD200EDF9F5 /* DetailsModel.m */,
+				C28A3E7E1CC8F04D00EDF9F5 /* DescriptionModel.h */,
+				C28A3E7F1CC8F04D00EDF9F5 /* DescriptionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +358,9 @@
 		C29C61CE1CC25FD400E44DDC /* ViewConrollers */ = {
 			isa = PBXGroup;
 			children = (
+				C28A3E741CC8802700EDF9F5 /* DatailsViewController.h */,
+				C28A3E751CC8802700EDF9F5 /* DatailsViewController.m */,
+				C28A3E761CC8802700EDF9F5 /* DatailsViewController.xib */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -330,6 +368,18 @@
 		C29C61CF1CC25FD400E44DDC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C28A3E8E1CC8FA8800EDF9F5 /* ContentCell.h */,
+				C28A3E8F1CC8FA8800EDF9F5 /* ContentCell.m */,
+				C28A3E901CC8FA8800EDF9F5 /* ContentCell.xib */,
+				C28A3E931CC8FA9A00EDF9F5 /* ImageCell.h */,
+				C28A3E941CC8FA9A00EDF9F5 /* ImageCell.m */,
+				C28A3E951CC8FA9A00EDF9F5 /* ImageCell.xib */,
+				C2EA1FB61CC9B2C500C7F3F6 /* HaderView.h */,
+				C2EA1FB71CC9B2C500C7F3F6 /* HaderView.m */,
+				C2EA1FB91CC9B37300C7F3F6 /* HaderView.xib */,
+				C2EA1FDE1CCA282A00C7F3F6 /* FooterView.h */,
+				C2EA1FDF1CCA282A00C7F3F6 /* FooterView.m */,
+				C2EA1FE11CCA28EB00C7F3F6 /* FooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -572,6 +622,7 @@
 				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
 				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
 				C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */,
+				C2EA1FE21CCA28EB00C7F3F6 /* FooterView.xib in Resources */,
 				C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */,
 				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
 				C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */,
@@ -580,12 +631,16 @@
 				C28A3E701CC86C2100EDF9F5 /* Info.plist in Resources */,
 				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
 				C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */,
+				C28A3E921CC8FA8800EDF9F5 /* ContentCell.xib in Resources */,
 				C291596D1CC5F082009FB972 /* 1.png in Resources */,
+				C28A3E971CC8FA9A00EDF9F5 /* ImageCell.xib in Resources */,
 				C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */,
 				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
 				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
 				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
 				C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */,
+				C2EA1FBA1CC9B37300C7F3F6 /* HaderView.xib in Resources */,
+				C28A3E781CC8802700EDF9F5 /* DatailsViewController.xib in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
 				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
 				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
@@ -652,23 +707,30 @@
 				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
 				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
+				C2EA1FB81CC9B2C500C7F3F6 /* HaderView.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
 				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
 				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
+				C2EA1FE01CCA282A00C7F3F6 /* FooterView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
+				C28A3E911CC8FA8800EDF9F5 /* ContentCell.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
 				C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */,
 				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
+				C28A3E731CC87FD200EDF9F5 /* DetailsModel.m in Sources */,
 				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
+				C28A3E801CC8F04D00EDF9F5 /* DescriptionModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
 				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
 				C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */,
+				C28A3E961CC8FA9A00EDF9F5 /* ImageCell.m in Sources */,
 				C2BB96AA1CC77C4E00090282 /* LocationModel.m in Sources */,
 				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
+				C28A3E771CC8802700EDF9F5 /* DatailsViewController.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
 				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
 			);
