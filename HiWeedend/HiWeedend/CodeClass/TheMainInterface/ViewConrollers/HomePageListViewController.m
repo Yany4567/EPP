@@ -131,7 +131,7 @@
 }
 
 - (void)viewDidLoad {
-    
+    NSLog(@"合并");
     self.longitude = 0;
     self.latitude = 0;
    
