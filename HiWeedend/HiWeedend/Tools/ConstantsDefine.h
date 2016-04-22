@@ -10,4 +10,11 @@
 #define ConstantsDefine_h
 
 
+//屏幕宽高
+#define  kWidth [UIScreen mainScreen].bounds.size.width
+
+#define  kHeight [UIScreen mainScreen].bounds.size.height
+
+
+
 #endif /* ConstantsDefine_h */

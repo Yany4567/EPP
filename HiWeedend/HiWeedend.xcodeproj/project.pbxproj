@@ -56,6 +56,10 @@
 		C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB96AB1CC77DF500090282 /* CoreLocation.framework */; };
 		C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */; };
 		C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C349051CC61BF500082B9D /* AppDelegate.m */; };
+		C2C7FCAC1CCA6A0B008762C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCA71CCA6A0B008762C4 /* LoginViewController.m */; };
+		C2C7FCAD1CCA6A0B008762C4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCA81CCA6A0B008762C4 /* LoginViewController.xib */; };
+		C2C7FCAE1CCA6A0B008762C4 /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCAA1CCA6A0B008762C4 /* RegisViewController.m */; };
+		C2C7FCAF1CCA6A0B008762C4 /* RegisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCAB1CCA6A0B008762C4 /* RegisViewController.xib */; };
 		C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EDBC1CCA4B3B00771D03 /* Info.plist */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
@@ -148,6 +152,12 @@
 		C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWithGET.m; sourceTree = "<group>"; };
 		C2C349041CC61BF500082B9D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HiWeedend/Appdelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C2C349051CC61BF500082B9D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HiWeedend/Appdelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C2C7FCA61CCA6A0B008762C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C2C7FCA71CCA6A0B008762C4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C2C7FCA81CCA6A0B008762C4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C2C7FCA91CCA6A0B008762C4 /* RegisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
+		C2C7FCAA1CCA6A0B008762C4 /* RegisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisViewController.m; sourceTree = "<group>"; };
+		C2C7FCAB1CCA6A0B008762C4 /* RegisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisViewController.xib; sourceTree = "<group>"; };
 		C2D7EDBC1CCA4B3B00771D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
@@ -316,6 +326,7 @@
 		C29C61CB1CC25FD400E44DDC /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
+				C2C7FCA51CCA6A0B008762C4 /* LogainAndRegist */,
 				C291596E1CC5F143009FB972 /* selectMapAndKind */,
 				C291594E1CC5E1AA009FB972 /*  selectHobbyVC */,
 				C291594F1CC5E1AA009FB972 /* coloctActionVC */,
@@ -548,6 +559,19 @@
 			path = ShowClass;
 			sourceTree = "<group>";
 		};
+		C2C7FCA51CCA6A0B008762C4 /* LogainAndRegist */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7FCA61CCA6A0B008762C4 /* LoginViewController.h */,
+				C2C7FCA71CCA6A0B008762C4 /* LoginViewController.m */,
+				C2C7FCA81CCA6A0B008762C4 /* LoginViewController.xib */,
+				C2C7FCA91CCA6A0B008762C4 /* RegisViewController.h */,
+				C2C7FCAA1CCA6A0B008762C4 /* RegisViewController.m */,
+				C2C7FCAB1CCA6A0B008762C4 /* RegisViewController.xib */,
+			);
+			path = LogainAndRegist;
+			sourceTree = "<group>";
+		};
 		D37304D336AA05F3D7704BB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +657,8 @@
 				C291596D1CC5F082009FB972 /* 1.png in Resources */,
 				C28A3E971CC8FA9A00EDF9F5 /* ImageCell.xib in Resources */,
 				C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */,
+				C2C7FCAF1CCA6A0B008762C4 /* RegisViewController.xib in Resources */,
+				C2C7FCAD1CCA6A0B008762C4 /* LoginViewController.xib in Resources */,
 				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
 				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
 				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
@@ -708,7 +734,9 @@
 				C2EA1FB81CC9B2C500C7F3F6 /* HaderView.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
 				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
+				C2C7FCAC1CCA6A0B008762C4 /* LoginViewController.m in Sources */,
 				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
+				C2C7FCAE1CCA6A0B008762C4 /* RegisViewController.m in Sources */,
 				C2EA1FE01CCA282A00C7F3F6 /* FooterView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
