@@ -10,12 +10,12 @@
 #define UrlHeadersDefine_h
 //	首页定位接口地址
 
-#define HWPOSITIONING  @"http://api.lanrenzhoumo.com/other/common/location/?lat=0&lon=0&session_id=0000423d7ecd75af788f3763566472ed27f06e"
+#define HWPOSITIONING  @"http://api.lanrenzhoumo.com/other/common/location/?"
 
 
 //首页列表接口地址
 
-#define HWHOMEPAGE    @"http://api.lanrenzhoumo.com/main/recommend/index/?city_id=53&lat=39.90855&lon=116.3975&page=1&session_id=0000423d7ecd75af788f3763566472ed27f06e&v=3"
+#define HWHOMEPAGE    @"http://api.lanrenzhoumo.com/main/recommend/index/?"
 
 
 //第一张图片点击后列表接口地址
