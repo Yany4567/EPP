@@ -15,6 +15,7 @@
 #import "SelectBookViewController.h"
 #import "CollectActionViewController.h"
 #import "SettingViewController.h"
+#import "LoginViewController.h"
 
 @interface MenuViewController () {
     NSMutableArray *list;  //  菜单列表数据源
@@ -39,7 +40,7 @@
     [list addObject:@"查看我的预定"];
     [list addObject:@"收藏活动"];
    [list addObject:@"设置"];
-
+       [list addObject:@"登录"];
 }
 
 //改变行的高度
@@ -110,6 +111,12 @@
        SettingViewController *controller = [[SettingViewController  alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootController:navController animated:YES];
+    }else{
+        
+        LoginViewController *controller = [[LoginViewController  alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootController:navController animated:YES];
+        
     }
 }
 
