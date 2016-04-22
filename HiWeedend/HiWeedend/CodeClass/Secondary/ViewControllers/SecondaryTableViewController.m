@@ -9,6 +9,7 @@
 #import "SecondaryTableViewController.h"
 #import "secondaryTableViewCell.h"
 #import "secondaryModel.h"
+#import "GroupListModel.h"
 @interface SecondaryTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
@@ -23,8 +24,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView registerClass:[secondaryTableViewCell class] forCellReuseIdentifier:@"Cell"];
-    
-    
+    self.title = self.string;
     [self requestData];
     
 }

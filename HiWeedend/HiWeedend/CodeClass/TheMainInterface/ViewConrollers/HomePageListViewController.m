@@ -259,7 +259,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SecondaryTableViewController *secVC = [[SecondaryTableViewController alloc]init];
-    
+    HomePageListModel *model = self.pageListArray[indexPath.row];
+    secVC.string = model.title;
     [self.navigationController pushViewController:secVC animated:YES];
     
 }
