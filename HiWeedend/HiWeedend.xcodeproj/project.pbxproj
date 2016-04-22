@@ -36,8 +36,6 @@
 		C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595A1CC5E229009FB972 /* SelectBookViewController.xib */; };
 		C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291595E1CC5E255009FB972 /* CollectActionViewController.m */; };
 		C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595F1CC5E255009FB972 /* CollectActionViewController.xib */; };
-		C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159631CC5E269009FB972 /* SelectHobbyViewController.m */; };
-		C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */; };
 		C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159681CC5E28A009FB972 /* ModfileViewController.m */; };
 		C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159691CC5E28A009FB972 /* ModfileViewController.xib */; };
 		C291596D1CC5F082009FB972 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C291596C1CC5F082009FB972 /* 1.png */; };
@@ -71,6 +69,10 @@
 		C2C7FCD31CCA6CD6008762C4 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCC91CCA6CD6008762C4 /* CityTableViewCell.m */; };
 		C2C7FCD41CCA6CD6008762C4 /* CustomSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCCB1CCA6CD6008762C4 /* CustomSearchView.m */; };
 		C2C7FCD51CCA6CD6008762C4 /* CustomTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCCD1CCA6CD6008762C4 /* CustomTopView.m */; };
+		C2C7FCDC1CCA6EC9008762C4 /* SelectHobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCD71CCA6EC9008762C4 /* SelectHobbyViewController.m */; };
+		C2C7FCDD1CCA6EC9008762C4 /* SelectHobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCD81CCA6EC9008762C4 /* SelectHobbyViewController.xib */; };
+		C2C7FCDE1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCDA1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.m */; };
+		C2C7FCDF1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCDB1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.xib */; };
 		C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EDBC1CCA4B3B00771D03 /* Info.plist */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
@@ -127,9 +129,6 @@
 		C291595D1CC5E255009FB972 /* CollectActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectActionViewController.h; sourceTree = "<group>"; };
 		C291595E1CC5E255009FB972 /* CollectActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectActionViewController.m; sourceTree = "<group>"; };
 		C291595F1CC5E255009FB972 /* CollectActionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectActionViewController.xib; sourceTree = "<group>"; };
-		C29159621CC5E269009FB972 /* SelectHobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectHobbyViewController.h; sourceTree = "<group>"; };
-		C29159631CC5E269009FB972 /* SelectHobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectHobbyViewController.m; sourceTree = "<group>"; };
-		C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectHobbyViewController.xib; sourceTree = "<group>"; };
 		C29159671CC5E28A009FB972 /* ModfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModfileViewController.h; sourceTree = "<group>"; };
 		C29159681CC5E28A009FB972 /* ModfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModfileViewController.m; sourceTree = "<group>"; };
 		C29159691CC5E28A009FB972 /* ModfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModfileViewController.xib; sourceTree = "<group>"; };
@@ -187,6 +186,12 @@
 		C2C7FCCB1CCA6CD6008762C4 /* CustomSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchView.m; sourceTree = "<group>"; };
 		C2C7FCCC1CCA6CD6008762C4 /* CustomTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTopView.h; sourceTree = "<group>"; };
 		C2C7FCCD1CCA6CD6008762C4 /* CustomTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTopView.m; sourceTree = "<group>"; };
+		C2C7FCD61CCA6EC9008762C4 /* SelectHobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectHobbyViewController.h; sourceTree = "<group>"; };
+		C2C7FCD71CCA6EC9008762C4 /* SelectHobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectHobbyViewController.m; sourceTree = "<group>"; };
+		C2C7FCD81CCA6EC9008762C4 /* SelectHobbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectHobbyViewController.xib; sourceTree = "<group>"; };
+		C2C7FCD91CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelsectHobbyCollectionViewCell.h; sourceTree = "<group>"; };
+		C2C7FCDA1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelsectHobbyCollectionViewCell.m; sourceTree = "<group>"; };
+		C2C7FCDB1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelsectHobbyCollectionViewCell.xib; sourceTree = "<group>"; };
 		C2D7EDBC1CCA4B3B00771D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
@@ -239,9 +244,12 @@
 		C291594E1CC5E1AA009FB972 /*  selectHobbyVC */ = {
 			isa = PBXGroup;
 			children = (
-				C29159621CC5E269009FB972 /* SelectHobbyViewController.h */,
-				C29159631CC5E269009FB972 /* SelectHobbyViewController.m */,
-				C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */,
+				C2C7FCD61CCA6EC9008762C4 /* SelectHobbyViewController.h */,
+				C2C7FCD71CCA6EC9008762C4 /* SelectHobbyViewController.m */,
+				C2C7FCD81CCA6EC9008762C4 /* SelectHobbyViewController.xib */,
+				C2C7FCD91CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.h */,
+				C2C7FCDA1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.m */,
+				C2C7FCDB1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.xib */,
 			);
 			path = " selectHobbyVC";
 			sourceTree = "<group>";
@@ -723,14 +731,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
-				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
 				C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */,
+				C2C7FCDD1CCA6EC9008762C4 /* SelectHobbyViewController.xib in Resources */,
 				C2C7FCCF1CCA6CD6008762C4 /* citydict.plist in Resources */,
 				C2C7FCCE1CCA6CD6008762C4 /* cancelBtn@2x.png in Resources */,
 				C2EA1FE21CCA28EB00C7F3F6 /* FooterView.xib in Resources */,
 				C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */,
 				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
 				C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */,
+				C2C7FCDF1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.xib in Resources */,
 				C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */,
 				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
 				C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */,
@@ -810,6 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */,
+				C2C7FCDE1CCA6EC9008762C4 /* SelsectHobbyCollectionViewCell.m in Sources */,
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
 				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
@@ -826,6 +836,7 @@
 				C2C7FCD41CCA6CD6008762C4 /* CustomSearchView.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
+				C2C7FCDC1CCA6EC9008762C4 /* SelectHobbyViewController.m in Sources */,
 				C2C7FCBA1CCA6CAF008762C4 /* MapAndKindViewController.m in Sources */,
 				C28A3E911CC8FA8800EDF9F5 /* ContentCell.m in Sources */,
 				C2C7FCD01CCA6CD6008762C4 /* CityViewController.m in Sources */,
@@ -848,7 +859,6 @@
 				C28A3E771CC8802700EDF9F5 /* DatailsViewController.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
 				C2C7FCD31CCA6CD6008762C4 /* CityTableViewCell.m in Sources */,
-				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
