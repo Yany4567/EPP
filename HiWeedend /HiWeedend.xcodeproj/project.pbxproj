@@ -1,0 +1,1292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C051DF43FBE9D3EE0CFD6B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB5C1A782FE78C3F3F7FCFD /* libPods.a */; };
+		C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8F21CC37A45002C2FB9 /* GroupListCell.m */; };
+		C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8F51CC37A58002C2FB9 /* HomePageCell.m */; };
+		C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */; };
+		C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */; };
+		C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */; };
+		C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */; };
+		C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */; };
+		C20647C91CC9B08F0039B99B /* HobbyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C20647C71CC9B08F0039B99B /* HobbyCollectionViewCell.m */; };
+		C20647CA1CC9B08F0039B99B /* HobbyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20647C81CC9B08F0039B99B /* HobbyCollectionViewCell.xib */; };
+		C20647CC1CC9C3C60039B99B /* buttonMap.png in Resources */ = {isa = PBXBuildFile; fileRef = C20647CB1CC9C3C60039B99B /* buttonMap.png */; };
+		C20647CE1CC9C4D20039B99B /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = C20647CD1CC9C4D20039B99B /* 222.png */; };
+		C20647D41CC9CDA10039B99B /* DataBaseManger.m in Sources */ = {isa = PBXBuildFile; fileRef = C20647D31CC9CDA10039B99B /* DataBaseManger.m */; };
+		C20647DD1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C20647DB1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.m */; };
+		C20647DE1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20647DC1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.xib */; };
+		C20647E11CCA1D510039B99B /* DataBaseHomeModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C20647E01CCA1D510039B99B /* DataBaseHomeModelDB.m */; };
+		C20647E41CCA2BAC0039B99B /* 99.png in Resources */ = {isa = PBXBuildFile; fileRef = C20647E21CCA2BAC0039B99B /* 99.png */; };
+		C20647E51CCA2BAC0039B99B /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = C20647E31CCA2BAC0039B99B /* 9.png */; };
+		C23AC2211CC62E2A00CD750C /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1D11CC62E2A00CD750C /* NSArray+Log.m */; };
+		C23AC2221CC62E2A00CD750C /* UIImage+ZLResizableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1D31CC62E2A00CD750C /* UIImage+ZLResizableImage.m */; };
+		C23AC2231CC62E2A00CD750C /* UIView+ZLFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1D51CC62E2A00CD750C /* UIView+ZLFrame.m */; };
+		C23AC2241CC62E2A00CD750C /* ZLCity.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1D81CC62E2A00CD750C /* ZLCity.m */; };
+		C23AC2251CC62E2A00CD750C /* ZLCityGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1DA1CC62E2A00CD750C /* ZLCityGroups.m */; };
+		C23AC2261CC62E2A00CD750C /* ZLRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1DC1CC62E2A00CD750C /* ZLRegion.m */; };
+		C23AC2271CC62E2A00CD750C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1E01CC62E2A00CD750C /* MASCompositeConstraint.m */; };
+		C23AC2281CC62E2A00CD750C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1E31CC62E2A00CD750C /* MASConstraint.m */; };
+		C23AC2291CC62E2A00CD750C /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1E51CC62E2A00CD750C /* MASConstraintMaker.m */; };
+		C23AC22A1CC62E2A00CD750C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1E71CC62E2A00CD750C /* MASLayoutConstraint.m */; };
+		C23AC22B1CC62E2A00CD750C /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1EB1CC62E2A00CD750C /* MASViewAttribute.m */; };
+		C23AC22C1CC62E2A00CD750C /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1ED1CC62E2A00CD750C /* MASViewConstraint.m */; };
+		C23AC22D1CC62E2A00CD750C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1EF1CC62E2A00CD750C /* NSArray+MASAdditions.m */; };
+		C23AC22E1CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1F21CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		C23AC22F1CC62E2A00CD750C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1F41CC62E2A00CD750C /* View+MASAdditions.m */; };
+		C23AC2301CC62E2A00CD750C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1F71CC62E2A00CD750C /* ViewController+MASAdditions.m */; };
+		C23AC2311CC62E2A00CD750C /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1FA1CC62E2A00CD750C /* MJArgument.m */; };
+		C23AC2321CC62E2A00CD750C /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1FC1CC62E2A00CD750C /* MJConst.m */; };
+		C23AC2331CC62E2A00CD750C /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC1FF1CC62E2A00CD750C /* MJFoundation.m */; };
+		C23AC2341CC62E2A00CD750C /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2011CC62E2A00CD750C /* MJIvar.m */; };
+		C23AC2351CC62E2A00CD750C /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2031CC62E2A00CD750C /* MJMember.m */; };
+		C23AC2361CC62E2A00CD750C /* MJMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2051CC62E2A00CD750C /* MJMethod.m */; };
+		C23AC2371CC62E2A00CD750C /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2071CC62E2A00CD750C /* MJType.m */; };
+		C23AC2381CC62E2A00CD750C /* MJTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2091CC62E2A00CD750C /* MJTypeEncoding.m */; };
+		C23AC2391CC62E2A00CD750C /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC20B1CC62E2A00CD750C /* NSObject+MJCoding.m */; };
+		C23AC23A1CC62E2A00CD750C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC20D1CC62E2A00CD750C /* NSObject+MJKeyValue.m */; };
+		C23AC23B1CC62E2A00CD750C /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC20F1CC62E2A00CD750C /* NSObject+MJMember.m */; };
+		C23AC23C1CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2131CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.m */; };
+		C23AC23D1CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2151CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.m */; };
+		C23AC23E1CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC2171CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.m */; };
+		C23AC23F1CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23AC2181CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.xib */; };
+		C23AC2401CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC21A1CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.m */; };
+		C23AC2411CC62E2A00CD750C /* ZLSwitchCitySearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC21C1CC62E2A00CD750C /* ZLSwitchCitySearchResultView.m */; };
+		C23AC2421CC62E2A00CD750C /* ZLSwitchCitySearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23AC21E1CC62E2A00CD750C /* ZLSwitchCitySearchView.m */; };
+		C23AC2431CC62E2A00CD750C /* ZLSwitchCityBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C23AC2201CC62E2A00CD750C /* ZLSwitchCityBundle.bundle */; };
+		C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7B1CC4D7BB00A0CD0B /* heart.png */; };
+		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
+		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
+		C28A529C1CC8D6BB002D3918 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28A529B1CC8D6BB002D3918 /* Info.plist */; };
+		C28A52C11CC8E40C002D3918 /* cancelBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C28A52B01CC8E40C002D3918 /* cancelBtn@2x.png */; };
+		C28A52C21CC8E40C002D3918 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28A52B11CC8E40C002D3918 /* citydict.plist */; };
+		C28A52C31CC8E40C002D3918 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52B41CC8E40C002D3918 /* CityViewController.m */; };
+		C28A52C41CC8E40C002D3918 /* ResultCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52B61CC8E40C002D3918 /* ResultCityController.m */; };
+		C28A52C51CC8E40C002D3918 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52B91CC8E40C002D3918 /* CityModel.m */; };
+		C28A52C61CC8E40C002D3918 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52BC1CC8E40C002D3918 /* CityTableViewCell.m */; };
+		C28A52C71CC8E40C002D3918 /* CustomSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52BE1CC8E40C002D3918 /* CustomSearchView.m */; };
+		C28A52C81CC8E40C002D3918 /* CustomTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52C01CC8E40C002D3918 /* CustomTopView.m */; };
+		C28A52CA1CC8ED05002D3918 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28A52C91CC8ED05002D3918 /* CoreLocation.framework */; };
+		C28A52CF1CC90CA6002D3918 /* PassdataManger.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52CE1CC90CA6002D3918 /* PassdataManger.m */; };
+		C28A52D51CC91A6F002D3918 /* ButtonAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C28A52D41CC91A6F002D3918 /* ButtonAction.m */; };
+		C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291593F1CC5D8BF009FB972 /* DrawerViewController.m */; };
+		C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159411CC5D8BF009FB972 /* MenuViewController.m */; };
+		C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159421CC5D8BF009FB972 /* MenuViewController.xib */; };
+		C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C29159461CC5DCD5009FB972 /* nav_menu_icon@2x.png */; };
+		C29159561CC5E201009FB972 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159541CC5E201009FB972 /* SettingViewController.m */; };
+		C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159551CC5E201009FB972 /* SettingViewController.xib */; };
+		C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159591CC5E229009FB972 /* SelectBookViewController.m */; };
+		C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595A1CC5E229009FB972 /* SelectBookViewController.xib */; };
+		C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291595E1CC5E255009FB972 /* CollectActionViewController.m */; };
+		C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595F1CC5E255009FB972 /* CollectActionViewController.xib */; };
+		C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159631CC5E269009FB972 /* SelectHobbyViewController.m */; };
+		C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */; };
+		C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159681CC5E28A009FB972 /* ModfileViewController.m */; };
+		C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159691CC5E28A009FB972 /* ModfileViewController.xib */; };
+		C291596D1CC5F082009FB972 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C291596C1CC5F082009FB972 /* 1.png */; };
+		C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159701CC5F15A009FB972 /* MapAndKindViewController.m */; };
+		C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */; };
+		C291597E1CC61FFE009FB972 /* ser1.png in Resources */ = {isa = PBXBuildFile; fileRef = C291597C1CC61FFE009FB972 /* ser1.png */; };
+		C291597F1CC61FFE009FB972 /* ser2.png in Resources */ = {isa = PBXBuildFile; fileRef = C291597D1CC61FFE009FB972 /* ser2.png */; };
+		C29C61B51CC25D8900E44DDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B41CC25D8900E44DDC /* main.m */; };
+		C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B71CC25D8900E44DDC /* AppDelegate.m */; };
+		C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61BA1CC25D8900E44DDC /* ViewController.m */; };
+		C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29C61BC1CC25D8900E44DDC /* Main.storyboard */; };
+		C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29C61BF1CC25D8900E44DDC /* Assets.xcassets */; };
+		C29C61C31CC25D8900E44DDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */; };
+		C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61DD1CC267F900E44DDC /* BaseModel.m */; };
+		C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E01CC2681E00E44DDC /* BaseViewController.m */; };
+		C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C61E11CC2681E00E44DDC /* BaseViewController.xib */; };
+		C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61E81CC2705400E44DDC /* HomePageListModel.m */; };
+		C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */; };
+		C2FC05501CC778F4002A030E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FC054E1CC778F4002A030E /* LoginViewController.m */; };
+		C2FC05511CC778F4002A030E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FC054F1CC778F4002A030E /* LoginViewController.xib */; };
+		C2FC05551CC79651002A030E /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FC05531CC79651002A030E /* RegisViewController.m */; };
+		C2FC05561CC79651002A030E /* RegisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FC05541CC79651002A030E /* RegisViewController.xib */; };
+		C2FC05581CC7B183002A030E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FC05571CC7B182002A030E /* Security.framework */; };
+		C2FC055C1CC7B22C002A030E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FC055B1CC7B22C002A030E /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6DB5C1A782FE78C3F3F7FCFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C203A8F11CC37A45002C2FB9 /* GroupListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListCell.h; sourceTree = "<group>"; };
+		C203A8F21CC37A45002C2FB9 /* GroupListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListCell.m; sourceTree = "<group>"; };
+		C203A8F41CC37A58002C2FB9 /* HomePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCell.h; sourceTree = "<group>"; };
+		C203A8F51CC37A58002C2FB9 /* HomePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCell.m; sourceTree = "<group>"; };
+		C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupListCell.xib; sourceTree = "<group>"; };
+		C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		C203A8FD1CC3A181002C2FB9 /* HomePageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageListViewController.h; sourceTree = "<group>"; };
+		C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListViewController.m; sourceTree = "<group>"; };
+		C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageListViewController.xib; sourceTree = "<group>"; };
+		C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetWorkRequestManager.h; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.h; sourceTree = "<group>"; };
+		C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetWorkRequestManager.m; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.m; sourceTree = "<group>"; };
+		C20647C61CC9B08F0039B99B /* HobbyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyCollectionViewCell.h; sourceTree = "<group>"; };
+		C20647C71CC9B08F0039B99B /* HobbyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyCollectionViewCell.m; sourceTree = "<group>"; };
+		C20647C81CC9B08F0039B99B /* HobbyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HobbyCollectionViewCell.xib; sourceTree = "<group>"; };
+		C20647CB1CC9C3C60039B99B /* buttonMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonMap.png; sourceTree = "<group>"; };
+		C20647CD1CC9C4D20039B99B /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
+		C20647D21CC9CDA10039B99B /* DataBaseManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManger.h; sourceTree = "<group>"; };
+		C20647D31CC9CDA10039B99B /* DataBaseManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManger.m; sourceTree = "<group>"; };
+		C20647DA1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelsectHobbyCollectionViewCell.h; sourceTree = "<group>"; };
+		C20647DB1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelsectHobbyCollectionViewCell.m; sourceTree = "<group>"; };
+		C20647DC1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelsectHobbyCollectionViewCell.xib; sourceTree = "<group>"; };
+		C20647DF1CCA1D510039B99B /* DataBaseHomeModelDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseHomeModelDB.h; sourceTree = "<group>"; };
+		C20647E01CCA1D510039B99B /* DataBaseHomeModelDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseHomeModelDB.m; sourceTree = "<group>"; };
+		C20647E21CCA2BAC0039B99B /* 99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 99.png; sourceTree = "<group>"; };
+		C20647E31CCA2BAC0039B99B /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		C23AC1D01CC62E2A00CD750C /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		C23AC1D11CC62E2A00CD750C /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		C23AC1D21CC62E2A00CD750C /* UIImage+ZLResizableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZLResizableImage.h"; sourceTree = "<group>"; };
+		C23AC1D31CC62E2A00CD750C /* UIImage+ZLResizableImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZLResizableImage.m"; sourceTree = "<group>"; };
+		C23AC1D41CC62E2A00CD750C /* UIView+ZLFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLFrame.h"; sourceTree = "<group>"; };
+		C23AC1D51CC62E2A00CD750C /* UIView+ZLFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLFrame.m"; sourceTree = "<group>"; };
+		C23AC1D71CC62E2A00CD750C /* ZLCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCity.h; sourceTree = "<group>"; };
+		C23AC1D81CC62E2A00CD750C /* ZLCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCity.m; sourceTree = "<group>"; };
+		C23AC1D91CC62E2A00CD750C /* ZLCityGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCityGroups.h; sourceTree = "<group>"; };
+		C23AC1DA1CC62E2A00CD750C /* ZLCityGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCityGroups.m; sourceTree = "<group>"; };
+		C23AC1DB1CC62E2A00CD750C /* ZLRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLRegion.h; sourceTree = "<group>"; };
+		C23AC1DC1CC62E2A00CD750C /* ZLRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLRegion.m; sourceTree = "<group>"; };
+		C23AC1DF1CC62E2A00CD750C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		C23AC1E01CC62E2A00CD750C /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		C23AC1E11CC62E2A00CD750C /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		C23AC1E21CC62E2A00CD750C /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		C23AC1E31CC62E2A00CD750C /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		C23AC1E41CC62E2A00CD750C /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		C23AC1E51CC62E2A00CD750C /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		C23AC1E61CC62E2A00CD750C /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		C23AC1E71CC62E2A00CD750C /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		C23AC1E81CC62E2A00CD750C /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		C23AC1E91CC62E2A00CD750C /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		C23AC1EA1CC62E2A00CD750C /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		C23AC1EB1CC62E2A00CD750C /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		C23AC1EC1CC62E2A00CD750C /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		C23AC1ED1CC62E2A00CD750C /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		C23AC1EE1CC62E2A00CD750C /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		C23AC1EF1CC62E2A00CD750C /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		C23AC1F01CC62E2A00CD750C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		C23AC1F11CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		C23AC1F21CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		C23AC1F31CC62E2A00CD750C /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		C23AC1F41CC62E2A00CD750C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		C23AC1F51CC62E2A00CD750C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		C23AC1F61CC62E2A00CD750C /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		C23AC1F71CC62E2A00CD750C /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		C23AC1F91CC62E2A00CD750C /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
+		C23AC1FA1CC62E2A00CD750C /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
+		C23AC1FB1CC62E2A00CD750C /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		C23AC1FC1CC62E2A00CD750C /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		C23AC1FD1CC62E2A00CD750C /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		C23AC1FE1CC62E2A00CD750C /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		C23AC1FF1CC62E2A00CD750C /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		C23AC2001CC62E2A00CD750C /* MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIvar.h; sourceTree = "<group>"; };
+		C23AC2011CC62E2A00CD750C /* MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIvar.m; sourceTree = "<group>"; };
+		C23AC2021CC62E2A00CD750C /* MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMember.h; sourceTree = "<group>"; };
+		C23AC2031CC62E2A00CD750C /* MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMember.m; sourceTree = "<group>"; };
+		C23AC2041CC62E2A00CD750C /* MJMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMethod.h; sourceTree = "<group>"; };
+		C23AC2051CC62E2A00CD750C /* MJMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMethod.m; sourceTree = "<group>"; };
+		C23AC2061CC62E2A00CD750C /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		C23AC2071CC62E2A00CD750C /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		C23AC2081CC62E2A00CD750C /* MJTypeEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTypeEncoding.h; sourceTree = "<group>"; };
+		C23AC2091CC62E2A00CD750C /* MJTypeEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTypeEncoding.m; sourceTree = "<group>"; };
+		C23AC20A1CC62E2A00CD750C /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		C23AC20B1CC62E2A00CD750C /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		C23AC20C1CC62E2A00CD750C /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		C23AC20D1CC62E2A00CD750C /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		C23AC20E1CC62E2A00CD750C /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
+		C23AC20F1CC62E2A00CD750C /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		C23AC2121CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCityDropDownCityMainCell.h; sourceTree = "<group>"; };
+		C23AC2131CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCityDropDownCityMainCell.m; sourceTree = "<group>"; };
+		C23AC2141CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCityDropDownCitySubCell.h; sourceTree = "<group>"; };
+		C23AC2151CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCityDropDownCitySubCell.m; sourceTree = "<group>"; };
+		C23AC2161CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCityDropDownCityView.h; sourceTree = "<group>"; };
+		C23AC2171CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCityDropDownCityView.m; sourceTree = "<group>"; };
+		C23AC2181CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLSwitchCityDropDownCityView.xib; sourceTree = "<group>"; };
+		C23AC2191CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCityDropDownMenu.h; sourceTree = "<group>"; };
+		C23AC21A1CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCityDropDownMenu.m; sourceTree = "<group>"; };
+		C23AC21B1CC62E2A00CD750C /* ZLSwitchCitySearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCitySearchResultView.h; sourceTree = "<group>"; };
+		C23AC21C1CC62E2A00CD750C /* ZLSwitchCitySearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCitySearchResultView.m; sourceTree = "<group>"; };
+		C23AC21D1CC62E2A00CD750C /* ZLSwitchCitySearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwitchCitySearchView.h; sourceTree = "<group>"; };
+		C23AC21E1CC62E2A00CD750C /* ZLSwitchCitySearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwitchCitySearchView.m; sourceTree = "<group>"; };
+		C23AC21F1CC62E2A00CD750C /* ZLCommonConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCommonConst.h; sourceTree = "<group>"; };
+		C23AC2201CC62E2A00CD750C /* ZLSwitchCityBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLSwitchCityBundle.bundle; sourceTree = "<group>"; };
+		C286BB7B1CC4D7BB00A0CD0B /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
+		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
+		C28A529B1CC8D6BB002D3918 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
+		C28A52B01CC8E40C002D3918 /* cancelBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cancelBtn@2x.png"; path = "../CodeClass/selectMapAndKind/selectCity/cancelBtn@2x.png"; sourceTree = "<group>"; };
+		C28A52B11CC8E40C002D3918 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		C28A52B31CC8E40C002D3918 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		C28A52B41CC8E40C002D3918 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		C28A52B51CC8E40C002D3918 /* ResultCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCityController.h; sourceTree = "<group>"; };
+		C28A52B61CC8E40C002D3918 /* ResultCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCityController.m; sourceTree = "<group>"; };
+		C28A52B81CC8E40C002D3918 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		C28A52B91CC8E40C002D3918 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		C28A52BB1CC8E40C002D3918 /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
+		C28A52BC1CC8E40C002D3918 /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
+		C28A52BD1CC8E40C002D3918 /* CustomSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchView.h; sourceTree = "<group>"; };
+		C28A52BE1CC8E40C002D3918 /* CustomSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchView.m; sourceTree = "<group>"; };
+		C28A52BF1CC8E40C002D3918 /* CustomTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTopView.h; sourceTree = "<group>"; };
+		C28A52C01CC8E40C002D3918 /* CustomTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTopView.m; sourceTree = "<group>"; };
+		C28A52C91CC8ED05002D3918 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C28A52CD1CC90CA6002D3918 /* PassdataManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassdataManger.h; sourceTree = "<group>"; };
+		C28A52CE1CC90CA6002D3918 /* PassdataManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassdataManger.m; sourceTree = "<group>"; };
+		C28A52D31CC91A6F002D3918 /* ButtonAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonAction.h; sourceTree = "<group>"; };
+		C28A52D41CC91A6F002D3918 /* ButtonAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonAction.m; sourceTree = "<group>"; };
+		C291593E1CC5D8BF009FB972 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		C291593F1CC5D8BF009FB972 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		C29159401CC5D8BF009FB972 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		C29159411CC5D8BF009FB972 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C29159421CC5D8BF009FB972 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		C29159461CC5DCD5009FB972 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav_menu_icon@2x.png"; path = "../../nav_menu_icon@2x.png"; sourceTree = "<group>"; };
+		C29159531CC5E201009FB972 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		C29159541CC5E201009FB972 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C29159551CC5E201009FB972 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		C29159581CC5E229009FB972 /* SelectBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBookViewController.h; sourceTree = "<group>"; };
+		C29159591CC5E229009FB972 /* SelectBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBookViewController.m; sourceTree = "<group>"; };
+		C291595A1CC5E229009FB972 /* SelectBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBookViewController.xib; sourceTree = "<group>"; };
+		C291595D1CC5E255009FB972 /* CollectActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectActionViewController.h; sourceTree = "<group>"; };
+		C291595E1CC5E255009FB972 /* CollectActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectActionViewController.m; sourceTree = "<group>"; };
+		C291595F1CC5E255009FB972 /* CollectActionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectActionViewController.xib; sourceTree = "<group>"; };
+		C29159621CC5E269009FB972 /* SelectHobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectHobbyViewController.h; sourceTree = "<group>"; };
+		C29159631CC5E269009FB972 /* SelectHobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectHobbyViewController.m; sourceTree = "<group>"; };
+		C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectHobbyViewController.xib; sourceTree = "<group>"; };
+		C29159671CC5E28A009FB972 /* ModfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModfileViewController.h; sourceTree = "<group>"; };
+		C29159681CC5E28A009FB972 /* ModfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModfileViewController.m; sourceTree = "<group>"; };
+		C29159691CC5E28A009FB972 /* ModfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModfileViewController.xib; sourceTree = "<group>"; };
+		C291596C1CC5F082009FB972 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../CodeClass/1.png; sourceTree = "<group>"; };
+		C291596F1CC5F15A009FB972 /* MapAndKindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAndKindViewController.h; sourceTree = "<group>"; };
+		C29159701CC5F15A009FB972 /* MapAndKindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAndKindViewController.m; sourceTree = "<group>"; };
+		C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapAndKindViewController.xib; sourceTree = "<group>"; };
+		C291597C1CC61FFE009FB972 /* ser1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ser1.png; sourceTree = "<group>"; };
+		C291597D1CC61FFE009FB972 /* ser2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ser2.png; sourceTree = "<group>"; };
+		C29C61B01CC25D8900E44DDC /* HiWeedend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeedend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29C61B41CC25D8900E44DDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C29C61B61CC25D8900E44DDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		C29C61B71CC25D8900E44DDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
+		C29C61B91CC25D8900E44DDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C29C61BA1CC25D8900E44DDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C29C61BD1CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C29C61BF1CC25D8900E44DDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C29C61C21CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C29C61C41CC25D8900E44DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C29C61DC1CC267F900E44DDC /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		C29C61DD1CC267F900E44DDC /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		C29C61DF1CC2681E00E44DDC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C29C61E01CC2681E00E44DDC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C29C61E11CC2681E00E44DDC /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		C29C61E41CC268F900E44DDC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C29C61E51CC2694D00E44DDC /* UrlHeadersDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrlHeadersDefine.h; sourceTree = "<group>"; };
+		C29C61E61CC2695F00E44DDC /* ConstantsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
+		C29C61E71CC2705400E44DDC /* HomePageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageListModel.h; sourceTree = "<group>"; };
+		C29C61E81CC2705400E44DDC /* HomePageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageListModel.m; sourceTree = "<group>"; };
+		C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListModel.h; sourceTree = "<group>"; };
+		C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListModel.m; sourceTree = "<group>"; };
+		C2FC054D1CC778F4002A030E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C2FC054E1CC778F4002A030E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C2FC054F1CC778F4002A030E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C2FC05521CC79651002A030E /* RegisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
+		C2FC05531CC79651002A030E /* RegisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisViewController.m; sourceTree = "<group>"; };
+		C2FC05541CC79651002A030E /* RegisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisViewController.xib; sourceTree = "<group>"; };
+		C2FC05571CC7B182002A030E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C2FC055A1CC7B22C002A030E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		C2FC055B1CC7B22C002A030E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C29C61AD1CC25D8900E44DDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C28A52CA1CC8ED05002D3918 /* CoreLocation.framework in Frameworks */,
+				C2FC05581CC7B183002A030E /* Security.framework in Frameworks */,
+				5C051DF43FBE9D3EE0CFD6B1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		61D86DC245D413278FFC80E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52C91CC8ED05002D3918 /* CoreLocation.framework */,
+				C2FC05571CC7B182002A030E /* Security.framework */,
+				6DB5C1A782FE78C3F3F7FCFD /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C23AC1CE1CC62E2A00CD750C /* ZLSwithCity */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1CF1CC62E2A00CD750C /* Category */,
+				C23AC1D61CC62E2A00CD750C /* Models */,
+				C23AC1DD1CC62E2A00CD750C /* Util */,
+				C23AC2101CC62E2A00CD750C /* ViewControllers */,
+				C23AC2111CC62E2A00CD750C /* Views */,
+				C23AC21F1CC62E2A00CD750C /* ZLCommonConst.h */,
+				C23AC2201CC62E2A00CD750C /* ZLSwitchCityBundle.bundle */,
+			);
+			path = ZLSwithCity;
+			sourceTree = "<group>";
+		};
+		C23AC1CF1CC62E2A00CD750C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1D01CC62E2A00CD750C /* NSArray+Log.h */,
+				C23AC1D11CC62E2A00CD750C /* NSArray+Log.m */,
+				C23AC1D21CC62E2A00CD750C /* UIImage+ZLResizableImage.h */,
+				C23AC1D31CC62E2A00CD750C /* UIImage+ZLResizableImage.m */,
+				C23AC1D41CC62E2A00CD750C /* UIView+ZLFrame.h */,
+				C23AC1D51CC62E2A00CD750C /* UIView+ZLFrame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C23AC1D61CC62E2A00CD750C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1D71CC62E2A00CD750C /* ZLCity.h */,
+				C23AC1D81CC62E2A00CD750C /* ZLCity.m */,
+				C23AC1D91CC62E2A00CD750C /* ZLCityGroups.h */,
+				C23AC1DA1CC62E2A00CD750C /* ZLCityGroups.m */,
+				C23AC1DB1CC62E2A00CD750C /* ZLRegion.h */,
+				C23AC1DC1CC62E2A00CD750C /* ZLRegion.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C23AC1DD1CC62E2A00CD750C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1DE1CC62E2A00CD750C /* Masonry */,
+				C23AC1F81CC62E2A00CD750C /* MJExtension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C23AC1DE1CC62E2A00CD750C /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1DF1CC62E2A00CD750C /* MASCompositeConstraint.h */,
+				C23AC1E01CC62E2A00CD750C /* MASCompositeConstraint.m */,
+				C23AC1E11CC62E2A00CD750C /* MASConstraint+Private.h */,
+				C23AC1E21CC62E2A00CD750C /* MASConstraint.h */,
+				C23AC1E31CC62E2A00CD750C /* MASConstraint.m */,
+				C23AC1E41CC62E2A00CD750C /* MASConstraintMaker.h */,
+				C23AC1E51CC62E2A00CD750C /* MASConstraintMaker.m */,
+				C23AC1E61CC62E2A00CD750C /* MASLayoutConstraint.h */,
+				C23AC1E71CC62E2A00CD750C /* MASLayoutConstraint.m */,
+				C23AC1E81CC62E2A00CD750C /* Masonry.h */,
+				C23AC1E91CC62E2A00CD750C /* MASUtilities.h */,
+				C23AC1EA1CC62E2A00CD750C /* MASViewAttribute.h */,
+				C23AC1EB1CC62E2A00CD750C /* MASViewAttribute.m */,
+				C23AC1EC1CC62E2A00CD750C /* MASViewConstraint.h */,
+				C23AC1ED1CC62E2A00CD750C /* MASViewConstraint.m */,
+				C23AC1EE1CC62E2A00CD750C /* NSArray+MASAdditions.h */,
+				C23AC1EF1CC62E2A00CD750C /* NSArray+MASAdditions.m */,
+				C23AC1F01CC62E2A00CD750C /* NSArray+MASShorthandAdditions.h */,
+				C23AC1F11CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.h */,
+				C23AC1F21CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.m */,
+				C23AC1F31CC62E2A00CD750C /* View+MASAdditions.h */,
+				C23AC1F41CC62E2A00CD750C /* View+MASAdditions.m */,
+				C23AC1F51CC62E2A00CD750C /* View+MASShorthandAdditions.h */,
+				C23AC1F61CC62E2A00CD750C /* ViewController+MASAdditions.h */,
+				C23AC1F71CC62E2A00CD750C /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		C23AC1F81CC62E2A00CD750C /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC1F91CC62E2A00CD750C /* MJArgument.h */,
+				C23AC1FA1CC62E2A00CD750C /* MJArgument.m */,
+				C23AC1FB1CC62E2A00CD750C /* MJConst.h */,
+				C23AC1FC1CC62E2A00CD750C /* MJConst.m */,
+				C23AC1FD1CC62E2A00CD750C /* MJExtension.h */,
+				C23AC1FE1CC62E2A00CD750C /* MJFoundation.h */,
+				C23AC1FF1CC62E2A00CD750C /* MJFoundation.m */,
+				C23AC2001CC62E2A00CD750C /* MJIvar.h */,
+				C23AC2011CC62E2A00CD750C /* MJIvar.m */,
+				C23AC2021CC62E2A00CD750C /* MJMember.h */,
+				C23AC2031CC62E2A00CD750C /* MJMember.m */,
+				C23AC2041CC62E2A00CD750C /* MJMethod.h */,
+				C23AC2051CC62E2A00CD750C /* MJMethod.m */,
+				C23AC2061CC62E2A00CD750C /* MJType.h */,
+				C23AC2071CC62E2A00CD750C /* MJType.m */,
+				C23AC2081CC62E2A00CD750C /* MJTypeEncoding.h */,
+				C23AC2091CC62E2A00CD750C /* MJTypeEncoding.m */,
+				C23AC20A1CC62E2A00CD750C /* NSObject+MJCoding.h */,
+				C23AC20B1CC62E2A00CD750C /* NSObject+MJCoding.m */,
+				C23AC20C1CC62E2A00CD750C /* NSObject+MJKeyValue.h */,
+				C23AC20D1CC62E2A00CD750C /* NSObject+MJKeyValue.m */,
+				C23AC20E1CC62E2A00CD750C /* NSObject+MJMember.h */,
+				C23AC20F1CC62E2A00CD750C /* NSObject+MJMember.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		C23AC2101CC62E2A00CD750C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C23AC2111CC62E2A00CD750C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C23AC2121CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.h */,
+				C23AC2131CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.m */,
+				C23AC2141CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.h */,
+				C23AC2151CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.m */,
+				C23AC2161CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.h */,
+				C23AC2171CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.m */,
+				C23AC2181CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.xib */,
+				C23AC2191CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.h */,
+				C23AC21A1CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.m */,
+				C23AC21B1CC62E2A00CD750C /* ZLSwitchCitySearchResultView.h */,
+				C23AC21C1CC62E2A00CD750C /* ZLSwitchCitySearchResultView.m */,
+				C23AC21D1CC62E2A00CD750C /* ZLSwitchCitySearchView.h */,
+				C23AC21E1CC62E2A00CD750C /* ZLSwitchCitySearchView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C28A52AF1CC8E40C002D3918 /* selectCity */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52B11CC8E40C002D3918 /* citydict.plist */,
+				C28A52B21CC8E40C002D3918 /* Controller */,
+				C28A52B71CC8E40C002D3918 /* Model */,
+				C28A52BA1CC8E40C002D3918 /* View */,
+			);
+			path = selectCity;
+			sourceTree = "<group>";
+		};
+		C28A52B21CC8E40C002D3918 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52B31CC8E40C002D3918 /* CityViewController.h */,
+				C28A52B41CC8E40C002D3918 /* CityViewController.m */,
+				C28A52B51CC8E40C002D3918 /* ResultCityController.h */,
+				C28A52B61CC8E40C002D3918 /* ResultCityController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C28A52B71CC8E40C002D3918 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52B81CC8E40C002D3918 /* CityModel.h */,
+				C28A52B91CC8E40C002D3918 /* CityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C28A52BA1CC8E40C002D3918 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52BB1CC8E40C002D3918 /* CityTableViewCell.h */,
+				C28A52BC1CC8E40C002D3918 /* CityTableViewCell.m */,
+				C28A52BD1CC8E40C002D3918 /* CustomSearchView.h */,
+				C28A52BE1CC8E40C002D3918 /* CustomSearchView.m */,
+				C28A52BF1CC8E40C002D3918 /* CustomTopView.h */,
+				C28A52C01CC8E40C002D3918 /* CustomTopView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C28A52CB1CC90C39002D3918 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52CD1CC90CA6002D3918 /* PassdataManger.h */,
+				C28A52CE1CC90CA6002D3918 /* PassdataManger.m */,
+				C20647D21CC9CDA10039B99B /* DataBaseManger.h */,
+				C20647D31CC9CDA10039B99B /* DataBaseManger.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C28A52CC1CC90C85002D3918 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				C20647E21CCA2BAC0039B99B /* 99.png */,
+				C20647E31CCA2BAC0039B99B /* 9.png */,
+				C20647CD1CC9C4D20039B99B /* 222.png */,
+				C20647CB1CC9C3C60039B99B /* buttonMap.png */,
+				C29159461CC5DCD5009FB972 /* nav_menu_icon@2x.png */,
+				C28A529B1CC8D6BB002D3918 /* Info.plist */,
+				C28A52B01CC8E40C002D3918 /* cancelBtn@2x.png */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		C291593D1CC5D87D009FB972 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61B61CC25D8900E44DDC /* AppDelegate.h */,
+				C29C61B71CC25D8900E44DDC /* AppDelegate.m */,
+			);
+			name = Appdelegate;
+			path = Tools/Appdelegate;
+			sourceTree = "<group>";
+		};
+		C291594E1CC5E1AA009FB972 /*  selectHobbyVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29159621CC5E269009FB972 /* SelectHobbyViewController.h */,
+				C29159631CC5E269009FB972 /* SelectHobbyViewController.m */,
+				C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */,
+				C20647DA1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.h */,
+				C20647DB1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.m */,
+				C20647DC1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.xib */,
+			);
+			path = " selectHobbyVC";
+			sourceTree = "<group>";
+		};
+		C291594F1CC5E1AA009FB972 /* coloctActionVC */ = {
+			isa = PBXGroup;
+			children = (
+				C291595D1CC5E255009FB972 /* CollectActionViewController.h */,
+				C291595E1CC5E255009FB972 /* CollectActionViewController.m */,
+				C291595F1CC5E255009FB972 /* CollectActionViewController.xib */,
+			);
+			path = coloctActionVC;
+			sourceTree = "<group>";
+		};
+		C29159501CC5E1AA009FB972 /* modfiledVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29159671CC5E28A009FB972 /* ModfileViewController.h */,
+				C29159681CC5E28A009FB972 /* ModfileViewController.m */,
+				C29159691CC5E28A009FB972 /* ModfileViewController.xib */,
+			);
+			path = modfiledVC;
+			sourceTree = "<group>";
+		};
+		C29159511CC5E1AA009FB972 /* selectBookVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29159581CC5E229009FB972 /* SelectBookViewController.h */,
+				C29159591CC5E229009FB972 /* SelectBookViewController.m */,
+				C291595A1CC5E229009FB972 /* SelectBookViewController.xib */,
+			);
+			path = selectBookVC;
+			sourceTree = "<group>";
+		};
+		C29159521CC5E1AA009FB972 /* settingVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29159531CC5E201009FB972 /* SettingViewController.h */,
+				C29159541CC5E201009FB972 /* SettingViewController.m */,
+				C29159551CC5E201009FB972 /* SettingViewController.xib */,
+			);
+			path = settingVC;
+			sourceTree = "<group>";
+		};
+		C291596E1CC5F143009FB972 /* selectMapAndKind */ = {
+			isa = PBXGroup;
+			children = (
+				C291596F1CC5F15A009FB972 /* MapAndKindViewController.h */,
+				C29159701CC5F15A009FB972 /* MapAndKindViewController.m */,
+				C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */,
+				C20647C61CC9B08F0039B99B /* HobbyCollectionViewCell.h */,
+				C20647C71CC9B08F0039B99B /* HobbyCollectionViewCell.m */,
+				C20647C81CC9B08F0039B99B /* HobbyCollectionViewCell.xib */,
+				C28A52D31CC91A6F002D3918 /* ButtonAction.h */,
+				C28A52D41CC91A6F002D3918 /* ButtonAction.m */,
+				C28A52AF1CC8E40C002D3918 /* selectCity */,
+			);
+			path = selectMapAndKind;
+			sourceTree = "<group>";
+		};
+		C29C61A71CC25D8900E44DDC = {
+			isa = PBXGroup;
+			children = (
+				C29C61B21CC25D8900E44DDC /* HiWeedend */,
+				C29C61B11CC25D8900E44DDC /* Products */,
+				D37304D336AA05F3D7704BB0 /* Pods */,
+				61D86DC245D413278FFC80E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C29C61B11CC25D8900E44DDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61B01CC25D8900E44DDC /* HiWeedend.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C29C61B21CC25D8900E44DDC /* HiWeedend */ = {
+			isa = PBXGroup;
+			children = (
+				C28A52CC1CC90C85002D3918 /* Resourse */,
+				C28A52CB1CC90C39002D3918 /* Helper */,
+				C291593D1CC5D87D009FB972 /* Appdelegate */,
+				C29C61CA1CC25FD400E44DDC /* Base */,
+				C29C61CB1CC25FD400E44DDC /* CodeClass */,
+				C29C61DA1CC25FD400E44DDC /* Document */,
+				C29C61DB1CC25FD400E44DDC /* Tools */,
+				C29C61B91CC25D8900E44DDC /* ViewController.h */,
+				C29C61BA1CC25D8900E44DDC /* ViewController.m */,
+				C29C61BC1CC25D8900E44DDC /* Main.storyboard */,
+				C29C61BF1CC25D8900E44DDC /* Assets.xcassets */,
+				C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */,
+				C29C61C41CC25D8900E44DDC /* Info.plist */,
+				C29C61B31CC25D8900E44DDC /* Supporting Files */,
+			);
+			path = HiWeedend;
+			sourceTree = "<group>";
+		};
+		C29C61B31CC25D8900E44DDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61B41CC25D8900E44DDC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C29C61CA1CC25FD400E44DDC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61DC1CC267F900E44DDC /* BaseModel.h */,
+				C29C61DD1CC267F900E44DDC /* BaseModel.m */,
+				C29C61DF1CC2681E00E44DDC /* BaseViewController.h */,
+				C29C61E01CC2681E00E44DDC /* BaseViewController.m */,
+				C29C61E11CC2681E00E44DDC /* BaseViewController.xib */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C29C61CB1CC25FD400E44DDC /* CodeClass */ = {
+			isa = PBXGroup;
+			children = (
+				C2FC054C1CC778E2002A030E /* LoginVC */,
+				C291596E1CC5F143009FB972 /* selectMapAndKind */,
+				C291594E1CC5E1AA009FB972 /*  selectHobbyVC */,
+				C291594F1CC5E1AA009FB972 /* coloctActionVC */,
+				C29159501CC5E1AA009FB972 /* modfiledVC */,
+				C29159511CC5E1AA009FB972 /* selectBookVC */,
+				C29159521CC5E1AA009FB972 /* settingVC */,
+				C2C348FF1CC5CEF700082B9D /* Select */,
+				C2C349031CC5CEF700082B9D /* ShowClass */,
+				C29C61CC1CC25FD400E44DDC /* Details */,
+				C29C61D01CC25FD400E44DDC /* Menu */,
+				C29C61D11CC25FD400E44DDC /* Search */,
+				C29C61D21CC25FD400E44DDC /* Secondary */,
+				C29C61D61CC25FD400E44DDC /* TheMainInterface */,
+			);
+			path = CodeClass;
+			sourceTree = "<group>";
+		};
+		C29C61CC1CC25FD400E44DDC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61CD1CC25FD400E44DDC /* Model */,
+				C29C61CE1CC25FD400E44DDC /* ViewConrollers */,
+				C29C61CF1CC25FD400E44DDC /* Views */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		C29C61CD1CC25FD400E44DDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C29C61CE1CC25FD400E44DDC /* ViewConrollers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewConrollers;
+			sourceTree = "<group>";
+		};
+		C29C61CF1CC25FD400E44DDC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C29C61D01CC25FD400E44DDC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C291593E1CC5D8BF009FB972 /* DrawerViewController.h */,
+				C291593F1CC5D8BF009FB972 /* DrawerViewController.m */,
+				C29159401CC5D8BF009FB972 /* MenuViewController.h */,
+				C29159411CC5D8BF009FB972 /* MenuViewController.m */,
+				C29159421CC5D8BF009FB972 /* MenuViewController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C29C61D11CC25FD400E44DDC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C29C61D21CC25FD400E44DDC /* Secondary */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61D31CC25FD400E44DDC /* Model */,
+				C29C61D41CC25FD400E44DDC /* ViewControllers */,
+				C29C61D51CC25FD400E44DDC /* Views */,
+			);
+			path = Secondary;
+			sourceTree = "<group>";
+		};
+		C29C61D31CC25FD400E44DDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C29C61D41CC25FD400E44DDC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C29C61D51CC25FD400E44DDC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C29C61D61CC25FD400E44DDC /* TheMainInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61D71CC25FD400E44DDC /* Model */,
+				C29C61D81CC25FD400E44DDC /* ViewConrollers */,
+				C29C61D91CC25FD400E44DDC /* Views */,
+			);
+			path = TheMainInterface;
+			sourceTree = "<group>";
+		};
+		C29C61D71CC25FD400E44DDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C29C61E71CC2705400E44DDC /* HomePageListModel.h */,
+				C29C61E81CC2705400E44DDC /* HomePageListModel.m */,
+				C29C61EA1CC27A6F00E44DDC /* GroupListModel.h */,
+				C29C61EB1CC27A6F00E44DDC /* GroupListModel.m */,
+				C20647DF1CCA1D510039B99B /* DataBaseHomeModelDB.h */,
+				C20647E01CCA1D510039B99B /* DataBaseHomeModelDB.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C29C61D81CC25FD400E44DDC /* ViewConrollers */ = {
+			isa = PBXGroup;
+			children = (
+				C203A8FD1CC3A181002C2FB9 /* HomePageListViewController.h */,
+				C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */,
+				C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */,
+			);
+			path = ViewConrollers;
+			sourceTree = "<group>";
+		};
+		C29C61D91CC25FD400E44DDC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C203A8F11CC37A45002C2FB9 /* GroupListCell.h */,
+				C203A8F21CC37A45002C2FB9 /* GroupListCell.m */,
+				C203A8F71CC37A69002C2FB9 /* GroupListCell.xib */,
+				C203A8F41CC37A58002C2FB9 /* HomePageCell.h */,
+				C203A8F51CC37A58002C2FB9 /* HomePageCell.m */,
+				C203A8F91CC37A72002C2FB9 /* HomePageCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C29C61DA1CC25FD400E44DDC /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				C291597C1CC61FFE009FB972 /* ser1.png */,
+				C291597D1CC61FFE009FB972 /* ser2.png */,
+				C291596C1CC5F082009FB972 /* 1.png */,
+				C286BB7F1CC4DCDE00A0CD0B /* 666.png */,
+				C286BB7B1CC4D7BB00A0CD0B /* heart.png */,
+				C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		C29C61DB1CC25FD400E44DDC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C2FC05591CC7B215002A030E /* keychain */,
+				C23AC1CE1CC62E2A00CD750C /* ZLSwithCity */,
+				C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */,
+				C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */,
+				C29C61E41CC268F900E44DDC /* PrefixHeader.pch */,
+				C29C61E51CC2694D00E44DDC /* UrlHeadersDefine.h */,
+				C29C61E61CC2695F00E44DDC /* ConstantsDefine.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		C2C348FF1CC5CEF700082B9D /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				C2C349001CC5CEF700082B9D /* CityAndClassFile */,
+				C2C349021CC5CEF700082B9D /* MapSearch */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		C2C349001CC5CEF700082B9D /* CityAndClassFile */ = {
+			isa = PBXGroup;
+			children = (
+				C2C349011CC5CEF700082B9D /* CityClassViewController */,
+			);
+			path = CityAndClassFile;
+			sourceTree = "<group>";
+		};
+		C2C349011CC5CEF700082B9D /* CityClassViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityClassViewController;
+			sourceTree = "<group>";
+		};
+		C2C349021CC5CEF700082B9D /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		C2C349031CC5CEF700082B9D /* ShowClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowClass;
+			sourceTree = "<group>";
+		};
+		C2FC054C1CC778E2002A030E /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				C2FC054D1CC778F4002A030E /* LoginViewController.h */,
+				C2FC054E1CC778F4002A030E /* LoginViewController.m */,
+				C2FC054F1CC778F4002A030E /* LoginViewController.xib */,
+				C2FC05521CC79651002A030E /* RegisViewController.h */,
+				C2FC05531CC79651002A030E /* RegisViewController.m */,
+				C2FC05541CC79651002A030E /* RegisViewController.xib */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		C2FC05591CC7B215002A030E /* keychain */ = {
+			isa = PBXGroup;
+			children = (
+				C2FC055A1CC7B22C002A030E /* KeychainItemWrapper.h */,
+				C2FC055B1CC7B22C002A030E /* KeychainItemWrapper.m */,
+			);
+			path = keychain;
+			sourceTree = "<group>";
+		};
+		D37304D336AA05F3D7704BB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */,
+				0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C29C61AF1CC25D8900E44DDC /* HiWeedend */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C29C61C71CC25D8900E44DDC /* Build configuration list for PBXNativeTarget "HiWeedend" */;
+			buildPhases = (
+				50DE44DAE347EBFC81A32F02 /* Check Pods Manifest.lock */,
+				C29C61AC1CC25D8900E44DDC /* Sources */,
+				C29C61AD1CC25D8900E44DDC /* Frameworks */,
+				C29C61AE1CC25D8900E44DDC /* Resources */,
+				6EC36CB27F26547AE144F1E2 /* Embed Pods Frameworks */,
+				440532A98C593AC67F3F817E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HiWeedend;
+			productName = HiWeedend;
+			productReference = C29C61B01CC25D8900E44DDC /* HiWeedend.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C29C61A81CC25D8900E44DDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "高艳闯";
+				TargetAttributes = {
+					C29C61AF1CC25D8900E44DDC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = C29C61AB1CC25D8900E44DDC /* Build configuration list for PBXProject "HiWeedend" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C29C61A71CC25D8900E44DDC;
+			productRefGroup = C29C61B11CC25D8900E44DDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C29C61AF1CC25D8900E44DDC /* HiWeedend */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C29C61AE1CC25D8900E44DDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
+				C20647E41CCA2BAC0039B99B /* 99.png in Resources */,
+				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
+				C20647CA1CC9B08F0039B99B /* HobbyCollectionViewCell.xib in Resources */,
+				C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */,
+				C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */,
+				C20647DE1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.xib in Resources */,
+				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
+				C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */,
+				C20647E51CCA2BAC0039B99B /* 9.png in Resources */,
+				C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */,
+				C29C61C31CC25D8900E44DDC /* LaunchScreen.storyboard in Resources */,
+				C291597F1CC61FFE009FB972 /* ser2.png in Resources */,
+				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
+				C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */,
+				C291596D1CC5F082009FB972 /* 1.png in Resources */,
+				C23AC2431CC62E2A00CD750C /* ZLSwitchCityBundle.bundle in Resources */,
+				C291597E1CC61FFE009FB972 /* ser1.png in Resources */,
+				C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */,
+				C28A529C1CC8D6BB002D3918 /* Info.plist in Resources */,
+				C2FC05561CC79651002A030E /* RegisViewController.xib in Resources */,
+				C2FC05511CC778F4002A030E /* LoginViewController.xib in Resources */,
+				C28A52C11CC8E40C002D3918 /* cancelBtn@2x.png in Resources */,
+				C28A52C21CC8E40C002D3918 /* citydict.plist in Resources */,
+				C20647CE1CC9C4D20039B99B /* 222.png in Resources */,
+				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
+				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
+				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
+				C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */,
+				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
+				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
+				C23AC23F1CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.xib in Resources */,
+				C20647CC1CC9C3C60039B99B /* buttonMap.png in Resources */,
+				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		440532A98C593AC67F3F817E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50DE44DAE347EBFC81A32F02 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EC36CB27F26547AE144F1E2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C29C61AC1CC25D8900E44DDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C20647E11CCA1D510039B99B /* DataBaseHomeModelDB.m in Sources */,
+				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
+				C23AC2421CC62E2A00CD750C /* ZLSwitchCitySearchView.m in Sources */,
+				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
+				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
+				C28A52C51CC8E40C002D3918 /* CityModel.m in Sources */,
+				C28A52C61CC8E40C002D3918 /* CityTableViewCell.m in Sources */,
+				C28A52C41CC8E40C002D3918 /* ResultCityController.m in Sources */,
+				C29C61B81CC25D8900E44DDC /* AppDelegate.m in Sources */,
+				C23AC2371CC62E2A00CD750C /* MJType.m in Sources */,
+				C23AC23E1CC62E2A00CD750C /* ZLSwitchCityDropDownCityView.m in Sources */,
+				C23AC2271CC62E2A00CD750C /* MASCompositeConstraint.m in Sources */,
+				C23AC22B1CC62E2A00CD750C /* MASViewAttribute.m in Sources */,
+				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
+				C2FC05551CC79651002A030E /* RegisViewController.m in Sources */,
+				C23AC2211CC62E2A00CD750C /* NSArray+Log.m in Sources */,
+				C20647C91CC9B08F0039B99B /* HobbyCollectionViewCell.m in Sources */,
+				C23AC2401CC62E2A00CD750C /* ZLSwitchCityDropDownMenu.m in Sources */,
+				C28A52CF1CC90CA6002D3918 /* PassdataManger.m in Sources */,
+				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
+				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
+				C23AC2251CC62E2A00CD750C /* ZLCityGroups.m in Sources */,
+				C23AC2301CC62E2A00CD750C /* ViewController+MASAdditions.m in Sources */,
+				C23AC23A1CC62E2A00CD750C /* NSObject+MJKeyValue.m in Sources */,
+				C23AC22E1CC62E2A00CD750C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				C23AC2311CC62E2A00CD750C /* MJArgument.m in Sources */,
+				C2FC055C1CC7B22C002A030E /* KeychainItemWrapper.m in Sources */,
+				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
+				C23AC22A1CC62E2A00CD750C /* MASLayoutConstraint.m in Sources */,
+				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
+				C23AC2411CC62E2A00CD750C /* ZLSwitchCitySearchResultView.m in Sources */,
+				C28A52C31CC8E40C002D3918 /* CityViewController.m in Sources */,
+				C23AC2261CC62E2A00CD750C /* ZLRegion.m in Sources */,
+				C23AC2241CC62E2A00CD750C /* ZLCity.m in Sources */,
+				C23AC2331CC62E2A00CD750C /* MJFoundation.m in Sources */,
+				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
+				C23AC23D1CC62E2A00CD750C /* ZLSwitchCityDropDownCitySubCell.m in Sources */,
+				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
+				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
+				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
+				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
+				C2FC05501CC778F4002A030E /* LoginViewController.m in Sources */,
+				C23AC22F1CC62E2A00CD750C /* View+MASAdditions.m in Sources */,
+				C23AC2221CC62E2A00CD750C /* UIImage+ZLResizableImage.m in Sources */,
+				C23AC2391CC62E2A00CD750C /* NSObject+MJCoding.m in Sources */,
+				C23AC2361CC62E2A00CD750C /* MJMethod.m in Sources */,
+				C23AC2281CC62E2A00CD750C /* MASConstraint.m in Sources */,
+				C20647D41CC9CDA10039B99B /* DataBaseManger.m in Sources */,
+				C23AC2351CC62E2A00CD750C /* MJMember.m in Sources */,
+				C23AC2291CC62E2A00CD750C /* MASConstraintMaker.m in Sources */,
+				C23AC23B1CC62E2A00CD750C /* NSObject+MJMember.m in Sources */,
+				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
+				C28A52D51CC91A6F002D3918 /* ButtonAction.m in Sources */,
+				C23AC2341CC62E2A00CD750C /* MJIvar.m in Sources */,
+				C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */,
+				C23AC2381CC62E2A00CD750C /* MJTypeEncoding.m in Sources */,
+				C23AC23C1CC62E2A00CD750C /* ZLSwitchCityDropDownCityMainCell.m in Sources */,
+				C23AC22C1CC62E2A00CD750C /* MASViewConstraint.m in Sources */,
+				C23AC2231CC62E2A00CD750C /* UIView+ZLFrame.m in Sources */,
+				C28A52C71CC8E40C002D3918 /* CustomSearchView.m in Sources */,
+				C23AC2321CC62E2A00CD750C /* MJConst.m in Sources */,
+				C23AC22D1CC62E2A00CD750C /* NSArray+MASAdditions.m in Sources */,
+				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
+				C20647DD1CC9D3340039B99B /* SelsectHobbyCollectionViewCell.m in Sources */,
+				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
+				C28A52C81CC8E40C002D3918 /* CustomTopView.m in Sources */,
+				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C29C61BC1CC25D8900E44DDC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C29C61BD1CC25D8900E44DDC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C29C61C21CC25D8900E44DDC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C29C61C51CC25D8900E44DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C29C61C61CC25D8900E44DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C29C61C81CC25D8900E44DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				INFOPLIST_FILE = HiWeedend/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C29C61C91CC25D8900E44DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/lanou3g/Desktop/WeekHiApp/HiWeedend/HiWeedend/Tools/PrefixHeader.pch;
+				INFOPLIST_FILE = HiWeedend/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.HiWeedend;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C29C61AB1CC25D8900E44DDC /* Build configuration list for PBXProject "HiWeedend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29C61C51CC25D8900E44DDC /* Debug */,
+				C29C61C61CC25D8900E44DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C29C61C71CC25D8900E44DDC /* Build configuration list for PBXNativeTarget "HiWeedend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29C61C81CC25D8900E44DDC /* Debug */,
+				C29C61C91CC25D8900E44DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C29C61A81CC25D8900E44DDC /* Project object */;
+}
