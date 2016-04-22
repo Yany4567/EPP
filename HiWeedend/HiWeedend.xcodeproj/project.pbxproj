@@ -41,8 +41,6 @@
 		C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159681CC5E28A009FB972 /* ModfileViewController.m */; };
 		C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159691CC5E28A009FB972 /* ModfileViewController.xib */; };
 		C291596D1CC5F082009FB972 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C291596C1CC5F082009FB972 /* 1.png */; };
-		C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159701CC5F15A009FB972 /* MapAndKindViewController.m */; };
-		C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */; };
 		C29C61B51CC25D8900E44DDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61B41CC25D8900E44DDC /* main.m */; };
 		C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C61BA1CC25D8900E44DDC /* ViewController.m */; };
 		C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29C61BC1CC25D8900E44DDC /* Main.storyboard */; };
@@ -60,6 +58,19 @@
 		C2C7FCAD1CCA6A0B008762C4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCA81CCA6A0B008762C4 /* LoginViewController.xib */; };
 		C2C7FCAE1CCA6A0B008762C4 /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCAA1CCA6A0B008762C4 /* RegisViewController.m */; };
 		C2C7FCAF1CCA6A0B008762C4 /* RegisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCAB1CCA6A0B008762C4 /* RegisViewController.xib */; };
+		C2C7FCB11CCA6C64008762C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C7FCB01CCA6C64008762C4 /* Security.framework */; };
+		C2C7FCB81CCA6CAF008762C4 /* HobbyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCB31CCA6CAF008762C4 /* HobbyCollectionViewCell.m */; };
+		C2C7FCB91CCA6CAF008762C4 /* HobbyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCB41CCA6CAF008762C4 /* HobbyCollectionViewCell.xib */; };
+		C2C7FCBA1CCA6CAF008762C4 /* MapAndKindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCB61CCA6CAF008762C4 /* MapAndKindViewController.m */; };
+		C2C7FCBB1CCA6CAF008762C4 /* MapAndKindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCB71CCA6CAF008762C4 /* MapAndKindViewController.xib */; };
+		C2C7FCCE1CCA6CD6008762C4 /* cancelBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCBD1CCA6CD6008762C4 /* cancelBtn@2x.png */; };
+		C2C7FCCF1CCA6CD6008762C4 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C7FCBE1CCA6CD6008762C4 /* citydict.plist */; };
+		C2C7FCD01CCA6CD6008762C4 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCC11CCA6CD6008762C4 /* CityViewController.m */; };
+		C2C7FCD11CCA6CD6008762C4 /* ResultCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCC31CCA6CD6008762C4 /* ResultCityController.m */; };
+		C2C7FCD21CCA6CD6008762C4 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCC61CCA6CD6008762C4 /* CityModel.m */; };
+		C2C7FCD31CCA6CD6008762C4 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCC91CCA6CD6008762C4 /* CityTableViewCell.m */; };
+		C2C7FCD41CCA6CD6008762C4 /* CustomSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCCB1CCA6CD6008762C4 /* CustomSearchView.m */; };
+		C2C7FCD51CCA6CD6008762C4 /* CustomTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7FCCD1CCA6CD6008762C4 /* CustomTopView.m */; };
 		C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EDBC1CCA4B3B00771D03 /* Info.plist */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
@@ -123,9 +134,6 @@
 		C29159681CC5E28A009FB972 /* ModfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModfileViewController.m; sourceTree = "<group>"; };
 		C29159691CC5E28A009FB972 /* ModfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModfileViewController.xib; sourceTree = "<group>"; };
 		C291596C1CC5F082009FB972 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../CodeClass/1.png; sourceTree = "<group>"; };
-		C291596F1CC5F15A009FB972 /* MapAndKindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAndKindViewController.h; sourceTree = "<group>"; };
-		C29159701CC5F15A009FB972 /* MapAndKindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAndKindViewController.m; sourceTree = "<group>"; };
-		C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapAndKindViewController.xib; sourceTree = "<group>"; };
 		C29C61B01CC25D8900E44DDC /* HiWeedend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeedend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29C61B41CC25D8900E44DDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C29C61B91CC25D8900E44DDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -158,6 +166,27 @@
 		C2C7FCA91CCA6A0B008762C4 /* RegisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
 		C2C7FCAA1CCA6A0B008762C4 /* RegisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisViewController.m; sourceTree = "<group>"; };
 		C2C7FCAB1CCA6A0B008762C4 /* RegisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisViewController.xib; sourceTree = "<group>"; };
+		C2C7FCB01CCA6C64008762C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C2C7FCB21CCA6CAF008762C4 /* HobbyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyCollectionViewCell.h; sourceTree = "<group>"; };
+		C2C7FCB31CCA6CAF008762C4 /* HobbyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyCollectionViewCell.m; sourceTree = "<group>"; };
+		C2C7FCB41CCA6CAF008762C4 /* HobbyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HobbyCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2C7FCB51CCA6CAF008762C4 /* MapAndKindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAndKindViewController.h; sourceTree = "<group>"; };
+		C2C7FCB61CCA6CAF008762C4 /* MapAndKindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAndKindViewController.m; sourceTree = "<group>"; };
+		C2C7FCB71CCA6CAF008762C4 /* MapAndKindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapAndKindViewController.xib; sourceTree = "<group>"; };
+		C2C7FCBD1CCA6CD6008762C4 /* cancelBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancelBtn@2x.png"; sourceTree = "<group>"; };
+		C2C7FCBE1CCA6CD6008762C4 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		C2C7FCC01CCA6CD6008762C4 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		C2C7FCC11CCA6CD6008762C4 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		C2C7FCC21CCA6CD6008762C4 /* ResultCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCityController.h; sourceTree = "<group>"; };
+		C2C7FCC31CCA6CD6008762C4 /* ResultCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCityController.m; sourceTree = "<group>"; };
+		C2C7FCC51CCA6CD6008762C4 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		C2C7FCC61CCA6CD6008762C4 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		C2C7FCC81CCA6CD6008762C4 /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
+		C2C7FCC91CCA6CD6008762C4 /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
+		C2C7FCCA1CCA6CD6008762C4 /* CustomSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchView.h; sourceTree = "<group>"; };
+		C2C7FCCB1CCA6CD6008762C4 /* CustomSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchView.m; sourceTree = "<group>"; };
+		C2C7FCCC1CCA6CD6008762C4 /* CustomTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTopView.h; sourceTree = "<group>"; };
+		C2C7FCCD1CCA6CD6008762C4 /* CustomTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTopView.m; sourceTree = "<group>"; };
 		C2D7EDBC1CCA4B3B00771D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
@@ -178,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C7FCB11CCA6C64008762C4 /* Security.framework in Frameworks */,
 				C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */,
 				5C051DF43FBE9D3EE0CFD6B1 /* libPods.a in Frameworks */,
 			);
@@ -189,6 +219,7 @@
 		61D86DC245D413278FFC80E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2C7FCB01CCA6C64008762C4 /* Security.framework */,
 				C2BB96AB1CC77DF500090282 /* CoreLocation.framework */,
 				6DB5C1A782FE78C3F3F7FCFD /* libPods.a */,
 			);
@@ -258,9 +289,13 @@
 		C291596E1CC5F143009FB972 /* selectMapAndKind */ = {
 			isa = PBXGroup;
 			children = (
-				C291596F1CC5F15A009FB972 /* MapAndKindViewController.h */,
-				C29159701CC5F15A009FB972 /* MapAndKindViewController.m */,
-				C29159711CC5F15A009FB972 /* MapAndKindViewController.xib */,
+				C2C7FCB21CCA6CAF008762C4 /* HobbyCollectionViewCell.h */,
+				C2C7FCB31CCA6CAF008762C4 /* HobbyCollectionViewCell.m */,
+				C2C7FCB41CCA6CAF008762C4 /* HobbyCollectionViewCell.xib */,
+				C2C7FCB51CCA6CAF008762C4 /* MapAndKindViewController.h */,
+				C2C7FCB61CCA6CAF008762C4 /* MapAndKindViewController.m */,
+				C2C7FCB71CCA6CAF008762C4 /* MapAndKindViewController.xib */,
+				C2C7FCBC1CCA6CD6008762C4 /* selectCity */,
 			);
 			path = selectMapAndKind;
 			sourceTree = "<group>";
@@ -572,6 +607,51 @@
 			path = LogainAndRegist;
 			sourceTree = "<group>";
 		};
+		C2C7FCBC1CCA6CD6008762C4 /* selectCity */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7FCBD1CCA6CD6008762C4 /* cancelBtn@2x.png */,
+				C2C7FCBE1CCA6CD6008762C4 /* citydict.plist */,
+				C2C7FCBF1CCA6CD6008762C4 /* Controller */,
+				C2C7FCC41CCA6CD6008762C4 /* Model */,
+				C2C7FCC71CCA6CD6008762C4 /* View */,
+			);
+			path = selectCity;
+			sourceTree = "<group>";
+		};
+		C2C7FCBF1CCA6CD6008762C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7FCC01CCA6CD6008762C4 /* CityViewController.h */,
+				C2C7FCC11CCA6CD6008762C4 /* CityViewController.m */,
+				C2C7FCC21CCA6CD6008762C4 /* ResultCityController.h */,
+				C2C7FCC31CCA6CD6008762C4 /* ResultCityController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C2C7FCC41CCA6CD6008762C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7FCC51CCA6CD6008762C4 /* CityModel.h */,
+				C2C7FCC61CCA6CD6008762C4 /* CityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2C7FCC71CCA6CD6008762C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7FCC81CCA6CD6008762C4 /* CityTableViewCell.h */,
+				C2C7FCC91CCA6CD6008762C4 /* CityTableViewCell.m */,
+				C2C7FCCA1CCA6CD6008762C4 /* CustomSearchView.h */,
+				C2C7FCCB1CCA6CD6008762C4 /* CustomSearchView.m */,
+				C2C7FCCC1CCA6CD6008762C4 /* CustomTopView.h */,
+				C2C7FCCD1CCA6CD6008762C4 /* CustomTopView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D37304D336AA05F3D7704BB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,10 +725,11 @@
 				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
 				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
 				C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */,
+				C2C7FCCF1CCA6CD6008762C4 /* citydict.plist in Resources */,
+				C2C7FCCE1CCA6CD6008762C4 /* cancelBtn@2x.png in Resources */,
 				C2EA1FE21CCA28EB00C7F3F6 /* FooterView.xib in Resources */,
 				C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */,
 				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
-				C29159731CC5F15A009FB972 /* MapAndKindViewController.xib in Resources */,
 				C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */,
 				C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */,
 				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
@@ -662,10 +743,12 @@
 				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
 				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
 				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
+				C2C7FCB91CCA6CAF008762C4 /* HobbyCollectionViewCell.xib in Resources */,
 				C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */,
 				C2EA1FBA1CC9B37300C7F3F6 /* HaderView.xib in Resources */,
 				C28A3E781CC8802700EDF9F5 /* DatailsViewController.xib in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
+				C2C7FCBB1CCA6CAF008762C4 /* MapAndKindViewController.xib in Resources */,
 				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
 				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
 			);
@@ -730,24 +813,30 @@
 				C29C61BB1CC25D8900E44DDC /* ViewController.m in Sources */,
 				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C29C61E21CC2681E00E44DDC /* BaseViewController.m in Sources */,
+				C2C7FCD21CCA6CD6008762C4 /* CityModel.m in Sources */,
 				C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */,
 				C2EA1FB81CC9B2C500C7F3F6 /* HaderView.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
 				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
 				C2C7FCAC1CCA6A0B008762C4 /* LoginViewController.m in Sources */,
-				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
 				C2C7FCAE1CCA6A0B008762C4 /* RegisViewController.m in Sources */,
 				C2EA1FE01CCA282A00C7F3F6 /* FooterView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
+				C2C7FCB81CCA6CAF008762C4 /* HobbyCollectionViewCell.m in Sources */,
+				C2C7FCD41CCA6CD6008762C4 /* CustomSearchView.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
+				C2C7FCBA1CCA6CAF008762C4 /* MapAndKindViewController.m in Sources */,
 				C28A3E911CC8FA8800EDF9F5 /* ContentCell.m in Sources */,
+				C2C7FCD01CCA6CD6008762C4 /* CityViewController.m in Sources */,
 				C29C61E91CC2705400E44DDC /* HomePageListModel.m in Sources */,
 				C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */,
 				C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */,
+				C2C7FCD11CCA6CD6008762C4 /* ResultCityController.m in Sources */,
 				C203A8F61CC37A58002C2FB9 /* HomePageCell.m in Sources */,
 				C28A3E731CC87FD200EDF9F5 /* DetailsModel.m in Sources */,
 				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
+				C2C7FCD51CCA6CD6008762C4 /* CustomTopView.m in Sources */,
 				C28A3E801CC8F04D00EDF9F5 /* DescriptionModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
 				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
@@ -758,6 +847,7 @@
 				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
 				C28A3E771CC8802700EDF9F5 /* DatailsViewController.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
+				C2C7FCD31CCA6CD6008762C4 /* CityTableViewCell.m in Sources */,
 				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

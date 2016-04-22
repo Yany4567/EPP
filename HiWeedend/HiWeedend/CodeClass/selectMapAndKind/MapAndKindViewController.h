@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MapAndKindViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISearchBar *maptextFILE;
+@property (weak, nonatomic) IBOutlet UIButton *cityButton;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (nonatomic,copy)void(^didSelectedBtn)(int tag);
 
 @end
