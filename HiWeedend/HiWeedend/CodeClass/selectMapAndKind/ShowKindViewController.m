@@ -13,7 +13,8 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "DatailsViewController.h"
-
+#import "MJExtension.h" //xml plist json数据解析封装
+#import "MJRefresh.h" //加载刷新
 
 @interface ShowKindViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView*showTabelView;
@@ -35,8 +36,58 @@
     self.dataArray=[NSMutableArray array];
     
     [self addView];
-    [self requestData];
+    [self setupRefresh]; //上拉加载下拉刷新
+
 }
+#pragma mark================ 加载刷新============
+- (void)setupRefresh //添加下载刷新
+{
+    self. showTabelView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)];
+    [self. showTabelView.header beginRefreshing];
+    
+    self. showTabelView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
+    //隐藏上拉加载隐藏
+    //self.collectionView.footer.hidden = YES;
+}
+
+//下拉刷新
+- (void)loadNewShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //调用数据 刷新UI
+    
+        
+            [self requestData];
+        [self.dataArray removeAllObjects];
+        //[self.dataArray addObjectsFromArray:shops];
+        
+        // 刷新数据
+        [self. showTabelView reloadData];
+        
+        //停止
+        [self. showTabelView.header endRefreshing];
+    });
+}
+//上拉加载
+- (void)loadMoreShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+
+    [self requestData];
+        
+        // 刷新数据
+        [self. showTabelView reloadData];
+        
+        //停止
+        [self. showTabelView.footer endRefreshing];
+    });
+}
+
+
+
 
 -(void)requestData{
     
