@@ -32,7 +32,7 @@
 
 //再点击详细内容地址接口
 
-#define HWSEONDDETAILT  @"http://api.lanrenzhoumo.com/wh/common/leo_detail?leo_id=1355295201&session_id=0000423d7ecd75af788f3763566472ed27f06e&v=4"
+#define HWSEONDDETAILT  @"http://api.lanrenzhoumo.com/wh/common/leo_detail?"
 
 
 

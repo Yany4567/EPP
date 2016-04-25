@@ -9,6 +9,8 @@
 #import "SecondaryTableViewController.h"
 #import "secondaryTableViewCell.h"
 #import "secondaryModel.h"
+#import "DatailsViewController.h"
+#import "HomePageListModel.h"
 @interface SecondaryTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
@@ -103,6 +105,15 @@
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DatailsViewController *datalisVC = [[DatailsViewController alloc]init];
+    secondaryModel *model = self.dataArray[indexPath.row];
+    datalisVC.HpmeModel = (HomePageListModel *)model;
+    [self.navigationController pushViewController:datalisVC animated:YES];
+    
 }
 
 

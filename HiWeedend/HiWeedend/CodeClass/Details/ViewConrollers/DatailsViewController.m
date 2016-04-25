@@ -14,6 +14,8 @@
 #import "ImageCell.h"
 
 #import "HaderView.h"
+#import "FooterView.h"
+#import "MapViewController.h"
 
 
 
@@ -22,12 +24,21 @@
 @property(nonatomic,strong)NSMutableArray *dataListArray;
 @property(nonatomic,strong)NSMutableArray *contentArray;
 @property(nonatomic,strong)NSMutableArray *imageArray;
+@property(nonatomic,strong)NSDictionary *diction;
 
 
 
 @end
 
 @implementation DatailsViewController
+
+-(NSDictionary *)diction{
+    if (_diction == nil) {
+        _diction = [NSDictionary dictionary];
+    }
+    return _diction;
+}
+
 -(NSMutableArray *)dataListArray{
     if (_dataListArray == nil) {
         _dataListArray = [NSMutableArray array];
@@ -56,11 +67,13 @@
 
 
 -(void)requestData{
-    [NetWorkRequestManager requestWithType:GET urlString:HWSEONDDETAILT parDic:nil finish:^(NSData *data) {
+  //  leo_id=1355295201&session_id=0000423d7ecd75af788f3763566472ed27f06e&v=4"
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWSEONDDETAILT byAppendingdic:@{@"leo_id":[NSString stringWithFormat:@"%ld",(long)self.HpmeModel.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"4"}] parDic:nil finish:^(NSData *data) {
         NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         DetailsModel *model = [[DetailsModel alloc]init];
         [model setValuesForKeysWithDictionary:dataDic[@"result"]];
         [self.dataListArray addObject:model];
+        self.diction = dataDic[@"result"][@"location"];
         NSArray *array = dataDic[@"result"][@"description"];
         for (NSDictionary *dic in array) {
             DescriptionModel *model1 = [[DescriptionModel alloc]init];
@@ -87,18 +100,26 @@
     [self.view addSubview:self.listTable];
     
     HaderView *haView = [[[NSBundle mainBundle] loadNibNamed:@"HaderView" owner:nil options:nil] firstObject];
+    FooterView *footerView = [[[NSBundle mainBundle]loadNibNamed:@"FooterView" owner:nil options:nil]firstObject];
+    
+    footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 120);
+    self.listTable.tableFooterView = footerView;
     //[haView awakeFromNib];
     haView.titleLabel.text = self.HpmeModel.title;
     NSLog(@"%@",self.HpmeModel.title);
    // haView.timeLabel.text = self.HpmeModel.time_desc;
     haView.categoryLabel.text = self.HpmeModel.category;
     haView.timeLabel.text = self.HpmeModel.time_desc;
-    haView.priceLabel.text = [NSString stringWithFormat:@"%ld",(long)self.HpmeModel.price];
+    [haView.mapButton setTitle:[self mystring:self.HpmeModel.address stringByAppding:@" · " and:self.HpmeModel.poi] forState:UIControlStateNormal];
+    [haView.mapButton addTarget:self action:@selector(mapAction:)  forControlEvents:UIControlEventTouchUpInside];
+    haView.priceLabel.text = self.HpmeModel.price_info;
     NSLog(@"%@",self.HpmeModel.time_desc);
     haView.frame = CGRectMake(0, 0, self.view.frame.size.width, 570);
     
     //haderView.backgroundColor = [UIColor redColor];
     self.listTable.tableHeaderView = haView;
+    self.listTable.backgroundColor = [UIColor grayColor];
+    
     
     self.listTable.delegate = self;
     self.listTable.dataSource = self;
@@ -109,6 +130,19 @@
     [self requestData];
     
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)mapAction:(id)sender{
+    DetailsModel *model = [[DetailsModel alloc]init];
+    model = [self.dataListArray firstObject];
+    MapViewController *mapVC = [[MapViewController alloc]init];
+    mapVC.locationDiction = self.diction;
+    mapVC.address = self.HpmeModel.address;
+    mapVC.poi = self.HpmeModel.poi;
+    [mapVC.navigationItem setTitle:self.HpmeModel.title];
+    [self.navigationController pushViewController:mapVC animated:YES];
+    
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -126,10 +160,12 @@
         ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContentCell" forIndexPath:indexPath];
         cell.contentLabel.frame = CGRectMake(8, 10, cell.contentView.frame.size.width- 16, [self stringHeight:model.content]);
         cell.contentLabel.text = model.content;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else{
         ImageCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
         [cell1.contenImage sd_setImageWithURL:[NSURL URLWithString:model.content] placeholderImage:nil];
+        cell1.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell1;
     }
   
@@ -170,6 +206,11 @@
     return temp.size.height;
 }
 
+-(NSString *)mystring:(NSString *)myString stringByAppding:(NSString *)modelStr and:(NSString *)andString{
+    NSString *string = [myString stringByAppendingString:modelStr];
+    NSString *str = [string stringByAppendingString:andString];
+    return str;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

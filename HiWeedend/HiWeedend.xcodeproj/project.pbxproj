@@ -15,6 +15,9 @@
 		C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A8FE1CC3A181002C2FB9 /* HomePageListViewController.m */; };
 		C203A9011CC3A181002C2FB9 /* HomePageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */; };
 		C203A9041CC3A4B8002C2FB9 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */; };
+		C21E51851CCB14A50072C133 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21E51831CCB14A50072C133 /* MapViewController.m */; };
+		C21E51861CCB14A50072C133 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21E51841CCB14A50072C133 /* MapViewController.xib */; };
+		C21E518C1CCB5D410072C133 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C21E518B1CCB5D410072C133 /* MyAnnotation.m */; };
 		C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7B1CC4D7BB00A0CD0B /* heart.png */; };
 		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
 		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
@@ -82,6 +85,11 @@
 		C203A8FF1CC3A181002C2FB9 /* HomePageListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageListViewController.xib; sourceTree = "<group>"; };
 		C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetWorkRequestManager.h; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.h; sourceTree = "<group>"; };
 		C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetWorkRequestManager.m; path = ../CodeClass/TheMainInterface/Views/NetWorkRequestManager.m; sourceTree = "<group>"; };
+		C21E51821CCB14A50072C133 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C21E51831CCB14A50072C133 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C21E51841CCB14A50072C133 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		C21E518A1CCB5D410072C133 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		C21E518B1CCB5D410072C133 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		C286BB7B1CC4D7BB00A0CD0B /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
 		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
@@ -361,6 +369,9 @@
 				C28A3E741CC8802700EDF9F5 /* DatailsViewController.h */,
 				C28A3E751CC8802700EDF9F5 /* DatailsViewController.m */,
 				C28A3E761CC8802700EDF9F5 /* DatailsViewController.xib */,
+				C21E51821CCB14A50072C133 /* MapViewController.h */,
+				C21E51831CCB14A50072C133 /* MapViewController.m */,
+				C21E51841CCB14A50072C133 /* MapViewController.xib */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -380,6 +391,8 @@
 				C2EA1FDE1CCA282A00C7F3F6 /* FooterView.h */,
 				C2EA1FDF1CCA282A00C7F3F6 /* FooterView.m */,
 				C2EA1FE11CCA28EB00C7F3F6 /* FooterView.xib */,
+				C21E518A1CCB5D410072C133 /* MyAnnotation.h */,
+				C21E518B1CCB5D410072C133 /* MyAnnotation.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -592,7 +605,7 @@
 				TargetAttributes = {
 					C29C61AF1CC25D8900E44DDC = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = TA5737D738;
+						DevelopmentTeam = VDNC783TP3;
 					};
 				};
 			};
@@ -620,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
+				C21E51861CCB14A50072C133 /* MapViewController.xib in Resources */,
 				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
 				C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */,
 				C2EA1FE21CCA28EB00C7F3F6 /* FooterView.xib in Resources */,
@@ -713,6 +727,7 @@
 				C29159721CC5F15A009FB972 /* MapAndKindViewController.m in Sources */,
 				C2EA1FE01CCA282A00C7F3F6 /* FooterView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
+				C21E51851CCB14A50072C133 /* MapViewController.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C29159441CC5D8BF009FB972 /* MenuViewController.m in Sources */,
 				C28A3E911CC8FA8800EDF9F5 /* ContentCell.m in Sources */,
@@ -733,6 +748,7 @@
 				C28A3E771CC8802700EDF9F5 /* DatailsViewController.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
 				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
+				C21E518C1CCB5D410072C133 /* MyAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

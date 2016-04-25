@@ -12,7 +12,7 @@
 @property(nonatomic,strong)NSString *address;
 @property(nonatomic,strong)NSString *cn_name;
 @property(nonatomic,strong)NSString *price_info;
-@property(nonatomic,strong)NSString *location;
+@property(nonatomic,strong)NSDictionary *location;
 @property(nonatomic,strong)NSString *time;
 @property(nonatomic,strong)NSString *title;
 @property(nonatomic,strong)NSString *poi;

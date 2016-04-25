@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FooterView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *shearButton;
+@property (weak, nonatomic) IBOutlet UIButton *interestButton;
+@property (weak, nonatomic) IBOutlet UIButton *consultingButton;
 
 @end
