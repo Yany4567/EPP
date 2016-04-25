@@ -179,7 +179,9 @@
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
     
     MapAndKindViewController*map=[[MapAndKindViewController alloc]init];
-//  UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
+   //UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
+   // UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:map];
+    
  [self.navigationController pushViewController:map animated:YES];
     //[self.navigationController presentViewController:naV animated:YES completion:nil];
 

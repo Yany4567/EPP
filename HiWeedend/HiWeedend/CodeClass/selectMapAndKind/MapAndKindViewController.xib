@@ -7,7 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapAndKindViewController">
             <connections>
                 <outlet property="cityButton" destination="N75-X9-y9L" id="6Z3-oA-GRV"/>
-                <outlet property="cityLabel" destination="lhH-kW-UWU" id="fuS-Hk-goU"/>
+                <outlet property="cityLabel" destination="lhH-kW-UWU" id="ju1-bB-mBL"/>
+                <outlet property="mapAndsearch" destination="XZ2-Yn-LkD" id="gqo-wV-6hu"/>
+                <outlet property="mapLabel" destination="HAK-Ka-buJ" id="Mkj-9K-L2p"/>
                 <outlet property="maptextFILE" destination="XZ2-Yn-LkD" id="xna-3C-thR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -51,21 +53,36 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAK-Ka-buJ">
+                    <rect key="frame" x="148" y="82" width="432" height="30"/>
+                    <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EB1-vV-VN0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="HAK-Ka-buJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="82" id="FkV-Wl-QwE"/>
                 <constraint firstItem="N75-X9-y9L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="FoD-Lw-64V"/>
+                <constraint firstItem="HAK-Ka-buJ" firstAttribute="leading" secondItem="N75-X9-y9L" secondAttribute="trailing" constant="8" id="KAc-AW-b0O"/>
                 <constraint firstItem="aRx-jl-sgE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="MyL-Mg-ZaN"/>
                 <constraint firstAttribute="trailing" secondItem="XZ2-Yn-LkD" secondAttribute="trailing" constant="20" id="PJL-It-hUC"/>
                 <constraint firstItem="aRx-jl-sgE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="110" id="UDi-J5-ty8"/>
                 <constraint firstItem="XZ2-Yn-LkD" firstAttribute="leading" secondItem="N75-X9-y9L" secondAttribute="trailing" id="b1d-Ht-boa"/>
+                <constraint firstItem="HAK-Ka-buJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="lDH-db-O4J"/>
                 <constraint firstItem="aRx-jl-sgE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="m4N-m9-Bhw"/>
+                <constraint firstAttribute="trailing" secondItem="HAK-Ka-buJ" secondAttribute="trailing" constant="20" id="oAS-Tg-q2Q"/>
                 <constraint firstItem="XZ2-Yn-LkD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="qbE-C3-p97"/>
                 <constraint firstItem="N75-X9-y9L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="upR-rt-dCT"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="MyL-Mg-ZaN"/>
+                    <exclude reference="lDH-db-O4J"/>
                 </mask>
             </variation>
         </view>

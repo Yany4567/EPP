@@ -31,7 +31,7 @@
     NSLog(@"%@%%%%%%%%%%%%%%",self.cityLocation);
 
   
-        self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
+//        self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
     self.dataArray=[NSMutableArray array];
     
     [self addView];
@@ -66,11 +66,11 @@
     
 }
 
--(void)rightAction:(UIBarButtonItem*)sender{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
+//-(void)rightAction:(UIBarButtonItem*)sender{
+//    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    
+//}
 
 
 -(void)addView{

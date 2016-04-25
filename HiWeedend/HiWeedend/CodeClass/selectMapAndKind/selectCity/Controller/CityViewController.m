@@ -420,7 +420,7 @@
     [self.rightIndexArray addObjectsFromArray:self.sectionTitlesArray];
     [self.rightIndexArray insertObject:UITableViewIndexSearch atIndex:0];
     [self.sectionTitlesArray insertObject:@"热门城市" atIndex:0];
-    [self.sectionTitlesArray insertObject:@"定位城市" atIndex:0];
+    [self.sectionTitlesArray insertObject:@"默认城市" atIndex:0];
     self.currentCityArray = @[self.currentCityString];
 //    NSLog(@"kkkkkkkkk%@", _currentCityString);
     self.hotCityArray = @[@"北京",@"上海",@"广州",@"深圳",@"武汉",@"天津",@"西安",@"南京",@"杭州",@"成都",@"长沙",@"苏州",@"大连",@"沈阳",@"青岛"];

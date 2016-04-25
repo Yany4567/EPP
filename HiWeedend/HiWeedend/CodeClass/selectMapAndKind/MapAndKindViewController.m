@@ -15,7 +15,7 @@
 
 
 
-@interface MapAndKindViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MapAndKindViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate>
 
 
 
@@ -73,7 +73,12 @@
 
 -(void)addView{
     
-    
+    self.mapAndsearch.placeholder=@"👈点击搜索地点,点击👇搜索活动";
+    self.mapAndsearch.delegate =self;
+   // self.mapAndsearch.hidden=YES;
+  //  self.mapLabel.text= @"🔍点击搜索活动或者地点";
+    self.mapLabel.hidden =YES;
+   
     UICollectionViewFlowLayout*layout=[[UICollectionViewFlowLayout alloc]init];
     layout.minimumLineSpacing=5;
     layout.minimumInteritemSpacing=5;
@@ -90,6 +95,17 @@
     [_collectView registerNib:[UINib nibWithNibName:@"HobbyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 
 
+}
+
+
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+
+    UIAlertController*alert=[UIAlertController alertControllerWithTitle:@"提示" message:@"点击左边搜索地点,点击下面搜索活动" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回 " style:(UIAlertActionStyleDefault) handler:nil ];
+    [alert addAction:al];
+    [self presentViewController:alert animated:YES completion:nil];
+ 
 }
 
 
@@ -268,12 +284,12 @@
 -(void)turnPage:(NSString*)string {
     
     ShowKindViewController*show=[[ShowKindViewController alloc]init];
-    UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
+  //  UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
     show.requestURLString = string;
 
-    naV.modalPresentationStyle =UIModalTransitionStyleFlipHorizontal;
-   //[self.navigationController pushViewController:naV  animated:YES];
-  [self presentViewController:naV animated:YES completion:nil];
+        
+   [self.navigationController pushViewController:show  animated:YES];
+  //[self presentViewController:naV animated:YES completion:nil];
     
     
 }

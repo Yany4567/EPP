@@ -70,7 +70,7 @@
 #define OncolickCity @"http://api.lanrenzhoumo.com/main/recommend/index/?city_id=321&lat=39.90854&lon=116.3975&page=1&session_id=000042eead60e2f01f344af95d0e75d9050867&v=3"
 
 //户外
-#define Outdoors @"http://api.lanrenzhoumo.com/wh/common/leos?category=music&city_id=53&keyword=&lat=40.0294&lon=116.3375&page=1&session_id=000042c8e69cff884054bb4ccd6352be417c1d"
+#define Outdoors @"http://api.lanrenzhoumo.com/wh/common/leos?category=outdoor&city_id=53&keyword=&lat=40.02932&lon=116.3376&page=1&session_id=000042eead60e2f01f344af95d0e75d9050867"
 //剧场
 #define Theatre @"http://api.lanrenzhoumo.com/wh/common/leos?category=music&city_id=53&keyword=&lat=40.0294&lon=116.3375&page=1&session_id=000042c8e69cff884054bb4ccd6352be417c1d"
 
