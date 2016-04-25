@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HobbyCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *kindImage;
+@property (weak, nonatomic) IBOutlet UILabel *kindLabel;
 
 @end

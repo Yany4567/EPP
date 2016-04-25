@@ -104,14 +104,14 @@
 
 // 解析数据
 -(void)requestData{
-    LocationModel *model1 = [self.locationArray lastObject];
+//    LocationModel *model1 = [self.locationArray lastObject];
 //    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
 //    NSLog(@"%@",[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]);
   //  http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3
     //[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]
         [NetWorkRequestManager requestWithType:GET urlString:@"http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3" parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-        NSLog(@"+++++++++++++%@",contentDic);
+       // NSLog(@"+++++++++++++%@",contentDic);
             NSArray *array = contentDic[@"result"];
             for (NSDictionary *dic in array) {
                 HomePageListModel *model = [[HomePageListModel alloc]init];
@@ -175,10 +175,13 @@
     
 }
 
+//跳转到地图和分类列表
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
+    
     MapAndKindViewController*map=[[MapAndKindViewController alloc]init];
-    UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
-  [self.navigationController presentViewController:naV animated:YES completion:nil];
+//  UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
+ [self.navigationController pushViewController:map animated:YES];
+    //[self.navigationController presentViewController:naV animated:YES completion:nil];
 
 }
 

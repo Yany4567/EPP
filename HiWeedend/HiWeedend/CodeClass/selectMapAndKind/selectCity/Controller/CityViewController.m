@@ -6,6 +6,9 @@
 #import "ResultCityController.h"
 #import "CityModel.h"
 #import "CityTableViewCell.h"
+#import "ShowKindViewController.h"
+#import "UIActivityIndicatorView+AFNetworking.h"
+#import "ShowCityModel.h"
 
 #define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -19,6 +22,7 @@
 @property (nonatomic,retain)NSMutableArray *dataArray;// cell数据源数组
 @property (nonatomic,retain)NSMutableArray *searchArray;//用于搜索的数组
 @property (nonatomic,retain)NSMutableArray *pinYinArray; // 地区名字转化为拼音的数组
+@property(nonatomic,strong)NSMutableArray*showCityArray;//解析城市列表
 @property (nonatomic,retain)ResultCityController *resultController;//显示结果的controller
 @property (nonatomic,retain)NSArray *currentCityArray;// 当前城市
 @property (nonatomic,retain)NSArray *hotCityArray; // 热门城市
@@ -53,6 +57,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadData];
@@ -117,7 +122,7 @@
     }
     else if (indexPath.section==1)
     {
-        return 150;
+        return 250;
     }
     else
     {
@@ -138,27 +143,47 @@
     {
         __weak typeof(self) weakSelf = self;
         CityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cityCell"];
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if(cell==nil)
         {
             cell = [[CityTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cityCell" cityArray:self.dataArray[indexPath.section]];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         cell.didSelectedBtn = ^(int tag){
             if(tag==1111)
             {
+                //当前城市名字
                 weakSelf.selectString(weakSelf.currentCityString);
                 NSLog(@"%@PPPPPPPPPP",_currentCityString);
+                ShowKindViewController*show=[[ShowKindViewController alloc]init];
+                show.cityLocation = _currentCityString;
+        
+                
+                [self presentViewController:show animated:YES completion:nil];
                 
             }
             else
             {
+              
+     
+                //热门城市名字
                 weakSelf.selectString(weakSelf.hotCityArray[tag]);
+                
                     NSLog(@"%@PPPPPPPPPP",weakSelf.hotCityArray[tag]);
+                ShowKindViewController*show=[[ShowKindViewController alloc]init];
+                show.cityLocation =weakSelf.hotCityArray[tag];
+                
+            [self presentViewController:show animated:YES completion:nil];
+               // [self.navigationController pushViewController:show animated:YES];
             }
 //            NSLog(@"%@**************#######" ,_hotCityArray);
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
-        };
+            
 
+            
+           // [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        };
+        cell.backgroundColor=[UIColor whiteColor];
         return cell;
     }
     else
@@ -190,6 +215,7 @@
     }
 
 }
+//cell分区名
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     //此方法返回的是section的值
@@ -223,17 +249,24 @@
         
         //列表选择名字
         NSLog(@"PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP地区名字%@",string);
+         self.selectString(string);
+        ShowKindViewController*show=[[ShowKindViewController alloc]init];
+        show.cityLocation =string;
         
-        self.selectString(string);
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self presentViewController:show animated:YES completion:nil];
+        //[self dismissViewControllerAnimated:YES completion:nil];
     }
 
 }
 #pragma mark --CustomTopViewDelegate
 -(void)didSelectBackButton
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+ //ShowKindViewController*show=[[ShowKindViewController alloc]init];
+//    show.cityLocation =string;
+    
+    //[self presentViewController:show animated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark --CustomSearchViewDelegate
 -(void)searchString:(NSString *)string
@@ -328,27 +361,69 @@
 }
 -(void)loadData
 {
+    //初始化数组
+    self.showCityArray =[NSMutableArray array];
     self.rightIndexArray = [NSMutableArray array];
     self.sectionTitlesArray = [NSMutableArray array]; //区头字母数组
     self.dataArray = [NSMutableArray array]; //包含所有区数组的大数组
     self.searchArray = [NSMutableArray array];
+#warning cityName======requestData=========
+    //获得城市名字列表
+    [NetWorkRequestManager requestWithType:GET urlString:CityList parDic:nil finish:^(NSData *data) {
+        
+        
+      NSDictionary*tempDic=[NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+        NSArray*array=tempDic[@"result"];
+       // NSLog(@"<<<<<<<<<<%@",array);
+        for (NSDictionary*dic in array) {
+       NSArray*temparray= dic[@"city_list"];
+           // NSLog(@"<<<<<<<<<<%@",temparray);
+            
+            
+       
+            
+            for (NSDictionary*listDic in temparray) {
+              //  [self.sectionTitlesArray addObject:listDic[@"city_name"]];
+                NSLog(@"<<<<<<<<<<%@",listDic);
+                ShowCityModel*model=[ShowCityModel new];
+                [model setValuesForKeysWithDictionary:listDic];
+                [self.dataArray addObject:model];
+//                  self.sectionTitlesArray = listDic[@"city_name"];
+//                self.dataArray =listDic[@"province_name"];
+            }
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+            
+        });
+     
+        
+    } error:^(NSError *error) {
+        NSLog(@"解析城市列表失败");
+    }];
+    
+////  正确解析
     NSString *path=[[NSBundle mainBundle] pathForResource:@"citydict"
                                                    ofType:@"plist"];
     self.bigDic = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSArray * allKeys = [self.bigDic allKeys];
     [self.sectionTitlesArray addObjectsFromArray:[allKeys sortedArrayUsingSelector:@selector(compare:)]];
+
     [self.sectionTitlesArray enumerateObjectsUsingBlock:^(NSString *zimu, NSUInteger idx, BOOL * _Nonnull stop) {
         NSArray *smallArray = self.bigDic[zimu];
         [self.dataArray addObject:smallArray];
         [self.searchArray addObject:smallArray];
     }];
+    
     [self.rightIndexArray addObjectsFromArray:self.sectionTitlesArray];
     [self.rightIndexArray insertObject:UITableViewIndexSearch atIndex:0];
     [self.sectionTitlesArray insertObject:@"热门城市" atIndex:0];
     [self.sectionTitlesArray insertObject:@"定位城市" atIndex:0];
     self.currentCityArray = @[self.currentCityString];
 //    NSLog(@"kkkkkkkkk%@", _currentCityString);
-    self.hotCityArray = @[@"上海",@"北京",@"广州",@"深圳",@"武汉",@"天津",@"西安",@"南京",@"杭州"];
+    self.hotCityArray = @[@"北京",@"上海",@"广州",@"深圳",@"武汉",@"天津",@"西安",@"南京",@"杭州",@"成都",@"长沙",@"苏州",@"大连",@"沈阳",@"青岛"];
     [self.dataArray insertObject:self.hotCityArray atIndex:0];
     [self.dataArray insertObject:self.currentCityArray atIndex:0];
 }

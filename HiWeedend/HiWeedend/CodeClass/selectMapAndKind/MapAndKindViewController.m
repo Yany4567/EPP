@@ -8,10 +8,11 @@
 
 #import "MapAndKindViewController.h"
 #import "CityViewController.h" //plist 获取城市名
-#import <CoreLocation/CoreLocation.h>
-//#import "PassdataManger.h"
-//#import "ButtonAction.h"
-#import "HobbyCollectionViewCell.h"
+#import <CoreLocation/CoreLocation.h> //定位框架
+#import "HobbyCollectionViewCell.h" //items
+#import "ShowKindViewController.h"  //itms跳转页面
+#import "HomePageListViewController.h"
+
 
 
 @interface MapAndKindViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -48,14 +49,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"兴趣爱好";
     
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
     
     
     
     [self addView];
     self.cityLabel.hidden=YES;
-
+    
+    self.collectAllay=[NSMutableArray array];
+    [_collectAllay addObject:@"全部类目"];
+    [_collectAllay addObject:@"户外活动"];
+    [_collectAllay addObject:@"剧场演出"];
+    [_collectAllay addObject:@"DIY手作"];
+    [_collectAllay addObject:@"派对聚会"];
+    [_collectAllay addObject:@"运动健身"];
+    [_collectAllay addObject:@"文艺生活"];
+    [_collectAllay addObject:@"沙龙学院"];
+    [_collectAllay addObject:@"茶会雅集"];
+    
 }
 
 -(void)addView{
@@ -180,7 +193,7 @@
 
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
 
-   [self dismissViewControllerAnimated:YES completion:nil];
+ //  [self dismissViewControllerAnimated:YES completion:nil];
 
 
 }
@@ -189,15 +202,16 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 9;
+    return _collectAllay.count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     HobbyCollectionViewCell*cell=[_collectView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-  
 
+    cell.kindLabel.text =_collectAllay[indexPath.row];
 
+      
 
     return  cell;
 
@@ -206,50 +220,64 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //此处需要传相应的参数 到首页获得分类数据
-
+    //
+    if (indexPath.row ==0) {
+        
+        HomePageListViewController*home=[[HomePageListViewController alloc]init];
+        
+        [self.navigationController pushViewController:home animated:YES];
+    }else if(indexPath.row ==1){
+        
+        [self turnPage:Outdoors];
+        
+        
+    }else if(indexPath.row ==2){
+        
+        [self turnPage:Theatre];
+        
+    }else if(indexPath.row ==3){
+        
+        [self turnPage:DIY];
+        
+    }else if(indexPath.row ==4){
+        
+        [self turnPage:Meeting];
+        
+    }else if(indexPath.row ==5){
+        
+        [self turnPage: Health];
+        
+    }else if(indexPath.row ==6){
+        
+        [self turnPage: Literature];
+        
+    }else if(indexPath.row ==7){
+        
+        [self turnPage:School];
+        
+    }else if(indexPath.row ==8){
+        
+        [self turnPage:Tea];
+        
+    }
+    
     NSLog(@"666");
 
 }
 
-//-(void)getStart{
-//    _mapView = [[BMKMapView alloc] init];
-//    mapView.showsUserLocation =YES;
-//    mapView.delegate = self;
-//    bmkMapManager = [[BMKMapManager alloc] init];
-//    searchAddress = [[BMKSearch alloc] init];
-//    searchAddress.delegate = self;
-//    BOOL ret = [bmkMapManager start:@"A4A908ABA1B16A3A60D154F278170DD433BB22E4" generalDelegate:self];
-//    if (!ret) {
-//        NSLog(@"manager start failed!");
-//    }
-//}
-//- (void)onGetAddrResult:(BMKAddrInfo*)result errorCode:(int)error{
-//    self.locationLabel.text = result.strAddr;//这里最精确的是街道
-//    NSLog(@"result.poiList: %@",result.poiList);
-//    BMKPoiInfo *one = [result.poiList objectAtIndex:0];
-//    
-//    NSLog(@"one %@",one.address);
-//    BMKPoiInfo *two =[result.poiList objectAtIndex:1];
-//    NSLog(@"two %@",two.address);
-//    BMKPoiInfo *three = [result.poiList objectAtIndex:2];
-//    NSLog(@"three %@",three.address);
-//    
-//    NSLog(@"result.addressComponent.streetName: %@",result.addressComponent.streetName);
-//    NSLog(@"result.addressComponent.streetNumber: %@",result.addressComponent.streetNumber);
-//    
-//}
-//- (void)mapView:(BMKMapView *)mapView didUpdateUserLocation:(BMKUserLocation *)userLocation{
-//    CLLocationCoordinate2D coordinate;
-//    
-//    
-//    
-//    
-//    coordinate.latitude = userLocation.coordinate.latitude;
-//    coordinate.longitude =userLocation.coordinate.longitude;
-//    
-//    
-//    [searchAddress reverseGeocode:coordinate];
-//}
+-(void)turnPage:(NSString*)string {
+    
+    ShowKindViewController*show=[[ShowKindViewController alloc]init];
+    UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
+    show.requestURLString = string;
+
+    naV.modalPresentationStyle =UIModalTransitionStyleFlipHorizontal;
+   //[self.navigationController pushViewController:naV  animated:YES];
+  [self presentViewController:naV animated:YES completion:nil];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
