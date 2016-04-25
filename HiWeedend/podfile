@@ -1,3 +1,4 @@
 pod 'AMap2DMap'
 pod 'AFNetworking'
+pod 'FMDB'
 pod 'SDWebImage', '~> 3.7.5'

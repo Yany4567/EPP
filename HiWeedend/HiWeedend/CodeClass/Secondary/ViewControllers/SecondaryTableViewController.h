@@ -10,4 +10,6 @@
 
 @interface SecondaryTableViewController : UITableViewController
 
+@property(nonatomic,strong)NSString *string;
+
 @end
