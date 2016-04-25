@@ -7,13 +7,24 @@
 //
 
 #import "SettingViewController.h"
-
-@interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "UMSocial.h"
+@interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate,UITextFieldDelegate>
 
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)UIImageView *imgView;
+@property(nonatomic,strong)NSMutableArray *commentArray;//评论数据源
+@property(nonatomic,assign)CGFloat keyBoardHeight;
+@property(nonatomic,assign)CGRect originalkey;
+@property(nonatomic,assign)CGRect originalText;
+@property(nonatomic,strong)ChatConsoleView *chatConsoleView;
+
+
 @end
 
 @implementation SettingViewController
+@synthesize chatConsoleView;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,14 +32,85 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 400) style:(UITableViewStylePlain)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorColor = [UIColor brownColor];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 50, 0, 20);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.scrollEnabled = NO;
     [self.view addSubview:self.tableView];
+    self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 10, 30, 30)];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//    //移除通知中心
+//    [self removeForKeyboardnotifications];
+//}
+//
+//
+///**
+// *  注册通知中心
+// */
+//-  (void)registerForKeyBoardNotifications{
+//    
+//    //使用NSNotificationCenter注册观察当键盘要出现时
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    //使用NSNotificationCenter 注册观察当键盘要隐藏时
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    
+//}
+//
+///**
+// *  移除通知中心
+// */
+//- (void)removeForKeyboardnotifications{
+//    [[NSNotificationCenter defaultCenter]removeObserver:self];
+//}
+///**
+// *  键盘将要弹出
+// *
+// *  @param notification 通知
+// */
+//- (void)didKeyboardWillShow:(NSNotification *)notification{
+//    
+//    NSDictionary *info = [notification userInfo];
+//    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue].size;
+//    NSLog(@"%f",keyboardSize.height);
+//    //输入框位置动画加载
+//    [self beginMoveUpAnimation:keyboardSize.height];
+//}
+///**
+// *  开始执行键盘改变后对应视图的变化
+// *
+// *  @param height 键盘的高度
+// */
+//- (void)beginMoveUpAnimation:(CGFloat)height{
+//    [UIView animateWithDuration:0.3 animations:^{
+//        [chatConsoleView setFrame:CGRectMake(0, self.view.frame.size.height - (height + 40), chatConsoleView.frame.size.width, chatConsoleView.frame.size.height)];
+//    }];
+////    [self.hahaha setConstant:height ];
+////    [self.commentTableView layoutIfNeeded];
+////    if (self.commentArray.count > 1) {
+////        [self.commentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.commentArray.count - 1 inSection:0] atScrollPosition:(UITableViewScrollPositionMiddle) animated:YES];
+////    }
+//}
+///**
+// *  键盘将要隐藏
+// *
+// *  @param notification 通知
+// */
+//- (void)didKeyboardWillHide:(NSNotification *)notification{
+//    [self beginMoveUpAnimation:0];
+//}
+//
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    [textField resignFirstResponder];
+//    return YES;
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,46 +127,159 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = @"asdfafa";
-//    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:@"Cell"];
+    }
+
     if (indexPath.row == 0) {
         cell.textLabel.text = @"分享给好友";
+        
+        cell.imageView.image = [UIImage imageNamed:@"2.png"];
     }
     
     if (indexPath.row == 1) {
+        cell.imageView.image = [UIImage imageNamed:@"laji.png"];
         cell.textLabel.text = @"清除缓存";
+        
+       
     }
     
     if (indexPath.row == 2) {
         cell.textLabel.text = @"给我们一个评价";
+        cell.imageView.image = [UIImage imageNamed:@"shoucang.png"];
     }
     
     if (indexPath.row == 3) {
-        cell.textLabel.text = @"拨打客服电话";
+        cell.textLabel.text = @"拨打客服电话          400-844-0900";
+        cell.imageView.image = [UIImage imageNamed:@"dianhua.png"];
     }
     
     if (indexPath.row == 4) {
         cell.textLabel.text = @"用户反馈";
+        cell.imageView.image = [UIImage imageNamed:@"888.png"];
     }
     
     if (indexPath.row == 5) {
         cell.textLabel.text = @"退出登录";
+        cell.imageView.image = [UIImage imageNamed:@"9999.png"];
+        
     }
-    
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        
+//拨打电话
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        NSURL * url = [NSURL URLWithString:@"tel:400-844-0900"];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        } else{
+//            [MyUtil showTipText:@"您的设备不支持拨打电话"];
+        }
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //点击cell松开后恢复cell颜色的方法
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 3) {
+        //拨打电话
+        UIAlertView * alertView = [[UIAlertView alloc] init];
+        alertView.message = @"400-844-0900";
+        alertView.delegate = self;
+        [alertView addButtonWithTitle:@"呼叫"];
+        [alertView addButtonWithTitle:@"取消"];
+        [alertView show];
+    }
+    
+    if (indexPath.row == 0) {
+       //QQ
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPK shareText:@"你要分享的文字"shareImage:[UIImage imageNamed:@"icon.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToSina,UMShareToDouban,UMShareToTencent,nil] delegate:self];
+    }
+    
+    if (indexPath.row == 1) {
+        
+        //清除缓存
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            
+            NSString *cachPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject];
+            
+            NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:cachPath];
+            NSLog(@"files :%lu",(unsigned long)[files count]);
+            for (NSString *p in files) {
+                NSError *error;
+                NSString *path = [cachPath stringByAppendingPathComponent:p];
+                if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
+                    [[NSFileManager defaultManager]removeItemAtPath:path error:&error];
+                }
+            }
+    
+        });
+        //设置一个弹框 title 和信息
+        UIAlertController *Alert = [UIAlertController alertControllerWithTitle:@"清理清理更健康" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        //设置弹框里取消按钮
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        //设置弹框里的确定按钮
+        UIAlertAction *queding = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self performSelectorOnMainThread:@selector(clearCacheSuccess) withObject:nil waitUntilDone:YES];
+            
+        }];
+        
+        [Alert addAction:quxiao];
+        [Alert addAction:queding];
+        [self presentViewController:Alert animated:YES completion:nil];
 
+    }
+    //跳转到AppStore评价
+    if (indexPath.row == 2) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/CN/lookup?id=917930451"]];
+    }
+    if (indexPath.row == 4) {
+//        ChatConsoleView *chatVC = [[ChatConsoleView alloc]init];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:chatVC];
+//        [self.navigationController pushViewController:nav animated:YES];
+//        //注册键盘弹出,回收
+//        [self registerForKeyBoardNotifications];
+//        chatConsoleView = [[ChatConsoleView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 100, self.view.frame.size.width, 40)];
+//        chatConsoleView.draftTextField.delegate = self;
+////        __weak typeof(self) weakSelf = self;
+//        chatConsoleView.buttonClicked = ^(NSString *draftText){
+//            //发表评论
+//            //发送评论的接口请求
+////            [weakSelf requestSendComment:draftText];
+//        };
+//        [self.view addSubview:chatConsoleView];
+    }
+    
+}
+
+-(void)clearCacheSuccess
+{
+    NSLog(@"清理成功");
+}
+
+
+//回调方法,即返回app后左上角不显示第三方app名字
+//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+//{
+//    //根据`responseCode`得到发送结果,如果分享成功
+//    if(response.responseCode == UMSResponseCodeSuccess)
+//    {
+//        
+//        //得到分享到的微博平台名
+//        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+//    }
+//}
 
 /*
 #pragma mark - Navigation

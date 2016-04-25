@@ -19,18 +19,18 @@
 
 - (void)addCells{
     //cell图片
-    self.front_image_QD = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 230)];
+    self.front_image_QD = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, [UIScreen mainScreen].bounds.size.width-10, 230)];
     self.front_image_QD.backgroundColor = [UIColor cyanColor];
     [self.contentView addSubview:self.front_image_QD];
     //标题
-    self.titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.front_image_QD.frame), CGRectGetWidth(self.front_image_QD.frame), CGRectGetHeight(self.front_image_QD.frame)*0.19)];
+    self.titleLab = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(self.front_image_QD.frame)+3, CGRectGetWidth(self.front_image_QD.frame), CGRectGetHeight(self.front_image_QD.frame)*0.19)];
     self.titleLab.font = [UIFont systemFontOfSize:18];
     self.titleLab.backgroundColor = [UIColor redColor];
     self.titleLab.numberOfLines = 0;
     [self.contentView addSubview:self.titleLab];
     
     //目的地
-    self.poiLab = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleLab.frame)+5, CGRectGetWidth(self.titleLab.frame)*0.35, CGRectGetHeight(self.titleLab.frame)-10)];
+    self.poiLab = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(self.titleLab.frame)+5, CGRectGetWidth(self.titleLab.frame)*0.35, CGRectGetHeight(self.titleLab.frame)-10)];
     self.poiLab.textAlignment = NSTextAlignmentCenter;
     self.poiLab.font = [UIFont systemFontOfSize:14];
     self.poiLab.backgroundColor = [UIColor blueColor];
