@@ -7,6 +7,8 @@
 //
 
 #import "CollectActionViewController.h"
+#import "DataBaseHomeModelDB.h"
+#import "HomePageListModel.h"
 
 @interface CollectActionViewController ()
 
@@ -16,8 +18,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    DataBaseHomeModelDB*db=[[DataBaseHomeModelDB alloc]init];
+    
+    //创建列表
+    [db creatTabel];
+    
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"+" style:(UIBarButtonItemStylePlain) target:self action:@selector(collectAction:)];
+    UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(50, 200, 200, 40)];
+    image.image=[UIImage imageNamed:@"99"];
+    [self.view addSubview:image];
+
 }
+
+
+-(void)collectAction:(UIBarButtonItem*)sender{
+    
+    
+    
+    
+    
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

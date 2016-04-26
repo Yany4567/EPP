@@ -101,7 +101,7 @@
                 <outlet property="timeIfoLabel" destination="Ago-pF-bnB" id="lmp-me-1K8"/>
                 <outlet property="titleLabel" destination="jMJ-Ua-bed" id="4Rw-RF-mNE"/>
             </connections>
-            <point key="canvasLocation" x="397.5" y="383"/>
+            <point key="canvasLocation" x="313.5" y="302"/>
         </tableViewCell>
     </objects>
 </document>

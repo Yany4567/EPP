@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HobbyCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="178"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="178"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-sX-qJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="148"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fft-4N-i5S">
+                        <rect key="frame" x="0.0" y="143" width="260" height="35"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="obT-4I-vgU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="M4k-sX-qJ8" secondAttribute="trailing" id="2ZM-a5-Zue"/>
+                <constraint firstAttribute="trailing" secondItem="fft-4N-i5S" secondAttribute="trailing" id="8d9-qB-e1o"/>
+                <constraint firstItem="M4k-sX-qJ8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Atw-ta-JqM"/>
+                <constraint firstAttribute="bottom" secondItem="M4k-sX-qJ8" secondAttribute="bottom" constant="30" id="FCY-qw-p2t"/>
+                <constraint firstItem="M4k-sX-qJ8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cDi-Hl-0Ph"/>
+                <constraint firstItem="fft-4N-i5S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mGL-84-S1E"/>
+                <constraint firstAttribute="bottom" secondItem="fft-4N-i5S" secondAttribute="bottom" id="pey-N1-UGh"/>
+                <constraint firstAttribute="bottom" secondItem="M4k-sX-qJ8" secondAttribute="bottom" id="qOo-Wm-7QR"/>
+            </constraints>
+            <size key="customSize" width="260" height="178"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="qOo-Wm-7QR"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="kindImage" destination="M4k-sX-qJ8" id="yft-Ia-XTL"/>
+                <outlet property="kindLabel" destination="fft-4N-i5S" id="C2y-QC-qbS"/>
+            </connections>
+            <point key="canvasLocation" x="287" y="221"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.png" width="66" height="66"/>
+    </resources>
+</document>

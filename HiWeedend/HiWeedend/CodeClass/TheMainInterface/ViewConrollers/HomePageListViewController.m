@@ -18,12 +18,13 @@
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "MapAndKindViewController.h"
 #import "LocationModel.h"
-
 #import <CoreLocation/CoreLocation.h>
+
+
 
 #import "SecondaryTableViewController.h"
 #import "DatailsViewController.h"
-
+#import "MapViewController.h"
 
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 // 初始化一个数组
@@ -105,13 +106,13 @@
 // 解析数据
 -(void)requestData{
     LocationModel *model1 = [self.locationArray lastObject];
-//    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
+    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
 //    NSLog(@"%@",[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]);
   //  http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3
     //[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]
-        [NetWorkRequestManager requestWithType:GET urlString:@"http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3" parDic:nil finish:^(NSData *data) {
+        [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-        NSLog(@"+++++++++++++%@",contentDic);
+       // NSLog(@"+++++++++++++%@",contentDic);
             NSArray *array = contentDic[@"result"];
             for (NSDictionary *dic in array) {
                 HomePageListModel *model = [[HomePageListModel alloc]init];
@@ -140,7 +141,7 @@
     [self getlocation];
     _locationManager.delegate = self;
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-       [self requestData];
+  //     [self requestData];
 //    });
     self.listTable.delegate = self;
     self.listTable.dataSource = self;
@@ -169,16 +170,27 @@
     self.longitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
     self.latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
     [_locationManager stopUpdatingLocation];
-//[self requestLocation];
+    
     NSLog(@"精度%f",location.coordinate.longitude);
     NSLog(@"纬度%f",location.coordinate.latitude);
+    MapViewController *mapVC = [[MapViewController alloc]init];
+   // mapVC.coord2d = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+    NSLog(@"精度%f",mapVC.coord2d.longitude);
+    
+    
+        [self requestLocation];
     
 }
 
+//跳转到地图和分类列表
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{
+    
     MapAndKindViewController*map=[[MapAndKindViewController alloc]init];
-    UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
-  [self.navigationController presentViewController:naV animated:YES completion:nil];
+   //UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
+   // UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:map];
+    
+ [self.navigationController pushViewController:map animated:YES];
+    //[self.navigationController presentViewController:naV animated:YES completion:nil];
 
 }
 

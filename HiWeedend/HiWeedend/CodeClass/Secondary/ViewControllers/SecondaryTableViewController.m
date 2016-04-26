@@ -9,6 +9,8 @@
 #import "SecondaryTableViewController.h"
 #import "secondaryTableViewCell.h"
 #import "secondaryModel.h"
+#import "DatailsViewController.h"
+#import "HomePageListModel.h"
 #import "GroupListModel.h"
 @interface SecondaryTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -104,10 +106,16 @@
     
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ////点击cell松开后恢复cell颜色的方法
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DatailsViewController *datalisVC = [[DatailsViewController alloc]init];
+    secondaryModel *model = self.dataArray[indexPath.row];
+    datalisVC.HpmeModel = (HomePageListModel *)model;
+    [self.navigationController pushViewController:datalisVC animated:YES];
+    
 }
+
 
 /*
 // Override to support conditional editing of the table view.

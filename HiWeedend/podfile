@@ -1,4 +1,5 @@
-pod 'FMDB'
 pod 'UMengSocial', '~> 5.0'
+pod 'AMap2DMap'
 pod 'AFNetworking'
+pod 'FMDB'
 pod 'SDWebImage', '~> 3.7.5'

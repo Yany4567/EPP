@@ -31,6 +31,11 @@
 //保存的点击事件
 - (void)keepAction:(UIBarButtonItem *)sender{
     NSLog(@"保存");
+    
+   
+    
+    
+    
 }
 
 - (void)addObjects{
@@ -138,6 +143,7 @@
     self.lab2.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:self.lab2];
     
+    
     self.image3 = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.maleBtn.frame)-10, CGRectGetMaxY(self.image2.frame)+20, 20, 20)];
     //    self.image1 setImage:<#(UIImage * _Nullable)#>
     self.image3.layer.cornerRadius = 10;
@@ -146,6 +152,8 @@
     [self.view addSubview:self.image3];
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap3:)];
     [self.image3 addGestureRecognizer:tap3];
+    
+    
     
     self.lab3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.image3.frame)+10, CGRectGetMinY(self.image3.frame), CGRectGetWidth(self.stateLab.frame)+50, CGRectGetHeight(self.image2.frame))];
     self.lab3.text = @"单身贵族";
@@ -323,9 +331,18 @@
 {
 
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    //此处需要存储
+//    self.imageV.image = [UIImage imageNamed:@"222"];
+//    
     self.imageV.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    
     self.imageV.layer.cornerRadius = 50;
     self.imageV.layer.masksToBounds = YES;
+    
+    
+    
     
 }
 

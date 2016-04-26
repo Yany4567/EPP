@@ -13,4 +13,23 @@
 #define WEI_XIN_Secret @"3532803175963f63472eb09f36b4133d"
 
 
+//屏幕宽高
+#define  kWidth [UIScreen mainScreen].bounds.size.width
+
+#define  kHeight [UIScreen mainScreen].bounds.size.height
+
+//钥匙串ID
+#define keyChainKEY @"KeyChainObject"
+#define keyName @"kUserNameKey"
+
+#define kEY @"passwordAndNamePhone"
+
+#pragma mark ==============sqlite==========
+
+#define SqliteName @"hiweek.sqlite"
+
+#define HomeListTabel @"HomeListTabel"
+#define ModfileTabel @"modfileTabel"
+
+
 #endif /* ConstantsDefine_h */
