@@ -7,7 +7,7 @@
 //
 
 #import "MapAndKindViewController.h"
-//#import "CityViewController.h" //plist 获取城市名
+#import "CityViewController.h" //plist 获取城市名
 #import <CoreLocation/CoreLocation.h> //定位框架
 #import "HobbyCollectionViewCell.h" //items
 #import "ShowKindViewController.h"  //itms跳转页面

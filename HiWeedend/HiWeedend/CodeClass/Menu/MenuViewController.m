@@ -15,7 +15,7 @@
 #import "SelectBookViewController.h"
 #import "CollectActionViewController.h"
 #import "SettingViewController.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 
 @interface MenuViewController () {
     NSMutableArray *list;  //  菜单列表数据源
