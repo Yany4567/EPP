@@ -106,5 +106,7 @@
 		<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 		<false/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>没有您的允许，实在嗨不起来！！！</string>
 </dict>
 </plist>
