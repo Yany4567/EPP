@@ -7,11 +7,9 @@
 //
 
 #import "HomePageListViewController.h"
-//#import "HomePageListViewContriler.h"
 #import "HomePageListModel.h"
 #import "GroupListModel.h"
 
-//#import "AFNetworking.h"
 #import "GroupListCell.h"
 #import "HomePageCell.h"
 #import "AFNetworkActivityIndicatorManager.h"
@@ -20,11 +18,12 @@
 #import "LocationModel.h"
 #import <CoreLocation/CoreLocation.h>
 
-
-
 #import "SecondaryTableViewController.h"
 #import "DatailsViewController.h"
 #import "MapViewController.h"
+
+// 添加上拉加载 下拉刷新
+#import "MJRefresh.h"
 
 @interface HomePageListViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 // 初始化一个数组
@@ -40,6 +39,8 @@
 @property(nonatomic,strong)NSString *longitude;
 
 @property(nonatomic,strong)NSString *latitude;
+@property(nonatomic,assign)int page;
+@property(nonatomic,assign)NSInteger cityId;
 
 
 @end
@@ -73,7 +74,7 @@
 -(void)requestLocation{
     NSLog(@"+++++精度%@",self.latitude);
     NSLog(@"++++++纬度%@",self.longitude);
-
+    
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
        session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
     [session GET:[self String:HWPOSITIONING byAppendingdic:@{@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"}] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -87,7 +88,42 @@
         NSLog(@"失败");
     }];
 }
+// 进入界面的请求数据
+-(void)FirstrequestData{
+    [SVProgressHUD showWithStatus:@"加载中"];
+   // [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":@"0",@"lat":self.latitude,@"lon":self.longitude,@"page":@"1",@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+        NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        // NSLog(@"+++++++++++++%@",contentDic);
+        NSArray *array = contentDic[@"result"];
+        // 移除pageListArray的内容
+        [self.pageListArray removeAllObjects];
+        for (NSDictionary *dic in array) {
+            HomePageListModel *model = [[HomePageListModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.pageListArray addObject:model];
+            
+        }
+       [SVProgressHUD dismiss];
 
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_listTable reloadData];
+            
+        });
+        
+        
+    } error:^(NSError *error) {
+        NSLog(@"asdfasfd");
+    }];
+}
+
+-(void)dismiss:(id)sender{
+
+    [SVProgressHUD dismiss];
+
+}
+
+// GET请求时拼接字符串完成网址
 -(NSString *)String:(NSString *)string byAppendingdic :(NSDictionary *)dictionary{
     
     NSMutableArray *array = [NSMutableArray array];
@@ -106,51 +142,116 @@
 // 解析数据
 -(void)requestData{
     LocationModel *model1 = [self.locationArray lastObject];
-    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
-//    NSLog(@"%@",[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]);
-  //  http://api.lanrenzhoumo.com/main/recommend/index/?session_id=0000423d7ecd75af788f3763566472ed27f06e&lat=22.284681&lon=114.158177&city_id=395&v=3
-    //[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}]
-        [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+    self.cityId = model1.cityId;
+     NSString *city = [NSString stringWithFormat:@"%ld",(long)self.cityId];
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"page":@"1",@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-       // NSLog(@"+++++++++++++%@",contentDic);
             NSArray *array = contentDic[@"result"];
+            // 移除pageListArray的内容
+            [self.pageListArray removeAllObjects];
             for (NSDictionary *dic in array) {
                 HomePageListModel *model = [[HomePageListModel alloc]init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.pageListArray addObject:model];
                 
             }
+        
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_listTable reloadData];
                 
             });
-            
+            [self setupRefresh]; //上拉加载下拉刷新
             
     } error:^(NSError *error) {
         NSLog(@"asdfasfd");
     }];
 }
 
-- (void)viewDidLoad {
+-(void)requestRefresh{
     
+    LocationModel *model1 = [self.locationArray lastObject];
+    NSString *city = [NSString stringWithFormat:@"%ld",(long)model1.cityId];
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":city,@"lat":self.latitude,@"lon":self.longitude,@"page":[NSString stringWithFormat:@"%d",self.page++],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+        NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        NSArray *array = contentDic[@"result"];
+        for (NSDictionary *dic in array) {
+            HomePageListModel *model = [[HomePageListModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.pageListArray addObject:model];
+            
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_listTable reloadData];
+            
+        });
+        
+        
+    } error:^(NSError *error) {
+        NSLog(@"asdfasfd");
+    }];
+
+    
+}
+
+
+- (void)viewDidLoad {
+    self.cityId = 0;
     self.longitude = 0;
     self.latitude = 0;
-   
+    self.page = 2;
     [super viewDidLoad];
     [AFNetworkActivityIndicatorManager  sharedManager].enabled = YES;
-    [self getlocation];
+    // 判断版本 请求定位
+   [self getlocation];
+    
+    // 设置代理
     _locationManager.delegate = self;
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-  //     [self requestData];
-//    });
     self.listTable.delegate = self;
     self.listTable.dataSource = self;
+    
     // 定义cell的重用标识符
     [self.listTable registerNib:[UINib nibWithNibName:@"GroupListCell" bundle:nil] forCellReuseIdentifier:@"GroupListCell"];
     [self.listTable registerNib:[UINib nibWithNibName:@"HomePageCell" bundle:nil] forCellReuseIdentifier:@"HomePageCell"];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"666.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
     [self.navigationItem setTitle:@"嗨!周末"];
+    
+
 }
+
+// 上了加载
+-(void)setupRefresh{
+//    self.listTable.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)];
+//    [self.listTable.header beginRefreshing];
+//    
+    self.listTable.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
+    
+}
+- (void)loadMoreShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+       
+        // 刷新数据
+        [self requestRefresh];
+                //停止
+            [self.listTable.footer endRefreshing];
+            [self.listTable reloadData];
+    });
+}
+
+// 上拉加载
+- (void)loadNewShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+        [self requestData];
+        [self.listTable reloadData];
+        
+        //停止
+        [self.listTable.header endRefreshing];
+    });
+}
+
 
 -(void)getlocation{
     _locationManager = [[CLLocationManager alloc]init];
@@ -177,10 +278,45 @@
    // mapVC.coord2d = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
     NSLog(@"精度%f",mapVC.coord2d.longitude);
     
-    
+        [self FirstrequestData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self requestLocation];
+    }); 
+    
     
 }
+// 监听状态的改变
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined:
+            NSLog(@"用户未完成");
+            break;
+        case kCLAuthorizationStatusRestricted:
+            NSLog(@"访问受限");
+           // [self requestFirstData];
+            break;
+        case kCLAuthorizationStatusDenied:
+            // 判断当前定位服务是否有用
+            if ([CLLocationManager locationServicesEnabled]) {
+                NSLog(@"定位服务可用，但拒绝");
+            }else{
+                NSLog(@"定位服务关闭");
+            }
+            break;
+        case kCLAuthorizationStatusAuthorizedAlways:
+            NSLog(@"前后台定位服务授权");
+            break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            NSLog(@"前台服务授权");
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+
 
 //跳转到地图和分类列表
 -(void)rightBarbuttonAction:(UIBarButtonItem*)sender{

@@ -118,14 +118,16 @@
 
 -(void)addAnnotationWithCoor:(CLLocationCoordinate2D)coor{
     MyAnnotation *an1 = [[MyAnnotation alloc]init];
+    an1.coordinate = coor;
     an1.title = self.poi;
     an1.subtitle = self.address;
  //   an1.icon = [UIImage imageNamed:@"图"];
-    an1.coordinate = coor;
+    
     [self.mapView selectAnnotation:an1 animated:YES];
+    
 
     // 添加大头针
-        [self.mapView addAnnotation:an1];
+    [self.mapView addAnnotation:an1];
         }
 
 
@@ -153,6 +155,7 @@
     rightBtn.tag = 100010;
     // 设置气泡显示
     AnnoView.canShowCallout = YES;
+   // [self.mapView selectAnnotation:annotation animated:YES];
     
     
     return AnnoView;
