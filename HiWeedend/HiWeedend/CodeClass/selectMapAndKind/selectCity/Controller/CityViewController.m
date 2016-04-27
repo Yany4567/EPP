@@ -10,6 +10,8 @@
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "ShowCityModel.h"
 
+#import "SelectCityViewController.h"
+
 #define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface CityViewController ()<CustomTopViewDelegate,CustomSearchViewDelegate,ResultCityControllerDelegate>
@@ -156,11 +158,11 @@
                 //当前城市名字
                 weakSelf.selectString(weakSelf.currentCityString);
                 NSLog(@"%@PPPPPPPPPP",_currentCityString);
-                ShowKindViewController*show=[[ShowKindViewController alloc]init];
-                show.cityLocation = _currentCityString;
-        
+                SelectCityViewController*show=[[SelectCityViewController alloc]init];
+                show.acceptCityName = _currentCityString;
                 
-                [self presentViewController:show animated:YES completion:nil];
+                
+                    [self.navigationController pushViewController:show animated:YES];
                 
             }
             else
@@ -170,12 +172,12 @@
                 //热门城市名字
                 weakSelf.selectString(weakSelf.hotCityArray[tag]);
                 
-                    NSLog(@"%@PPPPPPPPPP",weakSelf.hotCityArray[tag]);
-                ShowKindViewController*show=[[ShowKindViewController alloc]init];
-                show.cityLocation =weakSelf.hotCityArray[tag];
+                SelectCityViewController*show=[[SelectCityViewController alloc]init];
+                show.acceptCityName =weakSelf.hotCityArray[tag];
+               // UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:show];
                 
-            [self presentViewController:show animated:YES completion:nil];
-               // [self.navigationController pushViewController:show animated:YES];
+               // [self presentViewController:nav animated:YES completion:nil];
+               [self.navigationController pushViewController:show animated:YES];
             }
 //            NSLog(@"%@**************#######" ,_hotCityArray);
             
@@ -250,10 +252,11 @@
         //列表选择名字
         NSLog(@"PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP地区名字%@",string);
          self.selectString(string);
-        ShowKindViewController*show=[[ShowKindViewController alloc]init];
-        show.cityLocation =string;
+        SelectCityViewController*show=[[SelectCityViewController alloc]init];
+        show.acceptCityName= string;
+        //UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:show];
         
-        [self presentViewController:show animated:YES completion:nil];
+          [self.navigationController pushViewController:show animated:YES];
         //[self dismissViewControllerAnimated:YES completion:nil];
     }
 

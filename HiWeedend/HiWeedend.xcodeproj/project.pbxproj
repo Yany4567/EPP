@@ -143,6 +143,12 @@
 		C2DC05311CCE338400D097F0 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */; };
 		C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC05301CCE338400D097F0 /* CycleScrollView.m */; };
 		C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E72DF91CD0ABB3005F8A4D /* Icon.png */; };
+		C2E72E211CD0AD6C005F8A4D /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E1B1CD0AD6C005F8A4D /* SelectCityViewController.m */; };
+		C2E72E221CD0AD6C005F8A4D /* SelectCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E72E1C1CD0AD6C005F8A4D /* SelectCityViewController.xib */; };
+		C2E72E231CD0AD6C005F8A4D /* SelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E1F1CD0AD6C005F8A4D /* SelectTableViewCell.m */; };
+		C2E72E241CD0AD6C005F8A4D /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E72E201CD0AD6C005F8A4D /* SelectTableViewCell.xib */; };
+		C2E72E2A1CD0AD77005F8A4D /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */; };
+		C2E72E2B1CD0AD77005F8A4D /* ShowToLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
 		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
@@ -376,6 +382,16 @@
 		C2DC052F1CCE338400D097F0 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		C2DC05301CCE338400D097F0 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		C2E72DF91CD0ABB3005F8A4D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C2E72E1A1CD0AD6C005F8A4D /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
+		C2E72E1B1CD0AD6C005F8A4D /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
+		C2E72E1C1CD0AD6C005F8A4D /* SelectCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCityViewController.xib; sourceTree = "<group>"; };
+		C2E72E1E1CD0AD6C005F8A4D /* SelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTableViewCell.h; sourceTree = "<group>"; };
+		C2E72E1F1CD0AD6C005F8A4D /* SelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTableViewCell.m; sourceTree = "<group>"; };
+		C2E72E201CD0AD6C005F8A4D /* SelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewCell.xib; sourceTree = "<group>"; };
+		C2E72E261CD0AD77005F8A4D /* SelectCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityModel.h; sourceTree = "<group>"; };
+		C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityModel.m; sourceTree = "<group>"; };
+		C2E72E281CD0AD77005F8A4D /* ShowToLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowToLocationModel.h; sourceTree = "<group>"; };
+		C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowToLocationModel.m; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
 		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
@@ -815,6 +831,7 @@
 		C291596E1CC5F143009FB972 /* selectMapAndKind */ = {
 			isa = PBXGroup;
 			children = (
+				C2E72E181CD0AD46005F8A4D /* selectCityToShow */,
 				C255B35E1CCEFF8A006ACD80 /* HobbyCollectionViewCell.h */,
 				C255B35F1CCEFF8A006ACD80 /* HobbyCollectionViewCell.m */,
 				C255B3601CCEFF8A006ACD80 /* HobbyCollectionViewCell.xib */,
@@ -1093,6 +1110,47 @@
 			path = ShowClass;
 			sourceTree = "<group>";
 		};
+		C2E72E181CD0AD46005F8A4D /* selectCityToShow */ = {
+			isa = PBXGroup;
+			children = (
+				C2E72E251CD0AD77005F8A4D /* selectCtyShowModel */,
+				C2E72E191CD0AD6C005F8A4D /* selectCityController */,
+				C2E72E1D1CD0AD6C005F8A4D /* selectCityView */,
+			);
+			path = selectCityToShow;
+			sourceTree = "<group>";
+		};
+		C2E72E191CD0AD6C005F8A4D /* selectCityController */ = {
+			isa = PBXGroup;
+			children = (
+				C2E72E1A1CD0AD6C005F8A4D /* SelectCityViewController.h */,
+				C2E72E1B1CD0AD6C005F8A4D /* SelectCityViewController.m */,
+				C2E72E1C1CD0AD6C005F8A4D /* SelectCityViewController.xib */,
+			);
+			path = selectCityController;
+			sourceTree = "<group>";
+		};
+		C2E72E1D1CD0AD6C005F8A4D /* selectCityView */ = {
+			isa = PBXGroup;
+			children = (
+				C2E72E1E1CD0AD6C005F8A4D /* SelectTableViewCell.h */,
+				C2E72E1F1CD0AD6C005F8A4D /* SelectTableViewCell.m */,
+				C2E72E201CD0AD6C005F8A4D /* SelectTableViewCell.xib */,
+			);
+			path = selectCityView;
+			sourceTree = "<group>";
+		};
+		C2E72E251CD0AD77005F8A4D /* selectCtyShowModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2E72E261CD0AD77005F8A4D /* SelectCityModel.h */,
+				C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */,
+				C2E72E281CD0AD77005F8A4D /* ShowToLocationModel.h */,
+				C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */,
+			);
+			path = selectCtyShowModel;
+			sourceTree = "<group>";
+		};
 		D37304D336AA05F3D7704BB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,6 +1251,7 @@
 				C255B4CC1CCF0880006ACD80 /* ContentCell.xib in Resources */,
 				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
 				C26AA2C91CCB99BA00B323AE /* 2.png in Resources */,
+				C2E72E221CD0AD6C005F8A4D /* SelectCityViewController.xib in Resources */,
 				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
 				C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */,
 				C255B4D01CCF0880006ACD80 /* HaderView.xib in Resources */,
@@ -1203,6 +1262,7 @@
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
 				C26AA3EB1CCBA02A00B323AE /* 9999.png in Resources */,
 				C255B4C91CCF0880006ACD80 /* MapViewController.xib in Resources */,
+				C2E72E241CD0AD6C005F8A4D /* SelectTableViewCell.xib in Resources */,
 				C255B4C71CCF0880006ACD80 /* DatailsViewController.xib in Resources */,
 				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
 				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
@@ -1279,6 +1339,7 @@
 				C255B5301CCF0904006ACD80 /* MJConst.m in Sources */,
 				C255B52F1CCF0904006ACD80 /* MJArgument.m in Sources */,
 				C255B4C31CCF0880006ACD80 /* DescriptionModel.m in Sources */,
+				C2E72E2B1CD0AD77005F8A4D /* ShowToLocationModel.m in Sources */,
 				C255B4D11CCF0880006ACD80 /* ImageCell.m in Sources */,
 				C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */,
 				C255B5401CCF0904006ACD80 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1300,9 +1361,11 @@
 				C255B54F1CCF0904006ACD80 /* TADotView.m in Sources */,
 				C29159561CC5E201009FB972 /* SettingViewController.m in Sources */,
 				C255B3D21CCEFF8A006ACD80 /* CustomTopView.m in Sources */,
+				C2E72E231CD0AD6C005F8A4D /* SelectTableViewCell.m in Sources */,
 				C255B5491CCF0904006ACD80 /* MJRefreshConst.m in Sources */,
 				C255B54C1CCF0904006ACD80 /* UIView+MJExtension.m in Sources */,
 				C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */,
+				C2E72E2A1CD0AD77005F8A4D /* SelectCityModel.m in Sources */,
 				C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
@@ -1342,6 +1405,7 @@
 				C255B4CB1CCF0880006ACD80 /* ContentCell.m in Sources */,
 				C26893EE1CD06A360077F071 /* ShowCityModel.m in Sources */,
 				C20A7A781CCE1065006882EF /* ChatConsoleView.m in Sources */,
+				C2E72E211CD0AD6C005F8A4D /* SelectCityViewController.m in Sources */,
 				C255B5451CCF0904006ACD80 /* MJRefreshGifHeader.m in Sources */,
 				C2BB96AA1CC77C4E00090282 /* LocationModel.m in Sources */,
 				C255B5371CCF0904006ACD80 /* NSObject+MJCoding.m in Sources */,

@@ -198,7 +198,11 @@
 
         
     };
-    [self presentViewController:controller animated:YES completion:nil];
+    
+  //  UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:controller];
+    
+    
+    [self.navigationController pushViewController:controller animated:YES];
     
 //    self.longitudeCity = [_dataArray[0] doubleValue];
 //       NSLog(@"******************%f",self.longitudeCity);
@@ -284,7 +288,7 @@
 -(void)turnPage:(NSString*)string {
     
     ShowKindViewController*show=[[ShowKindViewController alloc]init];
-  //  UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
+  //UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
     show.requestURLString = string;
 
         
