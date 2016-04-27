@@ -35,15 +35,30 @@
     return [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil],result;
 }
 
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [UMSocialData setAppKey:UMAPPK];
+        //微博分享
+//    [UMSocialData setAppKey:@"3903466526"];
     [UMSocialQQHandler setQQWithAppId:@"1105260757" appKey:@"MqcoIyAr2mAy4zBp" url:@"http://www.umeng.com/social"];
     
     [UMSocialWechatHandler setWXAppId:@"wxd60093b20668e658" appSecret:@"3532803175963f63472eb09f36b4133d" url:@"http://www.umeng.com/social"];
     [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3903466526"
                                               secret:@"17abefda6e436a40b84470981138589a"
                                          RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    //纯图片分享
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeImage;
+    //纯文字分享
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeText;
+    //
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"链接网址"];
+
+
 
     
     //主页显示功能

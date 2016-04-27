@@ -8,15 +8,41 @@
 
 #import "LoginViewController.h"
 #import "RegisViewController.h"
-
+#import "UMSocial.h"
 
 @interface LoginViewController ()
+
 
 
 
 @end
 
 @implementation LoginViewController
+
+- (IBAction)logviewAction:(id)sender {
+    // 使用Sina微博账号登录
+    
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    
+    snsPlatform.loginClickHandler(self, [UMSocialControllerService defaultControllerService], YES, ^(UMSocialResponseEntity *response) {
+        
+        NSLog(@"response is %@", response);
+        
+        // 如果是授权到新浪微博，SSO之后如果想获取用户的昵称、头像等需要再获取一次账户信息
+        
+        [[UMSocialDataService defaultDataService]requestSocialAccountWithCompletion:^(UMSocialResponseEntity *response) {
+            
+            // 打印用户昵称
+            
+            NSLog(@"SinaWeibo's user name is %@", [[[response.data objectForKey:@"accounts"]objectForKey:UMShareToSina] objectForKey:@"username"]);
+            
+        }];
+        
+    });
+    
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

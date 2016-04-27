@@ -29,10 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设置";
+    //设置tableview
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 400) style:(UITableViewStylePlain)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorColor = [UIColor brownColor];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 50, 0, 20);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -40,76 +40,7 @@
     [self.view addSubview:self.tableView];
     self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 10, 30, 30)];
     
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//    //移除通知中心
-//    [self removeForKeyboardnotifications];
-//}
-//
-//
-///**
-// *  注册通知中心
-// */
-//-  (void)registerForKeyBoardNotifications{
-//    
-//    //使用NSNotificationCenter注册观察当键盘要出现时
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-//    //使用NSNotificationCenter 注册观察当键盘要隐藏时
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-//    
-//}
-//
-///**
-// *  移除通知中心
-// */
-//- (void)removeForKeyboardnotifications{
-//    [[NSNotificationCenter defaultCenter]removeObserver:self];
-//}
-///**
-// *  键盘将要弹出
-// *
-// *  @param notification 通知
-// */
-//- (void)didKeyboardWillShow:(NSNotification *)notification{
-//    
-//    NSDictionary *info = [notification userInfo];
-//    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue].size;
-//    NSLog(@"%f",keyboardSize.height);
-//    //输入框位置动画加载
-//    [self beginMoveUpAnimation:keyboardSize.height];
-//}
-///**
-// *  开始执行键盘改变后对应视图的变化
-// *
-// *  @param height 键盘的高度
-// */
-//- (void)beginMoveUpAnimation:(CGFloat)height{
-//    [UIView animateWithDuration:0.3 animations:^{
-//        [chatConsoleView setFrame:CGRectMake(0, self.view.frame.size.height - (height + 40), chatConsoleView.frame.size.width, chatConsoleView.frame.size.height)];
-//    }];
-////    [self.hahaha setConstant:height ];
-////    [self.commentTableView layoutIfNeeded];
-////    if (self.commentArray.count > 1) {
-////        [self.commentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.commentArray.count - 1 inSection:0] atScrollPosition:(UITableViewScrollPositionMiddle) animated:YES];
-////    }
-//}
-///**
-// *  键盘将要隐藏
-// *
-// *  @param notification 通知
-// */
-//- (void)didKeyboardWillHide:(NSNotification *)notification{
-//    [self beginMoveUpAnimation:0];
-//}
-//
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    [textField resignFirstResponder];
-//    return YES;
-//}
 
 
 - (void)didReceiveMemoryWarning {
@@ -201,7 +132,11 @@
     
     if (indexPath.row == 0) {
        //QQ
-        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPK shareText:@"你要分享的文字"shareImage:[UIImage imageNamed:@"icon.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToSina,UMShareToDouban,UMShareToTencent,nil] delegate:self];
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPK shareText:@"你想分享的文字"shareImage:[UIImage imageNamed:@"icon.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToSina,UMShareToDouban,UMShareToTencent,nil] delegate:self];
+        
+//        [[ShareEngine sharedInstance] sendWeChatMessage:nil url:momentUrl shareType:SHARE_ENGINE_FRIEND titleString:titleString description:nil thubnilImage:scaleImage];
+        
+        
     }
     
     if (indexPath.row == 1) {
@@ -245,22 +180,23 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/CN/lookup?id=917930451"]];
     }
     if (indexPath.row == 4) {
-//        ChatConsoleView *chatVC = [[ChatConsoleView alloc]init];
-//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:chatVC];
-//        [self.navigationController pushViewController:nav animated:YES];
-//        //注册键盘弹出,回收
-//        [self registerForKeyBoardNotifications];
-//        chatConsoleView = [[ChatConsoleView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 100, self.view.frame.size.width, 40)];
-//        chatConsoleView.draftTextField.delegate = self;
-////        __weak typeof(self) weakSelf = self;
-//        chatConsoleView.buttonClicked = ^(NSString *draftText){
-//            //发表评论
-//            //发送评论的接口请求
-////            [weakSelf requestSendComment:draftText];
-//        };
-//        [self.view addSubview:chatConsoleView];
+
     }
     
+    
+    
+    
+}
+
+
+
+
+
+
+//弹出列表方法presentSnsIconSheetView需要设置delegate为self
+-(BOOL)isDirectShareInIconActionSheet
+{
+    return YES;
 }
 
 -(void)clearCacheSuccess

@@ -62,7 +62,7 @@
                 <outlet property="interestButton" destination="vkJ-hX-WTM" id="uEm-a1-FXR"/>
                 <outlet property="shearButton" destination="REy-z1-v8J" id="nRM-p2-Oxk"/>
             </connections>
-            <point key="canvasLocation" x="386" y="210"/>
+            <point key="canvasLocation" x="17" y="208"/>
         </view>
     </objects>
 </document>
