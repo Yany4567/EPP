@@ -75,9 +75,9 @@
     self.mapView.delegate = self;
     // 设置显示用户的位置
    // self.mapView.showsUserLocation = YES;
-    // 显示地图 加载父视图上
     
-   // CLLocationCoordinate2D coor2d = CLLocationCoordinate2DMake([self.locationDiction[@"lat"] integerValue], [self.locationDiction[@"lon"] integerValue]);
+   // CLLocationCoordinate2D coor2d =
+    // 显示地图 加载父视图上CLLocationCoordinate2DMake([self.locationDiction[@"lat"] integerValue], [self.locationDiction[@"lon"] integerValue]);
     
     CLLocationCoordinate2D coord2d = CLLocationCoordinate2DMake([self.locationDiction[@"lat"] doubleValue],[self.locationDiction[@"lon"]doubleValue]);
     self.adderssCoord2d = coord2d;
