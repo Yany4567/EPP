@@ -16,6 +16,8 @@
 #import "HaderView.h"
 #import "FooterView.h"
 #import "MapViewController.h"
+#import "CycleScrollView.h"
+
 
 #import "UMSocial.h"
 
@@ -26,6 +28,8 @@
 @property(nonatomic,strong)NSMutableArray *contentArray;
 @property(nonatomic,strong)NSMutableArray *imageArray;
 @property(nonatomic,strong)NSDictionary *diction;
+// 创建scroolview
+@property(nonatomic,strong)CycleScrollView *cyScroll;
 
 
 
@@ -68,6 +72,7 @@
 
 
 -(void)requestData{
+     [SVProgressHUD showWithStatus:@"正在努力加载...."];
   //  leo_id=1355295201&session_id=0000423d7ecd75af788f3763566472ed27f06e&v=4"
     [NetWorkRequestManager requestWithType:GET urlString:[self String:HWSEONDDETAILT byAppendingdic:@{@"leo_id":[NSString stringWithFormat:@"%ld",(long)self.HpmeModel.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"4"}] parDic:nil finish:^(NSData *data) {
         NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
@@ -83,9 +88,10 @@
         }
                dispatch_async(dispatch_get_main_queue(), ^{
             [_listTable reloadData];
-            
+          
+                   
         });
-        
+        [SVProgressHUD dismiss];
     } error:^(NSError *error) {
         NSLog(@"失败");
         
@@ -97,11 +103,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@",self.HpmeModel);
-    self.listTable = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, -64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+64)];
     [self.view addSubview:self.listTable];
-    
+    // 添加头视图
     HaderView *haView = [[[NSBundle mainBundle] loadNibNamed:@"HaderView" owner:nil options:nil] firstObject];
+    // 添加底视图
     FooterView *footerView = [[[NSBundle mainBundle]loadNibNamed:@"FooterView" owner:nil options:nil]firstObject];
+    [self creatcreatCycleScrollView];
+    // 添加轮播图
+    self.cyScroll = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300) animationDuration:2];
+    self.imageArray = self.HpmeModel.front_cover_image_list.mutableCopy;
+    NSMutableArray *viewsArray = [NSMutableArray array];
+    for (int i = 0; i < self.imageArray.count; i++) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
+        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:nil];
+        [viewsArray addObject:imageView];
+    }
+    
+    [haView addSubview:self.cyScroll];
+    self.cyScroll.totalPagesCount = viewsArray.count;
+    
+    self.cyScroll.fetchContentViewAtIndex = ^UIView*(NSInteger pageindex){
+        return viewsArray[pageindex];
+    };
+
     
     footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 120);
     self.listTable.tableFooterView = footerView;
@@ -111,7 +136,7 @@
    // haView.timeLabel.text = self.HpmeModel.time_desc;
     haView.categoryLabel.text = self.HpmeModel.category;
     haView.timeLabel.text = self.HpmeModel.time_desc;
-    [haView.mapButton setTitle:[self mystring:self.HpmeModel.address stringByAppding:@" · " and:self.HpmeModel.poi] forState:UIControlStateNormal];
+    haView.mapLabel.text = [self mystring:self.HpmeModel.address stringByAppding:@" · " and:self.HpmeModel.poi];
     [haView.mapButton addTarget:self action:@selector(mapAction:)  forControlEvents:UIControlEventTouchUpInside];
     haView.priceLabel.text = self.HpmeModel.price_info;
     NSLog(@"%@",self.HpmeModel.time_desc);
@@ -131,6 +156,7 @@
     [self.listTable registerNib:[UINib nibWithNibName:@"ReservationCell" bundle:nil] forCellReuseIdentifier:@"ReservationCell"];
     [self requestData];
     
+    
     // Do any additional setup after loading the view from its nib.
 }
 //分享button
@@ -139,11 +165,33 @@
     
     
 }
+-(void)creatcreatCycleScrollView{
+    self.cyScroll = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300) animationDuration:2];
+    self.imageArray = self.HpmeModel.front_cover_image_list.mutableCopy;
+    NSMutableArray *viewsArray = [NSMutableArray array];
+    for (int i = 0; i < self.imageArray.count; i++) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
+        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:nil];
+        [viewsArray addObject:imageView];
+    }
+    
+    HaderView *haView = [[[NSBundle mainBundle]loadNibNamed:@"HaderView" owner:nil options:nil]firstObject];
+    [haView addSubview:self.cyScroll];
+    self.cyScroll.totalPagesCount = viewsArray.count;
+    
+    self.cyScroll.fetchContentViewAtIndex = ^UIView*(NSInteger pageindex){
+        return viewsArray[pageindex];
+    };
+    
+    }
 
 
 -(void)mapAction:(id)sender{
     DetailsModel *model = [[DetailsModel alloc]init];
     model = [self.dataListArray firstObject];
+    if ([self.dataListArray firstObject] == nil) {
+        return;
+    }
     MapViewController *mapVC = [[MapViewController alloc]init];
     mapVC.locationDiction = self.diction;
     mapVC.address = self.HpmeModel.address;

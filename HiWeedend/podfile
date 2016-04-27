@@ -1,5 +1,5 @@
 pod 'UMengSocial', '~> 5.0'
-pod 'AMap2DMap'
+pod 'SVProgressHUD', '~> 2.0.2'
 pod 'AFNetworking'
 pod 'FMDB'
 pod 'SDWebImage', '~> 3.7.5'
