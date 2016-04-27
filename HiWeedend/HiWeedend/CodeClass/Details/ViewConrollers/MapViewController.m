@@ -74,7 +74,7 @@
     // 设置代理
     self.mapView.delegate = self;
     // 设置显示用户的位置
-    self.mapView.showsUserLocation = YES;
+   // self.mapView.showsUserLocation = YES;
     // 显示地图 加载父视图上
     
    // CLLocationCoordinate2D coor2d = CLLocationCoordinate2DMake([self.locationDiction[@"lat"] integerValue], [self.locationDiction[@"lon"] integerValue]);
@@ -88,11 +88,12 @@
    
     
     
-    [self.view addSubview:self.mapView];
+    
     //        [self convertCoortoPointWithCoord2d:coord2d];
     [self addAnnotationWithCoor:coord2d];
      [self.mapView setCenterCoordinate:coord2d animated:YES];
      [self.mapView setRegion:MKCoordinateRegionMake(coord2d, MKCoordinateSpanMake(0.05, 0.05))];
+    [self.view addSubview:self.mapView];
 
 
     
@@ -123,11 +124,12 @@
     an1.subtitle = self.address;
  //   an1.icon = [UIImage imageNamed:@"图"];
     
-    [self.mapView selectAnnotation:an1 animated:YES];
+    
     
 
     // 添加大头针
     [self.mapView addAnnotation:an1];
+    [self.mapView selectAnnotation:an1 animated:YES];
         }
 
 
@@ -136,9 +138,9 @@
         return nil;
     }
     static NSString *identifier = @"identi";
-    MKAnnotationView *AnnoView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"identi"];
+    MKAnnotationView *AnnoView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"identi"];
     if (!AnnoView) {
-        AnnoView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:identifier];
+        AnnoView = (MKPinAnnotationView *)[[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:identifier];
     }
 
     AnnoView.annotation = annotation;
@@ -155,9 +157,6 @@
     rightBtn.tag = 100010;
     // 设置气泡显示
     AnnoView.canShowCallout = YES;
-   // [self.mapView selectAnnotation:annotation animated:YES];
-    
-    
     return AnnoView;
 
     
