@@ -99,8 +99,8 @@
     cell.categoryLab.text = model.category;
     cell.time_infoLab.text = model.time_info;
 //    cell.want_statusLab.text = model.want_status;
-    NSString *str = [NSString stringWithFormat:@"¥:%ld",(long)model.price_info];
-    cell.price_infoLab.text = str;
+    
+    cell.price_infoLab.text = [NSString stringWithFormat:@"%ld",(long)model.price];
 //    cell.distanceLab.text = model.distance;
     
     

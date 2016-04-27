@@ -17,9 +17,10 @@
 #import "FooterView.h"
 #import "MapViewController.h"
 
+#import "UMSocial.h"
 
 
-@interface DatailsViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface DatailsViewController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate>
 @property(nonatomic,strong)UITableView *listTable;
 @property(nonatomic,strong)NSMutableArray *dataListArray;
 @property(nonatomic,strong)NSMutableArray *contentArray;
@@ -116,6 +117,7 @@
     NSLog(@"%@",self.HpmeModel.time_desc);
     haView.frame = CGRectMake(0, 0, self.view.frame.size.width, 570);
     
+    [footerView.shearButton addTarget:self action:@selector(shareFriendAction:) forControlEvents:(UIControlEventTouchUpInside)];
     //haderView.backgroundColor = [UIColor redColor];
     self.listTable.tableHeaderView = haView;
     self.listTable.backgroundColor = [UIColor grayColor];
@@ -131,6 +133,13 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+//分享button
+- (void)shareFriendAction:(UIButton *)sender{
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPK shareText:@"你要分享的文字"shareImage:[UIImage imageNamed:@"icon.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToSina,UMShareToDouban,UMShareToTencent,nil] delegate:self];
+    
+    
+}
+
 
 -(void)mapAction:(id)sender{
     DetailsModel *model = [[DetailsModel alloc]init];

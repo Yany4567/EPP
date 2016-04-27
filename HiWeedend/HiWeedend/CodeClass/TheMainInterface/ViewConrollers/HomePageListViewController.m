@@ -281,7 +281,7 @@
     SecondaryTableViewController *secondVC = [[SecondaryTableViewController alloc]init];
     
     HomePageListModel *model = self.pageListArray[indexPath.row];
-    
+    secondVC.string = model.title;
     if ([model.jump_data isEqualToString:@""]) {
          dataVC.HpmeModel = model;
         [self.navigationController pushViewController:dataVC animated:YES];
