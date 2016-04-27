@@ -7,7 +7,7 @@
 //
 
 #import "CollectActionViewController.h"
-#import "DataBaseHomeModelDB.h"
+//#import "DataBaseHomeModelDB.h"
 #import "HomePageListModel.h"
 
 @interface CollectActionViewController ()
@@ -18,10 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DataBaseHomeModelDB*db=[[DataBaseHomeModelDB alloc]init];
-    
-    //创建列表
-    [db creatTabel];
+//    DataBaseHomeModelDB*db=[[DataBaseHomeModelDB alloc]init];
+//    
+//    //创建列表
+//    [db creatTabel];
     
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"+" style:(UIBarButtonItemStylePlain) target:self action:@selector(collectAction:)];

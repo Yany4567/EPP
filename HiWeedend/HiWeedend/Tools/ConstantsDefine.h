@@ -8,6 +8,9 @@
 
 #ifndef ConstantsDefine_h
 #define ConstantsDefine_h
+#define UMAPPK @"571a27b967e58e7a3c0017db"
+#define WEI_XIN @"wxd60093b20668e658"
+#define WEI_XIN_Secret @"3532803175963f63472eb09f36b4133d"
 
 
 //屏幕宽高

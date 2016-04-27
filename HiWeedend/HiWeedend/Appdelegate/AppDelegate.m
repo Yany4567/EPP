@@ -10,6 +10,13 @@
 #import "HomePageListViewController.h"
 #import "DrawerViewController.h"
 #import "MenuViewController.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "WXApi.h"
+#import "UMSocialQQHandler.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "UMSocialSinaSSOHandler.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +25,26 @@
 @implementation AppDelegate
 
 
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil],result;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [UMSocialData setAppKey:UMAPPK];
+    [UMSocialQQHandler setQQWithAppId:@"1105260757" appKey:@"MqcoIyAr2mAy4zBp" url:@"http://www.umeng.com/social"];
+    
+    [UMSocialWechatHandler setWXAppId:@"wxd60093b20668e658" appSecret:@"3532803175963f63472eb09f36b4133d" url:@"http://www.umeng.com/social"];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3903466526"
+                                              secret:@"17abefda6e436a40b84470981138589a"
+                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+
     
     //主页显示功能
 //    HomePageListViewController*homeVC=[[HomePageListViewController alloc]init];
@@ -48,6 +74,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     
+    
+    
     return YES;
 }
 
@@ -66,6 +94,10 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    
+    [UMSocialSnsService applicationDidBecomeActive];
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
