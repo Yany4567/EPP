@@ -19,7 +19,7 @@
 @interface ShowKindViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView*showTabelView;
 @property(nonatomic,strong)NSMutableArray*dataArray;
-
+@property(nonatomic,assign)int page;
 
 
 
@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@%%%%%%%%%%%%%%",self.cityLocation);
+      self.page=1;
 
   
 //        self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
@@ -58,7 +59,7 @@
         //调用数据 刷新UI
     
         
-            [self requestData];
+       [self requestDataAndPageString:self.page++];
         [self.dataArray removeAllObjects];
         //[self.dataArray addObjectsFromArray:shops];
         
@@ -76,7 +77,7 @@
         
         
 
-    [self requestData];
+    [self requestDataAndPageString:self.page++];
         
         // 刷新数据
         [self. showTabelView reloadData];
@@ -89,18 +90,52 @@
 
 
 
--(void)requestData{
+-(void)requestDataAndPageString:(int)page {
+    
+//    
+//    [NetWorkRequestManager requestWithType:GET urlString:self.requestURLString parDic:nil finish:^(NSData *data) {
+//        NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+//      //  NSLog(@"++++++888888888+++++++%@",contentDic);
+//        NSArray *array = contentDic[@"result"];
+//        for (NSDictionary *dic in array) {
+//            ShowModel *model = [[ShowModel alloc]init];
+//            [model setValuesForKeysWithDictionary:dic];
+//            [self.dataArray addObject:model];
+//            // NSLog(@"%@",_dataArray);
+//        }
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [_showTabelView reloadData];
+//            
+//        });
+//        
+//        
+//    } error:^(NSError *error) {
+//        NSLog(@"asdfasfd");
+//    }];
+//    
+    //获取经纬度(nsstring)
+    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+    double laitude =[userDefaults doubleForKey:@"let"];
+    double longitude =[userDefaults doubleForKey:@"lon"];
+    //double转nsstring
+    NSString *lat = [NSString stringWithFormat:@"%f",laitude];
+    NSString *lon = [NSString stringWithFormat:@"%f",longitude];
+    NSLog(@"%f88888888888",laitude);
+    
+    //self.requestURLString 种类关键字
+    NSString*pageNumber=[NSString stringWithFormat:@"%d",page];
     
     
-    [NetWorkRequestManager requestWithType:GET urlString:self.requestURLString parDic:nil finish:^(NSData *data) {
+    
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:KindUrlHead byAppendingdic:@{@"category":self.requestURLString, @"city_id":@"53",@"lat":@"40.02932",@"lon":@"116.3376",@"page":pageNumber,@"session_id":@"000042c8e69cff884054bb4ccd6352be417c1d"}] parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-      //  NSLog(@"++++++888888888+++++++%@",contentDic);
+        //  NSLog(@"++++++888888888+++++++%@",contentDic);
         NSArray *array = contentDic[@"result"];
         for (NSDictionary *dic in array) {
             ShowModel *model = [[ShowModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
-            // NSLog(@"%@",_dataArray);
+            
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [_showTabelView reloadData];
@@ -112,8 +147,23 @@
         NSLog(@"asdfasfd");
     }];
     
+
     
     
+}
+//字符串拼接方法
+-(NSString *)String:(NSString *)string byAppendingdic :(NSDictionary *)dictionary{
+    
+    NSMutableArray *array = [NSMutableArray array];
+    //遍历字典得到每一个键，得到所有的 Key＝Value类型的字符串
+    for (NSString *key in dictionary) {
+        NSString *str = [NSString stringWithFormat:@"%@=%@", key, dictionary[key]];
+        [array addObject:str];
+    }
+    //数组里所有Key＝Value的字符串通过&符号连接
+    NSString *parString = [array componentsJoinedByString:@"&"];
+    NSString *urlString = [string stringByAppendingString:parString];
+    return urlString;
     
 }
 

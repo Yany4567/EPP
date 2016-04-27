@@ -142,6 +142,7 @@
 		C2D7EE511CCA6BE300771D03 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EE501CCA6BE300771D03 /* CoreTelephony.framework */; };
 		C2DC05311CCE338400D097F0 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */; };
 		C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC05301CCE338400D097F0 /* CycleScrollView.m */; };
+		C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E72DF91CD0ABB3005F8A4D /* Icon.png */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
 		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
@@ -374,6 +375,7 @@
 		C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		C2DC052F1CCE338400D097F0 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		C2DC05301CCE338400D097F0 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		C2E72DF91CD0ABB3005F8A4D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
 		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 		C29C61DA1CC25FD400E44DDC /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C2E72DF91CD0ABB3005F8A4D /* Icon.png */,
 				C291596C1CC5F082009FB972 /* 1.png */,
 				C286BB7F1CC4DCDE00A0CD0B /* 666.png */,
 				C286BB7B1CC4D7BB00A0CD0B /* heart.png */,
@@ -1196,6 +1199,7 @@
 				C255B3B41CCEFF8A006ACD80 /* cancelBtn@2x.png in Resources */,
 				C26AA3E51CCB9C6D00B323AE /* laji.png in Resources */,
 				C255B3D51CCEFF8A006ACD80 /* ShowKindViewController.xib in Resources */,
+				C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
 				C26AA3EB1CCBA02A00B323AE /* 9999.png in Resources */,
 				C255B4C91CCF0880006ACD80 /* MapViewController.xib in Resources */,
