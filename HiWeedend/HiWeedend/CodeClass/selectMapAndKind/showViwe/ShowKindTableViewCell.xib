@@ -122,7 +122,7 @@
                 <outlet property="showkind" destination="Qmh-d2-zYc" id="UXS-Cc-C0c"/>
                 <outlet property="showprice" destination="3wd-rG-eau" id="QH8-Cd-K9J"/>
             </connections>
-            <point key="canvasLocation" x="467.5" y="288.5"/>
+            <point key="canvasLocation" x="308.5" y="314.5"/>
         </tableViewCell>
     </objects>
     <resources>

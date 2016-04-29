@@ -9,8 +9,10 @@
 #import "ShowKindViewController.h"
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "ShowCityModel.h"
+#import "UNicoderTurnNsstring.h"
 
 #import "SelectCityViewController.h"
+#import "DictiontyTurnUNIcode.h"
 
 #define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -28,6 +30,18 @@
 @property (nonatomic,retain)ResultCityController *resultController;//显示结果的controller
 @property (nonatomic,retain)NSArray *currentCityArray;// 当前城市
 @property (nonatomic,retain)NSArray *hotCityArray; // 热门城市
+
+@property(nonatomic,strong)NSMutableArray*cityIDarray;//存储城市ID
+
+@property(nonatomic,strong)NSMutableArray*tempArray;
+
+@property(nonatomic,strong)NSMutableArray*dataSouceArray;//
+@property(nonatomic,strong)NSMutableArray*requestArray;//
+
+@property(nonatomic,strong)NSString*cityName;
+@property(nonatomic,strong)NSString*cityId;
+@property(nonatomic,strong)NSDictionary*cityDic;
+
 @end
 
 @implementation CityViewController
@@ -36,7 +50,7 @@
 {
     if(!_blackView)
     {
-        _blackView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+        _blackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _blackView.backgroundColor = [UIColor colorWithRed:60/255.0 green:60/255.0 blue:60/255.0 alpha:0.6];
         _blackView.alpha = 0;
         [self.view addSubview:_blackView];
@@ -51,7 +65,7 @@
     {
         _resultController = [[ResultCityController alloc] init];
         
-        _resultController.view.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64);
+        _resultController.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         _resultController.delegate = self;
         [self.view addSubview:_resultController.view];
     }
@@ -59,14 +73,25 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //初始化数组
+    self.showCityArray =[NSMutableArray array];
+    self.rightIndexArray = [NSMutableArray array];
+    self.sectionTitlesArray = [NSMutableArray array]; //区头字母数组
+    self.dataArray = [NSMutableArray array]; //包含所有区数组的大数组
+    self.searchArray = [NSMutableArray array];
+    self.cityIDarray=[NSMutableArray array];
+    self.dataSouceArray=[NSMutableArray array];
+    self.requestArray=[NSMutableArray array];
 
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadData];
+    //[self DataArray];
 
     self.searchView = [[CustomSearchView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-20, 44)];
     _searchView.delegate = self;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -78,6 +103,14 @@
     self.navView = [[CustomTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
     _navView.delegate = self;
     [self.view addSubview:_navView];
+    
+    [self cityNameAndCityID];
+   // [self isEquestString:@"北京" massage:nil];
+    
+    
+    
+    
+
     
     
 }
@@ -124,10 +157,12 @@
     }
     else if (indexPath.section==1)
     {
+        //hotcity
         return 250;
     }
     else
     {
+        //cityList
         return 44;
     }
 }
@@ -161,6 +196,7 @@
                 SelectCityViewController*show=[[SelectCityViewController alloc]init];
                 show.acceptCityName = _currentCityString;
                 
+                show.acceptCityID = [self isEquestString:_currentCityString];
                 
                     [self.navigationController pushViewController:show animated:YES];
                 
@@ -177,6 +213,10 @@
                // UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:show];
                 
                // [self presentViewController:nav animated:YES completion:nil];
+                show.acceptCityID = [self isEquestString:weakSelf.hotCityArray[tag]];
+                show.searchID=@"2";
+                
+                
                [self.navigationController pushViewController:show animated:YES];
             }
 //            NSLog(@"%@**************#######" ,_hotCityArray);
@@ -255,6 +295,7 @@
         SelectCityViewController*show=[[SelectCityViewController alloc]init];
         show.acceptCityName= string;
         //UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:show];
+        show.acceptCityID =[self isEquestString:string];
         
           [self.navigationController pushViewController:show animated:YES];
         //[self dismissViewControllerAnimated:YES completion:nil];
@@ -364,12 +405,7 @@
 }
 -(void)loadData
 {
-    //初始化数组
-    self.showCityArray =[NSMutableArray array];
-    self.rightIndexArray = [NSMutableArray array];
-    self.sectionTitlesArray = [NSMutableArray array]; //区头字母数组
-    self.dataArray = [NSMutableArray array]; //包含所有区数组的大数组
-    self.searchArray = [NSMutableArray array];
+
 #warning cityName======requestData=========
     //获得城市名字列表
     [NetWorkRequestManager requestWithType:GET urlString:CityList parDic:nil finish:^(NSData *data) {
@@ -381,21 +417,78 @@
         for (NSDictionary*dic in array) {
        NSArray*temparray= dic[@"city_list"];
            // NSLog(@"<<<<<<<<<<%@",temparray);
-            
-            
-       
+        
             
             for (NSDictionary*listDic in temparray) {
-              //  [self.sectionTitlesArray addObject:listDic[@"city_name"]];
-                NSLog(@"<<<<<<<<<<%@",listDic);
-                ShowCityModel*model=[ShowCityModel new];
-                [model setValuesForKeysWithDictionary:listDic];
-                [self.dataArray addObject:model];
-//                  self.sectionTitlesArray = listDic[@"city_name"];
-//                self.dataArray =listDic[@"province_name"];
+     
+            // NSLog(@"<<<<<<<<<<%@",listDic);
+//                ShowCityModel*model=[ShowCityModel new];
+//                [model setValuesForKeysWithDictionary:listDic];
+//                
+//                
+//                [self.dataSouceArray addObject:model];
+
+                NSArray*array=[listDic allValues];
+                NSArray*array1=[listDic allValues];
+                [_requestArray addObject: array[1]];
+                [_cityIDarray addObject:   array1[2]];
+//                NSLog(@"111111%@",_requestArray);
+//                NSLog(@"222222%@",_cityIDarray);
+
+//                [self.requestArray addObject:[listDic valueForKey:@"city_name"]];
+//                [self.cityIDarray addObject:[listDic valueForKey:@"city_id"]];
+//                NSLog(@"*********%@",[listDic valueForKey:@"city_name"]);
+//                NSLog(@"*********%@",[listDic valueForKey:@"city_id"]);
+                
+                NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+                NSDictionary*dicCity=[NSDictionary dictionaryWithObjects:_cityIDarray forKeys:_requestArray];
+                [userDefaults setObject:dicCity forKey:@"aaa"];
+                // NSDictionary *myDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[listDic valueForKey:@"city_name"],[listDic valueForKey:@"city_id"], nil] forKeys:[NSArray arrayWithObjects:@"city_name", @"city_id", nil]];
+                
+                
+//   
+//                for (NSString*aa in self.requestArray) {
+//                    
+//                            //字符串转chart
+//                            const char * a =[aa UTF8String];
+//                            //unicode转中文
+//                            NSString *equipmentName = [[NSString alloc]initWithCString:a encoding:NSUTF8StringEncoding];
+//                    
+//                           NSLog(@"mmnmmmmm%@",equipmentName);
+//                    
+//                          
+//                        }
+//                for (NSString*aa in self.cityIDarray) {
+//                    
+//                    //字符串转chart
+//                    const char * a =[[NSString stringWithFormat:@"%@",aa] UTF8String];
+//                    //unicode转中文
+//                    NSString *equipmentName = [[NSString alloc]initWithCString:a encoding:NSUTF8StringEncoding];
+//                    
+//                    NSLog(@"mmnmmmmm%@",equipmentName);
+//                 
+//                    
+//                }
+     
+//                for (int i =0; i<self.requestArray.count; i++) {
+//                    
+//
+//                }
+//                 NSDictionary*dic=[NSDictionary dictionaryWithObjects:_requestArray forKeys:_cityIDarray];
+//                               NSLog(@"mmnmmmmm%@",dic);
+//          _cityDic =dic;
+//                
+//                [userDefaults setObject:self.requestArray forKey:@"array"];
+//              
             }
             
+            
+            
         }
+        
+
+     
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadData];
@@ -424,12 +517,106 @@
     [self.rightIndexArray insertObject:UITableViewIndexSearch atIndex:0];
     [self.sectionTitlesArray insertObject:@"热门城市" atIndex:0];
     [self.sectionTitlesArray insertObject:@"默认城市" atIndex:0];
-    self.currentCityArray = @[self.currentCityString];
-//    NSLog(@"kkkkkkkkk%@", _currentCityString);
+    
+    //上个页面传来的默认设置城市 应该由首页定位传来
+    //self.currentCityArray = @[self.currentCityString];
+    self.currentCityArray=@[@"北京"];
+    //self.currentCityArray=[self.tempArray firstObject];
+    
     self.hotCityArray = @[@"北京",@"上海",@"广州",@"深圳",@"武汉",@"天津",@"西安",@"南京",@"杭州",@"成都",@"长沙",@"苏州",@"大连",@"沈阳",@"青岛"];
+    
+
     [self.dataArray insertObject:self.hotCityArray atIndex:0];
     [self.dataArray insertObject:self.currentCityArray atIndex:0];
+
+//*********
+//    NSUserDefaults*userDefaults=[[NSUserDefaults alloc]init];
+//self.tempArray=   [userDefaults objectForKey:@"array"];
+//      self.sectionTitlesArray = self.tempArray[0];
+//      self.hotCityArray=self.tempArray[1];
+//    self.dataArray =self.tempArray;
 }
+
+-(void)cityNameAndCityID{
+//
+//  NSUserDefaults*userDefaultes=[NSUserDefaults standardUserDefaults];
+//    NSDictionary *myDictionary = [userDefaultes dictionaryForKey:@"aaa"];
+//    
+//    NSLog(@"%@",myDictionary);
+//    
+//    for (NSString*aa in [myDictionary allValues]) {
+//        
+//                                    //字符串转chart
+//                                    const char * a =[[NSString stringWithFormat:@"%@",aa] UTF8String];
+//                                    //unicode转中文
+//                                    NSString *equipmentName = [[NSString alloc]initWithCString:a encoding:NSUTF8StringEncoding];
+//                                  //cityID
+//                                   NSLog(@"mmnmmmmm%@",equipmentName);
+//        
+//        
+//                                }
+//    for (NSString*aa in [myDictionary allKeys]) {
+//        
+//        //字符串转chart
+//        const char * a =[aa UTF8String];
+//        //unicode转中文
+//        NSString *equipmentName = [[NSString alloc]initWithCString:a encoding:NSUTF8StringEncoding];
+//        //城市名
+//        NSLog(@"kkkkmmnmmmmmkkkkk%@",equipmentName);
+//        
+//        
+//    }
+//    
+
+}
+
+
+//-(void)DataArray{
+//
+//
+//    NSUserDefaults*userDefaults=[[NSUserDefaults alloc]init];
+//    self.tempArray=   [userDefaults objectForKey:@"array"];
+//    for (NSString*aa in self.tempArray) {
+//       
+//        //字符串转chart
+//        const char * a =[aa UTF8String];
+//        //unicode转中文
+//        NSString *equipmentName = [[NSString alloc]initWithCString:a encoding:NSUTF8StringEncoding];
+//        
+//        NSLog(@"mmnmmmmm%@",equipmentName);
+//        [_dataSouceArray addObject:equipmentName];
+//      
+//    }
+//
+//    [self.rightIndexArray addObjectsFromArray:self.sectionTitlesArray];
+//    [self.rightIndexArray insertObject:UITableViewIndexSearch atIndex:0];
+//    [self.sectionTitlesArray insertObject:@"热门城市" atIndex:0];
+//    [self.sectionTitlesArray insertObject:@"默认城市" atIndex:0];
+//    
+//    //上个页面传来的默认设置城市 应该由首页定位传来
+//    self.currentCityArray = @[self.currentCityString];
+//    //self.currentCityArray=[self.tempArray firstObject];
+//
+//    self.hotCityArray = @[@"北京",@"上海",@"广州",@"深圳",@"武汉",@"天津",@"西安",@"南京",@"杭州",@"成都",@"长沙",@"苏州",@"大连",@"沈阳",@"青岛"];
+//    
+//    
+//    [self.dataArray insertObject:_dataSouceArray atIndex:0];
+//    NSLog(@"llkkkkkffiuvhv%@",self.dataSouceArray);
+//     [self.dataArray insertObject:self.hotCityArray atIndex:0];
+//    [self.dataArray insertObject:self.currentCityArray atIndex:0];
+//
+//  
+//
+//
+//
+//}
+//这段代码一般用于网络编程。从服务器获得的数据一般是Unicode格式字符串，要正确显示需要转换成中文编码。
+
+// NSString值为Unicode格式的字符串编码(如\u7E8C)转换成中文
+
+//unicode编码以\u开头
+
+
 - (NSString *)Charactor:(NSString *)aString getFirstCharactor:(BOOL)isGetFirst
 {
     //转成了可变字符串
@@ -458,6 +645,56 @@
     return  [numberPre evaluateWithObject:string];
 }
 
+-(NSString*)isEquestString:(NSString*)isqueString {
+   // NSString utf8Str = @"sfsfdaf";
+
+
+    //NSString*str=[NSString stringWithCString:[isqueString UTF8String] encoding:NSUnicodeStringEncoding];
+    //NSString *str = [isqueString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+       //NSString *str = [[@"\""stringByAppendingString:isqueString] stringByAppendingString:@"\""];
+    
+NSUserDefaults*userDefaultes=[NSUserDefaults standardUserDefaults];
+    NSDictionary *myDictionary = [userDefaultes dictionaryForKey:@"aaa"];
+    NSString*cityIdnumber= myDictionary[isqueString];
+//    
+//    NSLog(@"%@",myDictionary);
+//    NSLog(@"KKKKKKKKKKKKKKKKKKKKKK%@",cityIdnumber);
+    
+    if (myDictionary[isqueString] !=nil) {
+        
+          return cityIdnumber;
+    }else if ([myDictionary[isqueString]  isEqual: @" "]){
+        [self alreation];
+        
+        return nil;
+
+    
+    }else{
+        
+        [self alreation];
+        return nil;
+    }
+   
+    
+    
+
+    return nil;
+    
+}
+
+-(void)alreation{
+
+    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:nil];
+    UIAlertAction*al1=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+    [alre addAction:al];
+    [alre addAction:al1];
+    
+    
+    [self presentViewController:alre animated:YES completion:nil];
+
+
+}
 
 
 
