@@ -15,7 +15,7 @@
 #import "SelectBookViewController.h"
 #import "CollectActionViewController.h"
 #import "SettingViewController.h"
-#import "LoginViewController.h"
+#import "QQLoginViewController.h"
 
 @interface MenuViewController () {
     NSMutableArray *list;  //  菜单列表数据源
@@ -25,23 +25,57 @@
 
 @implementation MenuViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    list = [[NSMutableArray alloc]init];
+    if ([[UserInfoManager getUserID]isEqualToString:@" "]) {
+        [list removeAllObjects];
+        //例子
+        [list addObject:@"首页"];
+        // [list addObject:@"修改个人资料"];
+        // [list addObject:@"收藏活动"];
+        [list addObject:@"设置"];
+        [list addObject:@"登录"];
+        
+    }else{
+        [list removeAllObjects];
+        [list addObject:@"首页"];
+        [list addObject:@"修改个人资料"];
+        [list addObject:@"收藏活动"];
+        [list addObject:@"设置"];
+
+    
+}
+    [self.listTable reloadData];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        
 //    });
-    
     list = [[NSMutableArray alloc]init];
+    if ([[UserInfoManager getUserID]isEqualToString:@" "]) {
+        [list removeAllObjects];
     //例子
     [list addObject:@"首页"];
-    [list addObject:@"修改个人资料"];
-    [list addObject:@"选择我的兴趣爱好标签"];
-    [list addObject:@"查看我的预定"];
-    [list addObject:@"收藏活动"];
+   // [list addObject:@"修改个人资料"];
+   // [list addObject:@"收藏活动"];
    [list addObject:@"设置"];
        [list addObject:@"登录"];
-}
+
+    }else{
+        [list removeAllObjects];
+        [list addObject:@"首页"];
+        [list addObject:@"修改个人资料"];
+        [list addObject:@"收藏活动"];
+        [list addObject:@"设置"];
+        //[list addObject:@"登录"];
+        
+        
+    }
+    
+    }
 
 //改变行的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,52 +109,59 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     //  获取抽屉对象
     DrawerViewController *menuController = (DrawerViewController*)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerController;
-    
-    if(indexPath.row == 0) {  // 设置首页为抽屉的根视图
-//        NSLog(@"1111111");
-        
-        HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+    if ([[UserInfoManager getUserID]isEqualToString:@" "]) {
+        if(indexPath.row == 0) {  // 设置首页为抽屉的根视图
+            //        NSLog(@"1111111");
+            
+            HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+            
+            
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
+            
+            
+            [menuController setRootController:navController animated:YES];
+                }else if(indexPath.row == 1){ //设置 设置页面为抽屉的根视图
+            SettingViewController *controller = [[SettingViewController  alloc] init];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [menuController setRootController:navController animated:YES];
+        }else{
+            // 设置登陆界面为根视图
+            QQLoginViewController *controller = [[QQLoginViewController  alloc] init];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+           [menuController setRootController:navController animated:YES];
+            
+        }
 
-        
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
-
-        
-        [menuController setRootController:navController animated:YES];
-        
-    }
-    else if(indexPath.row == 1){
-      ModfileViewController *controller = [[ModfileViewController alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
-        
-    }
-    else if(indexPath.row == 2){  // 设置爱好
-
-      SelectHobbyViewController *controller = [[SelectHobbyViewController alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
-        
-    } else if(indexPath.row == 3){ //设置良品为抽屉的根视图
-       SelectBookViewController *controller = [[SelectBookViewController alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
-    }else if(indexPath.row == 4){ //设置良品为抽屉的根视图
-        CollectActionViewController *controller = [[CollectActionViewController alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
-    }else if(indexPath.row == 5){ //设置良品为抽屉的根视图
-       SettingViewController *controller = [[SettingViewController  alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
     }else{
         
-        LoginViewController *controller = [[LoginViewController  alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-        [menuController setRootController:navController animated:YES];
+        if(indexPath.row == 0) {  // 设置首页为抽屉的根视图
+            //        NSLog(@"1111111");
+            
+            HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+            
+            
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
+            
+            
+            [menuController setRootController:navController animated:YES];
+        }else if(indexPath.row == 1){
+            ModfileViewController *controller = [[ModfileViewController alloc] init];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [menuController setRootController:navController animated:YES];
+        } else if(indexPath.row == 2){ //设置收藏为抽屉的根视图
+            CollectActionViewController *controller = [[CollectActionViewController alloc] init];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [menuController setRootController:navController animated:YES];
+        }else if(indexPath.row == 3){ //设置 设置界面 为抽屉的根视图
+            SettingViewController *controller = [[SettingViewController alloc] init];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [menuController setRootController:navController animated:YES];
+
         
     }
+    
+    }
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

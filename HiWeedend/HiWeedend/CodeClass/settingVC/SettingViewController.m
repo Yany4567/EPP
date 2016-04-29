@@ -8,6 +8,10 @@
 
 #import "SettingViewController.h"
 #import "UMSocial.h"
+#import "QQLoginViewController.h"
+#import "AppDelegate.h"
+#import "DrawerViewController.h"
+#import "HomePageListViewController.h"
 @interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate,UITextFieldDelegate>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -23,6 +27,12 @@
 
 @implementation SettingViewController
 @synthesize chatConsoleView;
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+    
+    
+}
 
 
 
@@ -53,7 +63,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    if ([[UserInfoManager getUserID]isEqualToString:@" "]) {
+        return 5;
+    }else{
+        return 6;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,6 +77,37 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:@"Cell"];
     }
+    if ([[UserInfoManager getUserID]isEqualToString:@" "]) {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = @"分享给好友";
+            
+            cell.imageView.image = [UIImage imageNamed:@"2.png"];
+        }
+        
+        if (indexPath.row == 1) {
+            cell.imageView.image = [UIImage imageNamed:@"laji.png"];
+            cell.textLabel.text = @"清除缓存";
+            
+            
+        }
+        
+        if (indexPath.row == 2) {
+            cell.textLabel.text = @"给我们一个评价";
+            cell.imageView.image = [UIImage imageNamed:@"shoucang.png"];
+        }
+        
+        if (indexPath.row == 3) {
+            cell.textLabel.text = @"拨打客服电话          400-844-0900";
+            cell.imageView.image = [UIImage imageNamed:@"dianhua.png"];
+        }
+        
+        if (indexPath.row == 4) {
+            cell.textLabel.text = @"用户反馈";
+            cell.imageView.image = [UIImage imageNamed:@"888.png"];
+        }
+        return cell;
+
+    }else{
 
     if (indexPath.row == 0) {
         cell.textLabel.text = @"分享给好友";
@@ -96,8 +142,10 @@
         cell.imageView.image = [UIImage imageNamed:@"9999.png"];
         
     }
+        return cell;
+    }
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    
 }
 
 
@@ -180,6 +228,19 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/CN/lookup?id=917930451"]];
     }
     if (indexPath.row == 4) {
+
+    }
+    
+    if (indexPath.row == 5) {
+        [UserInfoManager cancelUserID];
+        DrawerViewController *menuController = (DrawerViewController*)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerController;
+        
+        HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+        
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
+        
+        [menuController setRootController:navController animated:YES];
 
     }
     

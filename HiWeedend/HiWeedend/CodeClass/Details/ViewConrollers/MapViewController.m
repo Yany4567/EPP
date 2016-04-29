@@ -69,27 +69,12 @@
     self.mapView.mapType = MKMapTypeStandard;
     // 设置追踪模式
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-  //  CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([self.locationDiction[@"lat"] integerValue], [self.locationDiction[@"lon"] integerValue]);
-   // [self geoAddress:self.address];
+  
     // 设置代理
     self.mapView.delegate = self;
-    // 设置显示用户的位置
-   // self.mapView.showsUserLocation = YES;
-    
-   // CLLocationCoordinate2D coor2d =
-    // 显示地图 加载父视图上CLLocationCoordinate2DMake([self.locationDiction[@"lat"] integerValue], [self.locationDiction[@"lon"] integerValue]);
     
     CLLocationCoordinate2D coord2d = CLLocationCoordinate2DMake([self.locationDiction[@"lat"] doubleValue],[self.locationDiction[@"lon"]doubleValue]);
     self.adderssCoord2d = coord2d;
-//    CLLocationCoordinate2D amapcoord = MACoordinateConvert(CLLocationCoordinate2DMake([self.locationDiction[@"lat"] doubleValue],[self.locationDiction[@"lon"]),MACoordinateTypeGPS);
-
-    NSLog(@"------%f",coord2d.latitude);
-    NSLog(@"++++++++%f",coord2d.longitude);
-   
-    
-    
-    
-    //        [self convertCoortoPointWithCoord2d:coord2d];
     [self addAnnotationWithCoor:coord2d];
      [self.mapView setCenterCoordinate:coord2d animated:YES];
      [self.mapView setRegion:MKCoordinateRegionMake(coord2d, MKCoordinateSpanMake(0.05, 0.05))];
@@ -111,22 +96,12 @@
     
     
 }
-//-(void)convertCoortoPointWithCoord2d:(CLLocationCoordinate2D)coord2d{
-//    CGPoint point = [self.mapView convertCoordinate:coord2d toPointToView:self.mapView];
-//    self.mapView.center = point;
-//     NSLog(@"x = %f, y = %f",point.x,point.y);
-//}
 
 -(void)addAnnotationWithCoor:(CLLocationCoordinate2D)coor{
     MyAnnotation *an1 = [[MyAnnotation alloc]init];
     an1.coordinate = coor;
     an1.title = self.poi;
     an1.subtitle = self.address;
- //   an1.icon = [UIImage imageNamed:@"图"];
-    
-    
-    
-
     // 添加大头针
     [self.mapView addAnnotation:an1];
     [self.mapView selectAnnotation:an1 animated:YES];
@@ -163,10 +138,6 @@
 }
 
 -(void)rightBtn:(id)sender{
-    NSLog(@"###############%f",self.coord2d.latitude);
-    
-  //  [self roadPlan];
-       // [self degeoCoordinate:self.coord2d];
     NSLog(@"%f",self.coord2d.latitude);
     NSLog(@"%f",self.coord2d.longitude);
     

@@ -28,4 +28,7 @@
 @property(nonatomic,strong)UILabel *lab2;
 @property(nonatomic,strong)UILabel *lab3;
 
+@property(nonatomic,strong)NSString *nameString;
+@property(nonatomic,strong)NSString *iconURL;
+
 @end

@@ -18,7 +18,7 @@
 #import "MapViewController.h"
 #import "CycleScrollView.h"
 
-
+#import "QQViewController.h"
 #import "UMSocial.h"
 
 
@@ -28,6 +28,7 @@
 @property(nonatomic,strong)NSMutableArray *contentArray;
 @property(nonatomic,strong)NSMutableArray *imageArray;
 @property(nonatomic,strong)NSDictionary *diction;
+@property(nonatomic,strong)NSString *titString;
 // 创建scroolview
 @property(nonatomic,strong)CycleScrollView *cyScroll;
 
@@ -143,6 +144,8 @@
     haView.frame = CGRectMake(0, 0, self.view.frame.size.width, 570);
     
     [footerView.shearButton addTarget:self action:@selector(shareFriendAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [footerView.interestButton addTarget:self action:@selector(collectAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [footerView.consultingButton addTarget:self action:@selector(commentAction:) forControlEvents:(UIControlEventTouchUpInside)];
     //haderView.backgroundColor = [UIColor redColor];
     self.listTable.tableHeaderView = haView;
     self.listTable.backgroundColor = [UIColor grayColor];
@@ -155,13 +158,59 @@
     [self.listTable registerNib:[UINib nibWithNibName:@"ImageCell" bundle:nil] forCellReuseIdentifier:@"ImageCell"];
     [self.listTable registerNib:[UINib nibWithNibName:@"ReservationCell" bundle:nil] forCellReuseIdentifier:@"ReservationCell"];
     [self requestData];
-    
+    UIBarButtonItem *shareBtn = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:(UIBarButtonItemStyleDone) target:self action:@selector(shareFriendAction:)];
+    UIBarButtonItem *collectBtn = [[UIBarButtonItem alloc]initWithTitle:@"收藏" style:(UIBarButtonItemStyleDone) target:self action:@selector(collectAction:)];
+    UIBarButtonItem *commentBtn = [[UIBarButtonItem alloc] initWithTitle:@"在线咨询" style:(UIBarButtonItemStyleDone) target:self action:@selector(commentAction:)];
+    DetailModelDB *db = [[DetailModelDB alloc]init];
+    NSArray *array = [db selectModelWithRserId:[UserInfoManager getUserID]];
+    NSLog(@"+++++++++++++++++%@",[UserInfoManager getUserID]);
+    for (HomePageListModel *model in array) {
+        if (model.leo_id == self.HpmeModel.leo_id) {
+            [collectBtn setTitle:@"取消收藏"];
+        }
+    }
+
+    self.navigationItem.rightBarButtonItems = @[commentBtn,collectBtn,shareBtn];
     
     // Do any additional setup after loading the view from its nib.
 }
 //分享button
 - (void)shareFriendAction:(UIButton *)sender{
     [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPK shareText:@"你要分享的文字"shareImage:[UIImage imageNamed:@"icon.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToSina,UMShareToDouban,UMShareToTencent,nil] delegate:self];
+    
+    
+}
+
+-(void)collectAction:(id)sender{
+    
+    UIBarButtonItem *item_collect = (UIBarButtonItem *)sender;
+    if (![[UserInfoManager getUserID]isEqualToString:@" "]) {
+        // 处理数据的插入删除
+        DetailModelDB *db = [[DetailModelDB alloc]init];
+        NSArray *array = [db selectModelWithRserId:[UserInfoManager getUserID]];
+        for (HomePageListModel *model in array) {
+            if ([model.title isEqualToString:self.HpmeModel.title]) {
+                // 删除
+                [db deleteModelWithTitle:self.HpmeModel.title];
+                // 把title改成收藏
+                self.titString = @"收藏";
+                [item_collect setTitle:self.titString];
+                
+                return;
+            }
+        }
+        [db createTabel];
+        [db insertModelWithModel:self.HpmeModel];
+        self.titString = @"取消收藏";
+        [item_collect setTitle:@"取消收藏"];
+
+    }else{
+        // 登陆
+        QQViewController *login = [[QQViewController alloc]init];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+
     
     
 }

@@ -43,10 +43,12 @@
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 100, 100)];
     
     self.imageV.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/5.5);
-    self.imageV.backgroundColor = [UIColor cyanColor];
+    //self.imageV.backgroundColor = [UIColor cyanColor];
     self.imageV.layer.cornerRadius = 50;
     UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeAction:)];
     self.imageV.userInteractionEnabled = YES;
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:[UserInfoManager getUserIcon]]];
+    NSLog(@"--------------------###############%@",[UserInfoManager getUserIcon]);
     
     [self.imageV addGestureRecognizer:ges];
     [self.view addSubview:self.imageV];
@@ -61,7 +63,7 @@
     self.nameTextF = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
     self.nameTextF.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/5.5 + 75);
     self.nameTextF.textAlignment = NSTextAlignmentCenter;
-    self.nameTextF.placeholder = @"请输入姓名";
+    self.nameTextF.placeholder = [UserInfoManager getUserName];
     self.nameTextF.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:self.nameTextF];
     

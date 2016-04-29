@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 #import "RegisViewController.h"
 #import "UMSocial.h"
+#import "DrawerViewController.h"
+#import "HomePageListViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -19,28 +22,32 @@
 
 @implementation LoginViewController
 
-- (IBAction)logviewAction:(id)sender {
-    // 使用Sina微博账号登录
+
+// QQ登陆
+- (IBAction)qqLogin:(id)sender {
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
     
-    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
-    
-    snsPlatform.loginClickHandler(self, [UMSocialControllerService defaultControllerService], YES, ^(UMSocialResponseEntity *response) {
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
         
-        NSLog(@"response is %@", response);
+        //          获取微博用户名、uid、token等
         
-        // 如果是授权到新浪微博，SSO之后如果想获取用户的昵称、头像等需要再获取一次账户信息
-        
-        [[UMSocialDataService defaultDataService]requestSocialAccountWithCompletion:^(UMSocialResponseEntity *response) {
+        if (response.responseCode == UMSResponseCodeSuccess) {
             
-            // 打印用户昵称
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToQQ];
             
-            NSLog(@"SinaWeibo's user name is %@", [[[response.data objectForKey:@"accounts"]objectForKey:UMShareToSina] objectForKey:@"username"]);
+            NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
             
-        }];
+            
+        }});
+    DrawerViewController *menuController = (DrawerViewController*)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerController;
         
-    });
-    
-    
+        HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+        
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
+        
+        [menuController setRootController:navController animated:YES];
+
 }
 
 

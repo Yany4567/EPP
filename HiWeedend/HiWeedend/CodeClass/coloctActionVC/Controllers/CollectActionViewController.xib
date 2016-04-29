@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectActionViewController">
             <connections>
+                <outlet property="collectAction" destination="ZCi-xq-WoN" id="htg-p9-9Sv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,19 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-xq-WoN">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ZCi-xq-WoN" secondAttribute="trailing" id="Tsc-J3-oQg"/>
+                <constraint firstAttribute="bottom" secondItem="ZCi-xq-WoN" secondAttribute="bottom" id="lp4-WW-iBT"/>
+                <constraint firstItem="ZCi-xq-WoN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pg7-zO-peq"/>
+                <constraint firstItem="ZCi-xq-WoN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tm6-uY-G6K"/>
+            </constraints>
         </view>
     </objects>
 </document>
