@@ -144,6 +144,7 @@
 		C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB96AB1CC77DF500090282 /* CoreLocation.framework */; };
 		C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */; };
 		C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C349051CC61BF500082B9D /* AppDelegate.m */; };
+		C2D0FB6A1CD348EF0065C157 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D0FB691CD348EF0065C157 /* 1.jpg */; };
 		C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EDBC1CCA4B3B00771D03 /* Info.plist */; };
 		C2D7EDE71CCA5FEC00771D03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EDE61CCA5FEC00771D03 /* SystemConfiguration.framework */; };
 		C2D7EE491CCA64B000771D03 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EE481CCA64B000771D03 /* libsqlite3.tbd */; };
@@ -401,6 +402,7 @@
 		C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWithGET.m; sourceTree = "<group>"; };
 		C2C349041CC61BF500082B9D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HiWeedend/Appdelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C2C349051CC61BF500082B9D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HiWeedend/Appdelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C2D0FB691CD348EF0065C157 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C2D7EDBC1CCA4B3B00771D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D7EDE61CCA5FEC00771D03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C2D7EE481CCA64B000771D03 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -929,6 +931,7 @@
 			isa = PBXGroup;
 			children = (
 				C29159461CC5DCD5009FB972 /* nav_menu_icon@2x.png */,
+				C2D0FB691CD348EF0065C157 /* 1.jpg */,
 				C29C61B21CC25D8900E44DDC /* HiWeedend */,
 				C29C61B11CC25D8900E44DDC /* Products */,
 				D37304D336AA05F3D7704BB0 /* Pods */,
@@ -1389,6 +1392,7 @@
 				C26AA3E51CCB9C6D00B323AE /* laji.png in Resources */,
 				C255B3D51CCEFF8A006ACD80 /* ShowKindViewController.xib in Resources */,
 				C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */,
+				C2D0FB6A1CD348EF0065C157 /* 1.jpg in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
 				C26AA3EB1CCBA02A00B323AE /* 9999.png in Resources */,
 				C26D5AD01CD1CCB9003BC9E7 /* QQViewController.xib in Resources */,
