@@ -41,7 +41,7 @@
         self.scrollView.pagingEnabled = YES;
         _scrollView.bounces = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.backgroundColor = [UIColor redColor];
+       // _scrollView.backgroundColor = [UIColor redColor];
         [self addSubview:self.scrollView];
         
         // 创建UIPageControl对象

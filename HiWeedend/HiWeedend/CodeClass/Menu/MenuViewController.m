@@ -39,7 +39,8 @@
     }else{
         [list removeAllObjects];
         [list addObject:@"首页"];
-        [list addObject:@"修改个人资料"];
+//        [list addObject:@"修改个人资料"];
+
         [list addObject:@"收藏活动"];
         [list addObject:@"设置"];
 
@@ -67,7 +68,7 @@
     }else{
         [list removeAllObjects];
         [list addObject:@"首页"];
-        [list addObject:@"修改个人资料"];
+//        [list addObject:@"修改个人资料"];
         [list addObject:@"收藏活动"];
         [list addObject:@"设置"];
         //[list addObject:@"登录"];
@@ -144,15 +145,15 @@
             
             
             [menuController setRootController:navController animated:YES];
-        }else if(indexPath.row == 1){
-            ModfileViewController *controller = [[ModfileViewController alloc] init];
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-            [menuController setRootController:navController animated:YES];
-        } else if(indexPath.row == 2){ //设置收藏为抽屉的根视图
+//        }else if(indexPath.row == 1){
+//            ModfileViewController *controller = [[ModfileViewController alloc] init];
+//            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+//            [menuController setRootController:navController animated:YES];
+        } else if(indexPath.row == 1){ //设置收藏为抽屉的根视图
             CollectActionViewController *controller = [[CollectActionViewController alloc] init];
             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
             [menuController setRootController:navController animated:YES];
-        }else if(indexPath.row == 3){ //设置 设置界面 为抽屉的根视图
+        }else if(indexPath.row == 2){ //设置 设置界面 为抽屉的根视图
             SettingViewController *controller = [[SettingViewController alloc] init];
             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
             [menuController setRootController:navController animated:YES];

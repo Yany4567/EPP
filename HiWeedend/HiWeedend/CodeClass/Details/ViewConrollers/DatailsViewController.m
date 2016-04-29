@@ -108,9 +108,7 @@
     [self.view addSubview:self.listTable];
     // 添加头视图
     HaderView *haView = [[[NSBundle mainBundle] loadNibNamed:@"HaderView" owner:nil options:nil] firstObject];
-    // 添加底视图
-    FooterView *footerView = [[[NSBundle mainBundle]loadNibNamed:@"FooterView" owner:nil options:nil]firstObject];
-    [self creatcreatCycleScrollView];
+        [self creatcreatCycleScrollView];
     // 添加轮播图
     self.cyScroll = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300) animationDuration:2];
     self.imageArray = self.HpmeModel.front_cover_image_list.mutableCopy;
@@ -128,9 +126,6 @@
         return viewsArray[pageindex];
     };
 
-    
-    footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 120);
-    self.listTable.tableFooterView = footerView;
     //[haView awakeFromNib];
     haView.titleLabel.text = self.HpmeModel.title;
     NSLog(@"%@",self.HpmeModel.title);
@@ -143,10 +138,7 @@
     NSLog(@"%@",self.HpmeModel.time_desc);
     haView.frame = CGRectMake(0, 0, self.view.frame.size.width, 570);
     
-    [footerView.shearButton addTarget:self action:@selector(shareFriendAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [footerView.interestButton addTarget:self action:@selector(collectAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [footerView.consultingButton addTarget:self action:@selector(commentAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    //haderView.backgroundColor = [UIColor redColor];
+   
     self.listTable.tableHeaderView = haView;
     self.listTable.backgroundColor = [UIColor grayColor];
     
@@ -160,7 +152,6 @@
     [self requestData];
     UIBarButtonItem *shareBtn = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:(UIBarButtonItemStyleDone) target:self action:@selector(shareFriendAction:)];
     UIBarButtonItem *collectBtn = [[UIBarButtonItem alloc]initWithTitle:@"收藏" style:(UIBarButtonItemStyleDone) target:self action:@selector(collectAction:)];
-    UIBarButtonItem *commentBtn = [[UIBarButtonItem alloc] initWithTitle:@"在线咨询" style:(UIBarButtonItemStyleDone) target:self action:@selector(commentAction:)];
     DetailModelDB *db = [[DetailModelDB alloc]init];
     NSArray *array = [db selectModelWithRserId:[UserInfoManager getUserID]];
     NSLog(@"+++++++++++++++++%@",[UserInfoManager getUserID]);
@@ -170,7 +161,7 @@
         }
     }
 
-    self.navigationItem.rightBarButtonItems = @[commentBtn,collectBtn,shareBtn];
+    self.navigationItem.rightBarButtonItems = @[collectBtn,shareBtn];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -220,7 +211,7 @@
     NSMutableArray *viewsArray = [NSMutableArray array];
     for (int i = 0; i < self.imageArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
-        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:nil];
+        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
         [viewsArray addObject:imageView];
     }
     
@@ -270,7 +261,7 @@
         return cell;
     }else{
         ImageCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
-        [cell1.contenImage sd_setImageWithURL:[NSURL URLWithString:model.content] placeholderImage:nil];
+        [cell1.contenImage sd_setImageWithURL:[NSURL URLWithString:model.content] placeholderImage:[UIImage imageNamed:@"34858PIC6sf.jpg"]];
         cell1.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell1;
     }

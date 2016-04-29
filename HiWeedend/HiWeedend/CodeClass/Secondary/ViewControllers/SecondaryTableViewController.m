@@ -92,7 +92,7 @@
     
     secondaryModel *model = self.dataArray[indexPath.row];
     
-    [cell.front_image_QD sd_setImageWithURL:[NSURL URLWithString:[model.front_cover_image_list firstObject]]];
+    [cell.front_image_QD sd_setImageWithURL:[NSURL URLWithString:[model.front_cover_image_list firstObject]]placeholderImage:[UIImage imageNamed:@"34858PIC6sf.jpg"]];
     
     cell.titleLab.text = model.title;
     cell.poiLab.text = model.poi;
