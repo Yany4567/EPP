@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SelectCityModel;
 @interface SelectTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *selectShoeImahe;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+-(void)setDataModel:(SelectCityModel*)model;
 
 @end

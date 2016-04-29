@@ -18,6 +18,8 @@
 #import "MapAndKindViewController.h"
 #import "DatailsViewController.h"
 #import "SecondaryTableViewController.h"
+#import "MJRefresh.h"
+
 
 @interface SelectCityViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -34,6 +36,8 @@
 @property(nonatomic,strong)NSMutableArray*dataArray;
 @property(nonatomic,strong)NSMutableArray*locationArray;
 @property(nonatomic,strong)CityViewController*city;
+
+@property(nonatomic,assign)int page;
 @end
 
 @implementation SelectCityViewController
@@ -50,10 +54,10 @@
     // Do any additional setup after loading the view from its nib.
  self.title =self.acceptCityName;
    // self.title=  [NSString stringWithFormat:@"%@", self.acceptCityID ];
-    
+    self.page=1;
     
     [self addView];
-    [self requestData];
+   
     
     if([self.searchID isEqualToString:@"1"]){
         
@@ -78,7 +82,7 @@
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
 
   }
-    
+    [self setupRefresh];
 
     
 }
@@ -111,6 +115,55 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+#pragma mark================ 加载刷新============
+- (void)setupRefresh //添加下载刷新
+{
+    self. selectCityShowTabelView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)];
+    [self. selectCityShowTabelView.header beginRefreshing];
+    
+    self. selectCityShowTabelView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
+    //隐藏上拉加载隐藏
+    //self.selectCityShowTabelView.footer.hidden = YES;
+}
+
+//下拉刷新
+- (void)loadNewShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //调用数据 刷新UI
+        
+        
+        [self requestData:self.page++];
+        [self.dataArray removeAllObjects];
+        //[self.dataArray addObjectsFromArray:shops];
+        
+        // 刷新数据
+        [self.selectCityShowTabelView  reloadData];
+        
+        //停止
+        [self. selectCityShowTabelView.header endRefreshing];
+    });
+}
+//上拉加载
+- (void)loadMoreShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+        
+        [self requestData:self.page++];
+        
+        // 刷新数据
+        [self. selectCityShowTabelView reloadData];
+        
+        //停止
+        [self. selectCityShowTabelView.footer endRefreshing];
+    });
+}
+
+
 
 //
 //-(void)BackAction1:(UIBarButtonItem*)sender{
@@ -163,7 +216,7 @@
 }
 
 
--(void)requestData {
+-(void)requestData:(int)page {
     self.intNumber=1;
     
  NSString*cityID= [NSString stringWithFormat:@"%@", self.acceptCityID ];
@@ -176,13 +229,16 @@
     NSString *lat = [NSString stringWithFormat:@"%f",laitude];
     NSString *lon = [NSString stringWithFormat:@"%f",longitude];
 
+    //page
+    NSString*pag=[NSString stringWithFormat:@"%d",page];
     
     //self.requestURLString 种类关键字
    // NSString*pageNumber=[NSString stringWithFormat:@"%d",page];
-    _DataBool=NO;
 
-       [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
-           
+
+//       [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+     [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"page":pag,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+    
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
 
         NSArray *array = contentDic[@"result"];
@@ -254,17 +310,10 @@
 
     SelectTableViewCell*cell=[self.selectCityShowTabelView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     SelectCityModel*model=self.dataArray[indexPath.row];
-    [cell.selectShoeImahe sd_setImageWithURL:[NSURL URLWithString:[model.front_cover_image_list firstObject]]];
-
-    cell.titleLabel .text =model.title;
-    cell.priceLabel.text =[NSString stringWithFormat:@"¥:%ld", model.price ];
-   
-    
-    NSString *string =  [model.poi stringByAppendingString:@" * "];
-    cell.timeLabel.text = [string stringByAppendingString:model.category];
-    
+    [cell setDataModel:model];
+        
     //navation title
-    self.title = model.category;
+  //  self.title = model.category;
     //    cell.showTime.text = model.time_desc;
 //    cell.showTime.text = [self mystring:@"  " stringByAppding:model.time_desc and:@"  "];
 //    NSLog(@"****%@,&&&%@",model.time_info,model.time_desc);
@@ -319,7 +368,7 @@
 
 -(void)alreation{
     
-    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息或信息加载完毕,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
    // UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:nil];
     UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         [self .navigationController popToViewController:self.navigationController.viewControllers[2] animated:YES];

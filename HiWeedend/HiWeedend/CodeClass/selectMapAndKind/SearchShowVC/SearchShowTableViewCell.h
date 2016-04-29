@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SearchShowModel;
 
 @interface SearchShowTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *showImage;
@@ -14,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 
+-(void)setData:(SearchShowModel*)model;
 @end

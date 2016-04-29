@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DatailsViewController.h"
 #import "SecondaryTableViewController.h"
-
+#import "MJRefresh.h"
 
 @interface SearchShowController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *SearchTabelView;
@@ -23,6 +23,9 @@
 
 //接收维度
 @property(nonatomic,assign)double latituCity;
+
+@property(nonatomic,assign)int page;
+
 @end
 
 @implementation SearchShowController
@@ -30,10 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.page=1;
+    
     _dataArray=[NSMutableArray array];
     self.title =self.acceptCityName;
     
     [self addView];
+    [self setupRefresh];
 }
 
 -(void)addView{
@@ -45,7 +51,7 @@
 
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(BackAction:)];
     
-     [self requestData];
+     [self requestData:self.page++];
 
 }
 -(void)BackAction:(UIBarButtonItem*)sender{
@@ -55,6 +61,55 @@
 
 
 }
+
+#pragma mark================ 加载刷新============
+- (void)setupRefresh //添加下载刷新
+{
+    self. SearchTabelView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)];
+    [self. SearchTabelView.header beginRefreshing];
+    
+    self.SearchTabelView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
+    //隐藏上拉加载隐藏
+    //self.selectCityShowTabelView.footer.hidden = YES;
+}
+
+//下拉刷新
+- (void)loadNewShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //调用数据 刷新UI
+        
+        
+        [self requestData:self.page++];
+        [self.dataArray removeAllObjects];
+        //[self.dataArray addObjectsFromArray:shops];
+        
+        // 刷新数据
+        [self.SearchTabelView  reloadData];
+        
+        //停止
+        [self. SearchTabelView.header endRefreshing];
+    });
+}
+//上拉加载
+- (void)loadMoreShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+        
+        [self requestData:self.page++];
+        
+        // 刷新数据
+        [self. SearchTabelView reloadData];
+        
+        //停止
+        [self. SearchTabelView.footer endRefreshing];
+    });
+}
+
+
 
 //根据地名获取经纬度
 -(void)getlOcation:(NSString*)string{
@@ -91,8 +146,8 @@
     
 }
 
--(void)requestData {
-    
+-(void)requestData:(int)page {
+    NSString*pag=[NSString stringWithFormat:@"%d",page];
     
     NSString*cityID= [NSString stringWithFormat:@"%@", self.acceptCityID ];
     
@@ -108,8 +163,9 @@
     //self.requestURLString 种类关键字
     // NSString*pageNumber=[NSString stringWithFormat:@"%d",page];
     
-    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
-        
+//    [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+      [NetWorkRequestManager requestWithType:GET urlString:[self String:HWHOMEPAGE byAppendingdic:@{@"city_id":cityID,@"lat":lat,@"lon":lon,@"page":pag,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e",@"v":@"3"}] parDic:nil finish:^(NSData *data) {
+    
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
         
         NSArray *array = contentDic[@"result"];
@@ -149,35 +205,18 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.row==0  ) {
-//        return 0;
-//    }else{
+
     return 350;
-   // }
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     SearchShowTableViewCell*cell=[_SearchTabelView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    if (indexPath.row==0  ) {
-//      
-//    }else{
+
     
-        SearchShowModel*model=self.dataArray[indexPath.row];
-        [cell.showImage sd_setImageWithURL:[NSURL URLWithString:[model.front_cover_image_list firstObject]]];
-        //
-        cell.title .text =model.title;
-        cell.price.text =[NSString stringWithFormat:@"¥:%ld", model.price ];
-        
-        
-        NSString *string =  [model.poi stringByAppendingString:@" * "];
-        cell.time.text = [string stringByAppendingString:model.category];
-        
-
-        
-   // }
-
-    //self.title = model.category;
+    SearchShowModel*model=self.dataArray[indexPath.row];
+    [cell setData:model];
 
 
 
@@ -189,16 +228,16 @@
     
   if (indexPath.row ==0 ) {
 //        
-        if ( [self.acceptCityName isEqual:@"北京"]||[self.acceptCityName isEqual:@"上海"]||[self.acceptCityName isEqual:@"广州"]||[self.acceptCityName isEqual:@"深圳"]||[self.acceptCityName isEqual:@"杭州"]||[self.acceptCityName isEqual:@"成都"]) {
-            
-            SecondaryTableViewController*sec=[[SecondaryTableViewController alloc]init];
-            //  UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:sec];
-            
-            [self.navigationController pushViewController:sec animated:YES];
-
-        
-        }else{
-    
+//        if ( [self.acceptCityName isEqual:@"北京"]||[self.acceptCityName isEqual:@"上海"]||[self.acceptCityName isEqual:@"广州"]||[self.acceptCityName isEqual:@"深圳"]||[self.acceptCityName isEqual:@"杭州"]||[self.acceptCityName isEqual:@"成都"]) {
+//            
+//            SecondaryTableViewController*sec=[[SecondaryTableViewController alloc]init];
+//            //  UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:sec];
+//            
+//            [self.navigationController pushViewController:sec animated:YES];
+//
+//        
+//        }else{
+//    
             DatailsViewController*detail=[[DatailsViewController alloc]init];
             SearchShowModel*model=self.dataArray[indexPath.row];
             detail.HpmeModel = (HomePageListModel*)model;
@@ -206,7 +245,7 @@
            // [self.navigationController pushViewController:detail animated:YES];
             [self.navigationController pushViewController:detail animated:YES];
 
-       }
+       //}
         
     }else{
 
@@ -240,7 +279,7 @@
 
 -(void)alreation{
     
-    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息或信息加载完毕,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
     // UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:nil];
     UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
 //        [self .navigationController popToViewController:self.navigationController.viewControllers[2] animated:YES];
