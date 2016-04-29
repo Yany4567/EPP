@@ -19,31 +19,173 @@
 #import "HomePageListViewController.h"
 #import "MenuViewController.h"
 #import "DrawerViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ShowKindViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ShowKindViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 @property(nonatomic,strong)UITableView*showTabelView;
 @property(nonatomic,strong)NSMutableArray*dataArray;
 @property(nonatomic,assign)int page;
+@property(nonatomic,strong)NSString*cityName;
+@property(nonatomic,strong)NSString*cityID;
 
+//3 创建位置管理者
+@property(nonatomic,strong)CLLocationManager * locationManger;
+//二 地理编码 反编码
 
+//编码管理者
+@property(nonatomic,strong)CLGeocoder *geo;
+
+//编码方法 (具体地理位置转换为具体位置,坐标)
+-(void)geoAddress:(NSString*)address;
+
+//反地理编码 (通过经纬度 转为具体的地理位置 街道,区,市 等)
+
+-(void)rdegeoCoordinate:(CLLocationCoordinate2D)cood;
 
 @end
 
 @implementation ShowKindViewController
+//懒加载
+-(CLLocationManager *)locationManger
+{
+    
+    if (!_locationManger) {
+        
+        
+        //4 初始化位置管理者
+        _locationManger =  [[CLLocationManager alloc]init];
+        
+        //5 设置代理
+        _locationManger .delegate = self;
+        
+        //6 访问授权
+        //ios8之前不需要访问授权
+        //ios8 以后需要用户授权使用定位服务
+        if([[UIDevice currentDevice].systemVersion floatValue] >=8.0){
+            
+            //设置支持前台定位服务使用
+            [_locationManger requestWhenInUseAuthorization];
+            
+            //支持前后台定位服务
+            [_locationManger requestAlwaysAuthorization];
+            
+            
+        }
+        //7 需要在plist文件做设置
+        
+        //    （1）NSLocationAlwaysUsageDescription搜索
+        //
+        //    （2）NSLocationWhenInUseUsageDescription
+        
+        //8 设置精度 精度越高越费电
+        
+        self.locationManger.desiredAccuracy = kCLLocationAccuracyBest;//最高精度
+        //9 设置最小更新距离
+        // _locationManger .distanceFilter = 10;
+        
+        
+        
+    }
+    
+    return  _locationManger;
+    
+    
+}
 
+-(CLGeocoder*)geo
+{
+    
+    if (!_geo) {
+        _geo =[[CLGeocoder alloc]init];
+    }
+    
+    return  _geo;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@%%%%%%%%%%%%%%",self.cityLocation);
       self.page=1;
-
   
-        self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"^" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
-    self.dataArray=[NSMutableArray array];
+        //self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"^" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
     
+         self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home2.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
+    
+    self.dataArray=[NSMutableArray array];
+    [self degeoCoordinate];//根据经纬度获取地址
     [self addView];
     [self setupRefresh]; //上拉加载下拉刷新
-
+    NSUserDefaults*user=[NSUserDefaults standardUserDefaults];
+   _cityName= [user objectForKey:@"cityName"];
+    NSLog(@"----------------------------------%@",_cityName);
+  _cityID=  [self isEquestString:_cityName];
+        NSLog(@"----------------------------------%@",_cityID);
+    
 }
+
+//反地理编码 (通过经纬度 转为具体的地理位置 街道,区,市 等)
+
+-(void)degeoCoordinate{
+    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString*la =[userDefaults objectForKey:@"homeLa"];
+    NSString*lon =[userDefaults objectForKey:@"homeLon"];
+    double la1=[la doubleValue];
+    double lon1=[lon doubleValue];
+    
+    //CLLocationCoordinate2D coor2D = CLLocationCoordinate2DMake(la1, lon);
+
+    
+    //CLLocationCoordinate2D 坐标点
+    
+    //使用坐标点生成位置对象
+    CLLocation *location =[[CLLocation alloc]initWithLatitude:la1 longitude:lon1];
+    
+    //反地理编码方法
+    [self.geo reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"反地理编码%@",error);
+            return ;
+        }
+        
+        //没有错误取出信息
+        CLPlacemark *piachMark =placemarks.firstObject;
+        
+        //使用枚举方法得到信息
+        [piachMark.addressDictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            
+            
+            if([obj isKindOfClass:[NSArray class]]){
+                
+                
+                NSArray *objArr= obj;
+                NSLog(@"keykkkkk = %@, obj = %@",key,objArr);
+                
+                
+            }else
+            {
+                
+                NSLog(@"key lllllll= %@, obj = %@",key,obj);
+            
+               // _cityName =[obj firstObject];
+                  _cityName =obj ;
+                NSUserDefaults*user=[NSUserDefaults standardUserDefaults];
+                [user setObject:obj forKey:@"cityName"];
+
+                
+                
+            }
+            
+        }];
+        
+        //打印经纬度
+        
+        NSLog(@"维度 =%f 经度 = %f",piachMark.location.coordinate.latitude ,piachMark.location.coordinate.longitude);
+        
+    }];
+    
+}
+
+
 -(void)rightAction:(UIBarButtonItem*)sender{
 //    
 //    [self dismissViewControllerAnimated:YES completion:nil];
@@ -111,7 +253,6 @@
 
 
 
-
 -(void)requestDataAndPageString:(int)page {
     
 //    
@@ -136,20 +277,24 @@
 //    }];
 //    
     //获取经纬度(nsstring)
-//    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
-//    double laitude =[userDefaults doubleForKey:@"let"];
-//    double longitude =[userDefaults doubleForKey:@"lon"];
-    //double转nsstring
-//    NSString *lat = [NSString stringWithFormat:@"%f",laitude];
-//    NSString *lon = [NSString stringWithFormat:@"%f",longitude];
-//    NSLog(@"%f88888888888",laitude);
+        NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+     NSString*la =[userDefaults objectForKey:@"homeLa"];
+       NSString*lon =[userDefaults objectForKey:@"homeLon"];
+     //NSString*cityID =[userDefaults objectForKey:@"homeCityID"];
     
+    
+    
+    //double转nsstring
+//        NSString *lat = [NSString stringWithFormat:@"%f",laitude];
+//        NSString *lon = [NSString stringWithFormat:@"%f",longitude];
     //self.requestURLString 种类关键字
     NSString*pageNumber=[NSString stringWithFormat:@"%d",page];
     
+    if (_cityID==nil) {
+        _cityID=@"53";
+    }
     
-    
-    [NetWorkRequestManager requestWithType:GET urlString:[self String:KindUrlHead byAppendingdic:@{@"category":self.requestURLString, @"city_id":@"53",@"lat":@"40.02932",@"lon":@"116.3376",@"page":pageNumber,@"session_id":@"000042c8e69cff884054bb4ccd6352be417c1d"}] parDic:nil finish:^(NSData *data) {
+    [NetWorkRequestManager requestWithType:GET urlString:[self String:KindUrlHead byAppendingdic:@{@"category":self.requestURLString, @"city_id":_cityID,@"lat":la,@"lon":lon,@"page":pageNumber,@"session_id":@"000042c8e69cff884054bb4ccd6352be417c1d"}] parDic:nil finish:^(NSData *data) {
         NSMutableDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
         //  NSLog(@"++++++888888888+++++++%@",contentDic);
         NSArray *array = contentDic[@"result"];
@@ -314,6 +459,56 @@
 
 }
 
+-(NSString*)isEquestString:(NSString*)isqueString {
+    // NSString utf8Str = @"sfsfdaf";
+    
+    
+    //NSString*str=[NSString stringWithCString:[isqueString UTF8String] encoding:NSUnicodeStringEncoding];
+    //NSString *str = [isqueString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //NSString *str = [[@"\""stringByAppendingString:isqueString] stringByAppendingString:@"\""];
+    
+    NSUserDefaults*userDefaultes=[NSUserDefaults standardUserDefaults];
+    NSDictionary *myDictionary = [userDefaultes dictionaryForKey:@"aaa"];
+    NSString*cityIdnumber= myDictionary[isqueString];
+    //
+    //    NSLog(@"%@",myDictionary);
+    //    NSLog(@"KKKKKKKKKKKKKKKKKKKKKK%@",cityIdnumber);
+    
+    if (myDictionary[isqueString] !=nil) {
+        
+        return cityIdnumber;
+    }else if ([myDictionary[isqueString]  isEqual: @" "]){
+        [self alreation];
+        
+        return nil;
+        
+        
+    }else{
+        
+        [self alreation];
+        return nil;
+    }
+    
+    
+    
+    
+    return nil;
+    
+}
+
+-(void)alreation{
+    
+    UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你定位城市信息,请选择其他城市,默认为北京市" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:nil];
+    UIAlertAction*al1=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+    [alre addAction:al];
+    [alre addAction:al1];
+    
+    
+    [self presentViewController:alre animated:YES completion:nil];
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

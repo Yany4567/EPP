@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *mapAndsearch;
 @property (weak, nonatomic) IBOutlet UILabel *mapLabel;
 
+
+
+
 @end

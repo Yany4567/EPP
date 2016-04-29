@@ -78,9 +78,30 @@
     NSLog(@"+++++精度%@",self.latitude);
     NSLog(@"++++++纬度%@",self.longitude);
     
+//    NSString*la=[NSString stringWithFormat:@"%@",self.latitude];
+//      NSString*lo=[NSString stringWithFormat:@"%@",self.longitude];
+    
+  //  NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+//    [userDefaults setDouble:self.latitude forKey:@"latitude"];
+//    [userDefaults setDouble:lo forKey:@"longitude"];
+//    [userDefaults setObject:self.latitude forKey:@"latitude"];
+//    [userDefaults setObject:self.longitude forKey:@"longitude"];
+//    
+    
+
+    
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
        session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
     [session GET:[self String:HWPOSITIONING byAppendingdic:@{@"lat":self.latitude,@"lon":self.longitude,@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"}] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       //city_id
+        NSString*str=[responseObject[@"result"] objectForKey:@"cityId"];
+        NSLog(@"city_id +++++++++++++KKKKKKKKKKKKKKKK%@",str);
+        
+        //存储ciyiID
+        NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+           [userDefaults setObject:str forKey:@"homeCityID"];
+        
+        
         NSLog(@"_________---------%@",responseObject);
         LocationModel *model = [[LocationModel alloc]init];
         [model setValuesForKeysWithDictionary:responseObject[@"result"]];
@@ -220,7 +241,7 @@
     // 定义cell的重用标识符
     [self.listTable registerNib:[UINib nibWithNibName:@"GroupListCell" bundle:nil] forCellReuseIdentifier:@"GroupListCell"];
     [self.listTable registerNib:[UINib nibWithNibName:@"HomePageCell" bundle:nil] forCellReuseIdentifier:@"HomePageCell"];
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"666.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed: @"search8.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarbuttonAction:)];
     [self.navigationItem setTitle:@"嗨!周末"];
     
 
@@ -280,6 +301,14 @@
     self.latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
     [_locationManager stopUpdatingLocation];
     
+    /**
+     *  存储经纬度
+     */
+    
+    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.latitude forKey:@"homeLa"];
+    [userDefaults setObject:self.longitude forKey:@"homeLon"];
+    
     NSLog(@"精度%f",location.coordinate.longitude);
     NSLog(@"纬度%f",location.coordinate.latitude);
     MapViewController *mapVC = [[MapViewController alloc]init];
@@ -332,6 +361,16 @@
     MapAndKindViewController*map=[[MapAndKindViewController alloc]init];
    //UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:map];
    // UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:map];
+    //获取经纬度(nsstring)
+//    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+//    double laitude =[userDefaults doubleForKey:@"latitude"];
+//    double longitude =[userDefaults doubleForKey:@"longitude"];
+//    //double转nsstring
+//    NSString *lat = [NSString stringWithFormat:@"%f",laitude];
+//    NSString *lon = [NSString stringWithFormat:@"%f",longitude];ey:@"latitude"];
+//    [userDefaults setObject:self.longitude forKey:@"longitude"];
+//    
+    
     
  [self.navigationController pushViewController:map animated:YES];
     //[self.navigationController presentViewController:naV animated:YES completion:nil];

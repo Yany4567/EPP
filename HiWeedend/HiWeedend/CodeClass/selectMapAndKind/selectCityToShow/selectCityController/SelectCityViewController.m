@@ -221,6 +221,9 @@
     
  NSString*cityID= [NSString stringWithFormat:@"%@", self.acceptCityID ];
     
+
+
+
     //获取经纬度(nsstring)
     NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
     double laitude =[userDefaults doubleForKey:@"let"];

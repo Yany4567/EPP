@@ -104,7 +104,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@",self.HpmeModel);
-    self.listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, -64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+64)];
+    
+    self.navigationController.navigationBar.translucent =NO;
+    
+    
+    self.listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self.view addSubview:self.listTable];
     // 添加头视图
     HaderView *haView = [[[NSBundle mainBundle] loadNibNamed:@"HaderView" owner:nil options:nil] firstObject];
@@ -113,10 +117,17 @@
     self.cyScroll = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300) animationDuration:2];
     self.imageArray = self.HpmeModel.front_cover_image_list.mutableCopy;
     NSMutableArray *viewsArray = [NSMutableArray array];
+    
+    if (self.imageArray.count ==1) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
+        [imageView sd_setImageWithURL:[self.imageArray firstObject] placeholderImage:nil];
+        [self.cyScroll addSubview:  imageView];
+    }else{
     for (int i = 0; i < self.imageArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
         [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:nil];
         [viewsArray addObject:imageView];
+    }
     }
     
     [haView addSubview:self.cyScroll];
@@ -209,10 +220,23 @@
     self.cyScroll = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300) animationDuration:2];
     self.imageArray = self.HpmeModel.front_cover_image_list.mutableCopy;
     NSMutableArray *viewsArray = [NSMutableArray array];
+    
+    if (self.imageArray.count<1) {
+        
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
+        [imageView sd_setImageWithURL:[self.imageArray firstObject] placeholderImage:[UIImage imageNamed:@"8.png"]];
+        
+        
+        [viewsArray addObject:imageView];
+        
+    }else{
     for (int i = 0; i < self.imageArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.cyScroll.frame];
-        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+        [imageView sd_setImageWithURL:self.imageArray[i] placeholderImage:[UIImage imageNamed:@"8.png"]];
+        
+        
         [viewsArray addObject:imageView];
+    }
     }
     
     HaderView *haView = [[[NSBundle mainBundle]loadNibNamed:@"HaderView" owner:nil options:nil]firstObject];
