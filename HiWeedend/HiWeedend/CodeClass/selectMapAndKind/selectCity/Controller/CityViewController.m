@@ -679,6 +679,8 @@ NSUserDefaults*userDefaultes=[NSUserDefaults standardUserDefaults];
 }
 
 -(void)alreation{
+    
+
 
     UIAlertController*alre=[UIAlertController alertControllerWithTitle:@"提示" message:@"暂无你所选城市信息,请选择其他城市" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回" style:(UIAlertActionStyleDefault) handler:nil];

@@ -115,11 +115,14 @@
     [self degeoCoordinate];//根据经纬度获取地址
     [self addView];
     [self setupRefresh]; //上拉加载下拉刷新
+    
+
     NSUserDefaults*user=[NSUserDefaults standardUserDefaults];
    _cityName= [user objectForKey:@"cityName"];
     NSLog(@"----------------------------------%@",_cityName);
   _cityID=  [self isEquestString:_cityName];
         NSLog(@"----------------------------------%@",_cityID);
+ 
     
 }
 
