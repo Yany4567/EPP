@@ -9,11 +9,7 @@
 #import "ShowKindViewController.h"
 #import "UIActivityIndicatorView+AFNetworking.h"
 #import "ShowCityModel.h"
-#import "UNicoderTurnNsstring.h"
-
 #import "SelectCityViewController.h"
-#import "DictiontyTurnUNIcode.h"
-
 #define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface CityViewController ()<CustomTopViewDelegate,CustomSearchViewDelegate,ResultCityControllerDelegate>

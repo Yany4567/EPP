@@ -152,7 +152,6 @@
 		C2D7EE511CCA6BE300771D03 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EE501CCA6BE300771D03 /* CoreTelephony.framework */; };
 		C2DC05311CCE338400D097F0 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */; };
 		C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC05301CCE338400D097F0 /* CycleScrollView.m */; };
-		C2E208031CD1DD110065C956 /* DictiontyTurnUNIcode.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E208021CD1DD110065C956 /* DictiontyTurnUNIcode.m */; };
 		C2E208081CD237B10065C956 /* SearchShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E208061CD237B10065C956 /* SearchShowController.m */; };
 		C2E208091CD237B10065C956 /* SearchShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E208071CD237B10065C956 /* SearchShowController.xib */; };
 		C2E2080D1CD237C80065C956 /* SearchShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E2080B1CD237C80065C956 /* SearchShowTableViewCell.m */; };
@@ -165,7 +164,6 @@
 		C2E72E241CD0AD6C005F8A4D /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E72E201CD0AD6C005F8A4D /* SelectTableViewCell.xib */; };
 		C2E72E2A1CD0AD77005F8A4D /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */; };
 		C2E72E2B1CD0AD77005F8A4D /* ShowToLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */; };
-		C2E72E311CD0F740005F8A4D /* UNicoderTurnNsstring.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E301CD0F740005F8A4D /* UNicoderTurnNsstring.m */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
 		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
@@ -416,8 +414,6 @@
 		C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		C2DC052F1CCE338400D097F0 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		C2DC05301CCE338400D097F0 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
-		C2E208011CD1DD110065C956 /* DictiontyTurnUNIcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictiontyTurnUNIcode.h; sourceTree = "<group>"; };
-		C2E208021CD1DD110065C956 /* DictiontyTurnUNIcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictiontyTurnUNIcode.m; sourceTree = "<group>"; };
 		C2E208051CD237B10065C956 /* SearchShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchShowController.h; path = ../SearchShowVC/SearchShowController.h; sourceTree = "<group>"; };
 		C2E208061CD237B10065C956 /* SearchShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchShowController.m; path = ../SearchShowVC/SearchShowController.m; sourceTree = "<group>"; };
 		C2E208071CD237B10065C956 /* SearchShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchShowController.xib; path = ../SearchShowVC/SearchShowController.xib; sourceTree = "<group>"; };
@@ -437,8 +433,6 @@
 		C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityModel.m; sourceTree = "<group>"; };
 		C2E72E281CD0AD77005F8A4D /* ShowToLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowToLocationModel.h; sourceTree = "<group>"; };
 		C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowToLocationModel.m; sourceTree = "<group>"; };
-		C2E72E2F1CD0F740005F8A4D /* UNicoderTurnNsstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNicoderTurnNsstring.h; sourceTree = "<group>"; };
-		C2E72E301CD0F740005F8A4D /* UNicoderTurnNsstring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNicoderTurnNsstring.m; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
 		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
@@ -1537,11 +1531,9 @@
 				C255B54A1CCF0904006ACD80 /* UIScrollView+MJExtension.m in Sources */,
 				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
-				C2E208031CD1DD110065C956 /* DictiontyTurnUNIcode.m in Sources */,
 				C255B4CF1CCF0880006ACD80 /* HaderView.m in Sources */,
 				C255B5501CCF0904006ACD80 /* TAPageControl.m in Sources */,
 				C2E2080D1CD237C80065C956 /* SearchShowTableViewCell.m in Sources */,
-				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
 				C26D5ACF1CD1CCB9003BC9E7 /* QQViewController.m in Sources */,
 				C255B3D41CCEFF8A006ACD80 /* ShowKindViewController.m in Sources */,
@@ -1559,7 +1551,6 @@
 				C255B5371CCF0904006ACD80 /* NSObject+MJCoding.m in Sources */,
 				C26D5AE01CD22333003BC9E7 /* DataHandle.m in Sources */,
 				C255B5471CCF0904006ACD80 /* MJRefreshStateHeader.m in Sources */,
-				C2E72E311CD0F740005F8A4D /* UNicoderTurnNsstring.m in Sources */,
 				C255B5381CCF0904006ACD80 /* NSObject+MJKeyValue.m in Sources */,
 				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
 				C255B54E1CCF0904006ACD80 /* TAAnimatedDotView.m in Sources */,
