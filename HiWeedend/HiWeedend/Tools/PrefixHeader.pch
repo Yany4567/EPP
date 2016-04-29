@@ -17,6 +17,11 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 
 #import "ChatConsoleView.h"
+#import "UserInfoManager.h"
+
+#import "DetailModelDB.h"
+#import "DatabaseManager.h"
+#import "EfficientDefine.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

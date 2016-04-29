@@ -54,7 +54,6 @@
 		C255B4D01CCF0880006ACD80 /* HaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C255B4BC1CCF0880006ACD80 /* HaderView.xib */; };
 		C255B4D11CCF0880006ACD80 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C255B4BE1CCF0880006ACD80 /* ImageCell.m */; };
 		C255B4D21CCF0880006ACD80 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C255B4BF1CCF0880006ACD80 /* ImageCell.xib */; };
-		C255B52E1CCF0904006ACD80 /* DataBaseManger.m in Sources */ = {isa = PBXBuildFile; fileRef = C255B4D61CCF0904006ACD80 /* DataBaseManger.m */; };
 		C255B52F1CCF0904006ACD80 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C255B4DA1CCF0904006ACD80 /* MJArgument.m */; };
 		C255B5301CCF0904006ACD80 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C255B4DC1CCF0904006ACD80 /* MJConst.m */; };
 		C255B5311CCF0904006ACD80 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = C255B4DF1CCF0904006ACD80 /* MJFoundation.m */; };
@@ -123,6 +122,28 @@
 		C2769F7B1CD34E280063BA5A /* wenyi6.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769F7A1CD34E280063BA5A /* wenyi6.png */; };
 		C2769F7D1CD34E920063BA5A /* Music8.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769F7C1CD34E920063BA5A /* Music8.png */; };
 		C2769F7F1CD34EDB0063BA5A /* Ball6.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769F7E1CD34EDB0063BA5A /* Ball6.png */; };
+		C2769F861CD351210063BA5A /* QQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2769F801CD351210063BA5A /* QQViewController.xib */; };
+		C2769F871CD351210063BA5A /* QQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F811CD351210063BA5A /* QQViewController.m */; };
+		C2769F881CD351210063BA5A /* QQLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2769F831CD351210063BA5A /* QQLoginViewController.xib */; };
+		C2769F891CD351210063BA5A /* QQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F841CD351210063BA5A /* QQLoginViewController.m */; };
+		C2769F9A1CD351C20063BA5A /* CollectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F911CD351C20063BA5A /* CollectTableViewCell.m */; };
+		C2769F9B1CD351C20063BA5A /* CollectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2769F921CD351C20063BA5A /* CollectTableViewCell.xib */; };
+		C2769F9C1CD351C20063BA5A /* collecetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F951CD351C20063BA5A /* collecetModel.m */; };
+		C2769F9D1CD351C20063BA5A /* CollectActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F981CD351C20063BA5A /* CollectActionViewController.m */; };
+		C2769F9E1CD351C20063BA5A /* CollectActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2769F991CD351C20063BA5A /* CollectActionViewController.xib */; };
+		C2769FA81CD352100063BA5A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769F9F1CD352100063BA5A /* UserInfoManager.m */; };
+		C2769FA91CD352100063BA5A /* DetailModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769FA21CD352100063BA5A /* DetailModelDB.m */; };
+		C2769FAA1CD352100063BA5A /* DataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769FA41CD352100063BA5A /* DataHandle.m */; };
+		C2769FAB1CD352100063BA5A /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2769FA61CD352100063BA5A /* DatabaseManager.m */; };
+		C2769FAD1CD355970063BA5A /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FAC1CD355970063BA5A /* home.png */; };
+		C2769FAF1CD357030063BA5A /* xin.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FAE1CD357030063BA5A /* xin.png */; };
+		C2769FB11CD357140063BA5A /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FB01CD357140063BA5A /* search.png */; };
+		C2769FB31CD3579B0063BA5A /* search2.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FB21CD3579B0063BA5A /* search2.png */; };
+		C2769FB51CD3586C0063BA5A /* search3.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FB41CD3586C0063BA5A /* search3.png */; };
+		C2769FB71CD35A360063BA5A /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FB61CD35A360063BA5A /* home2.png */; };
+		C2769FB91CD35AED0063BA5A /* search6.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FB81CD35AED0063BA5A /* search6.png */; };
+		C2769FBB1CD35B270063BA5A /* search8.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FBA1CD35B270063BA5A /* search8.png */; };
+		C2769FBD1CD35C2C0063BA5A /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = C2769FBC1CD35C2C0063BA5A /* 8.png */; };
 		C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7B1CC4D7BB00A0CD0B /* heart.png */; };
 		C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */; };
 		C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */ = {isa = PBXBuildFile; fileRef = C286BB7F1CC4DCDE00A0CD0B /* 666.png */; };
@@ -134,8 +155,6 @@
 		C29159571CC5E201009FB972 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159551CC5E201009FB972 /* SettingViewController.xib */; };
 		C291595B1CC5E229009FB972 /* SelectBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159591CC5E229009FB972 /* SelectBookViewController.m */; };
 		C291595C1CC5E229009FB972 /* SelectBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595A1CC5E229009FB972 /* SelectBookViewController.xib */; };
-		C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C291595E1CC5E255009FB972 /* CollectActionViewController.m */; };
-		C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C291595F1CC5E255009FB972 /* CollectActionViewController.xib */; };
 		C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159631CC5E269009FB972 /* SelectHobbyViewController.m */; };
 		C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */; };
 		C291596A1CC5E28A009FB972 /* ModfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29159681CC5E28A009FB972 /* ModfileViewController.m */; };
@@ -162,7 +181,6 @@
 		C2D7EE511CCA6BE300771D03 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EE501CCA6BE300771D03 /* CoreTelephony.framework */; };
 		C2DC05311CCE338400D097F0 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */; };
 		C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DC05301CCE338400D097F0 /* CycleScrollView.m */; };
-		C2E208031CD1DD110065C956 /* DictiontyTurnUNIcode.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E208021CD1DD110065C956 /* DictiontyTurnUNIcode.m */; };
 		C2E208081CD237B10065C956 /* SearchShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E208061CD237B10065C956 /* SearchShowController.m */; };
 		C2E208091CD237B10065C956 /* SearchShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E208071CD237B10065C956 /* SearchShowController.xib */; };
 		C2E2080D1CD237C80065C956 /* SearchShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E2080B1CD237C80065C956 /* SearchShowTableViewCell.m */; };
@@ -175,7 +193,6 @@
 		C2E72E241CD0AD6C005F8A4D /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E72E201CD0AD6C005F8A4D /* SelectTableViewCell.xib */; };
 		C2E72E2A1CD0AD77005F8A4D /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */; };
 		C2E72E2B1CD0AD77005F8A4D /* ShowToLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */; };
-		C2E72E311CD0F740005F8A4D /* UNicoderTurnNsstring.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E301CD0F740005F8A4D /* UNicoderTurnNsstring.m */; };
 		C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */; };
 		C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCA1CC72867006DA1CC /* SecondaryTableViewController.m */; };
 		C2EA1CCE1CC72896006DA1CC /* secondaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA1CCD1CC72896006DA1CC /* secondaryTableViewCell.m */; };
@@ -364,6 +381,38 @@
 		C2769F7A1CD34E280063BA5A /* wenyi6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wenyi6.png; sourceTree = "<group>"; };
 		C2769F7C1CD34E920063BA5A /* Music8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Music8.png; sourceTree = "<group>"; };
 		C2769F7E1CD34EDB0063BA5A /* Ball6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball6.png; sourceTree = "<group>"; };
+		C2769F801CD351210063BA5A /* QQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQViewController.xib; sourceTree = "<group>"; };
+		C2769F811CD351210063BA5A /* QQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQViewController.m; sourceTree = "<group>"; };
+		C2769F821CD351210063BA5A /* QQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQViewController.h; sourceTree = "<group>"; };
+		C2769F831CD351210063BA5A /* QQLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQLoginViewController.xib; sourceTree = "<group>"; };
+		C2769F841CD351210063BA5A /* QQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQLoginViewController.m; sourceTree = "<group>"; };
+		C2769F851CD351210063BA5A /* QQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQLoginViewController.h; sourceTree = "<group>"; };
+		C2769F901CD351C20063BA5A /* CollectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectTableViewCell.h; sourceTree = "<group>"; };
+		C2769F911CD351C20063BA5A /* CollectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectTableViewCell.m; sourceTree = "<group>"; };
+		C2769F921CD351C20063BA5A /* CollectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectTableViewCell.xib; sourceTree = "<group>"; };
+		C2769F941CD351C20063BA5A /* collecetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collecetModel.h; sourceTree = "<group>"; };
+		C2769F951CD351C20063BA5A /* collecetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collecetModel.m; sourceTree = "<group>"; };
+		C2769F971CD351C20063BA5A /* CollectActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectActionViewController.h; sourceTree = "<group>"; };
+		C2769F981CD351C20063BA5A /* CollectActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectActionViewController.m; sourceTree = "<group>"; };
+		C2769F991CD351C20063BA5A /* CollectActionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectActionViewController.xib; sourceTree = "<group>"; };
+		C2769F9F1CD352100063BA5A /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
+		C2769FA01CD352100063BA5A /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
+		C2769FA11CD352100063BA5A /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
+		C2769FA21CD352100063BA5A /* DetailModelDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModelDB.m; sourceTree = "<group>"; };
+		C2769FA31CD352100063BA5A /* DetailModelDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModelDB.h; sourceTree = "<group>"; };
+		C2769FA41CD352100063BA5A /* DataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandle.m; sourceTree = "<group>"; };
+		C2769FA51CD352100063BA5A /* DataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandle.h; sourceTree = "<group>"; };
+		C2769FA61CD352100063BA5A /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		C2769FA71CD352100063BA5A /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		C2769FAC1CD355970063BA5A /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		C2769FAE1CD357030063BA5A /* xin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xin.png; sourceTree = "<group>"; };
+		C2769FB01CD357140063BA5A /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		C2769FB21CD3579B0063BA5A /* search2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search2.png; sourceTree = "<group>"; };
+		C2769FB41CD3586C0063BA5A /* search3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search3.png; sourceTree = "<group>"; };
+		C2769FB61CD35A360063BA5A /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
+		C2769FB81CD35AED0063BA5A /* search6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search6.png; sourceTree = "<group>"; };
+		C2769FBA1CD35B270063BA5A /* search8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search8.png; sourceTree = "<group>"; };
+		C2769FBC1CD35C2C0063BA5A /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		C286BB7B1CC4D7BB00A0CD0B /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C286BB7C1CC4D7BB00A0CD0B /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
 		C286BB7F1CC4DCDE00A0CD0B /* 666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 666.png; sourceTree = "<group>"; };
@@ -379,9 +428,6 @@
 		C29159581CC5E229009FB972 /* SelectBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBookViewController.h; sourceTree = "<group>"; };
 		C29159591CC5E229009FB972 /* SelectBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBookViewController.m; sourceTree = "<group>"; };
 		C291595A1CC5E229009FB972 /* SelectBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBookViewController.xib; sourceTree = "<group>"; };
-		C291595D1CC5E255009FB972 /* CollectActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectActionViewController.h; sourceTree = "<group>"; };
-		C291595E1CC5E255009FB972 /* CollectActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectActionViewController.m; sourceTree = "<group>"; };
-		C291595F1CC5E255009FB972 /* CollectActionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectActionViewController.xib; sourceTree = "<group>"; };
 		C29159621CC5E269009FB972 /* SelectHobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectHobbyViewController.h; sourceTree = "<group>"; };
 		C29159631CC5E269009FB972 /* SelectHobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectHobbyViewController.m; sourceTree = "<group>"; };
 		C29159641CC5E269009FB972 /* SelectHobbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectHobbyViewController.xib; sourceTree = "<group>"; };
@@ -580,6 +626,12 @@
 		C255B3E11CCF00AB006ACD80 /* LogainAndRegist */ = {
 			isa = PBXGroup;
 			children = (
+				C2769F801CD351210063BA5A /* QQViewController.xib */,
+				C2769F811CD351210063BA5A /* QQViewController.m */,
+				C2769F821CD351210063BA5A /* QQViewController.h */,
+				C2769F831CD351210063BA5A /* QQLoginViewController.xib */,
+				C2769F841CD351210063BA5A /* QQLoginViewController.m */,
+				C2769F851CD351210063BA5A /* QQLoginViewController.h */,
 				C255B3E21CCF00AB006ACD80 /* LoginViewController.h */,
 				C255B3E31CCF00AB006ACD80 /* LoginViewController.m */,
 				C255B3E41CCF00AB006ACD80 /* LoginViewController.xib */,
@@ -826,6 +878,14 @@
 		C2769F371CD33DCE0063BA5A /* Reasourse */ = {
 			isa = PBXGroup;
 			children = (
+				C2769FB81CD35AED0063BA5A /* search6.png */,
+				C2769FBA1CD35B270063BA5A /* search8.png */,
+				C2769FB41CD3586C0063BA5A /* search3.png */,
+				C2769FB21CD3579B0063BA5A /* search2.png */,
+				C2769FB01CD357140063BA5A /* search.png */,
+				C2769FAE1CD357030063BA5A /* xin.png */,
+				C2769FB61CD35A360063BA5A /* home2.png */,
+				C2769FAC1CD355970063BA5A /* home.png */,
 				C2769F3D1CD33DDF0063BA5A /* Kind */,
 				C2769F381CD33DCE0063BA5A /* 222.png */,
 				C2769F391CD33DCE0063BA5A /* 屏幕快照 2016-04-24 下午3.15.31.png */,
@@ -858,6 +918,35 @@
 			path = Kind;
 			sourceTree = "<group>";
 		};
+		C2769F8F1CD351C10063BA5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2769F901CD351C20063BA5A /* CollectTableViewCell.h */,
+				C2769F911CD351C20063BA5A /* CollectTableViewCell.m */,
+				C2769F921CD351C20063BA5A /* CollectTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2769F931CD351C20063BA5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2769F941CD351C20063BA5A /* collecetModel.h */,
+				C2769F951CD351C20063BA5A /* collecetModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2769F961CD351C20063BA5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2769F971CD351C20063BA5A /* CollectActionViewController.h */,
+				C2769F981CD351C20063BA5A /* CollectActionViewController.m */,
+				C2769F991CD351C20063BA5A /* CollectActionViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C291593D1CC5D87D009FB972 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,9 +970,9 @@
 		C291594F1CC5E1AA009FB972 /* coloctActionVC */ = {
 			isa = PBXGroup;
 			children = (
-				C291595D1CC5E255009FB972 /* CollectActionViewController.h */,
-				C291595E1CC5E255009FB972 /* CollectActionViewController.m */,
-				C291595F1CC5E255009FB972 /* CollectActionViewController.xib */,
+				C2769F8F1CD351C10063BA5A /* Views */,
+				C2769F931CD351C20063BA5A /* Model */,
+				C2769F961CD351C20063BA5A /* Controllers */,
 			);
 			path = coloctActionVC;
 			sourceTree = "<group>";
@@ -1145,6 +1234,7 @@
 		C29C61DA1CC25FD400E44DDC /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C2769FBC1CD35C2C0063BA5A /* 8.png */,
 				C2E72DF91CD0ABB3005F8A4D /* Icon.png */,
 				C291596C1CC5F082009FB972 /* 1.png */,
 				C286BB7F1CC4DCDE00A0CD0B /* 666.png */,
@@ -1157,6 +1247,15 @@
 		C29C61DB1CC25FD400E44DDC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C2769F9F1CD352100063BA5A /* UserInfoManager.m */,
+				C2769FA01CD352100063BA5A /* UserInfoManager.h */,
+				C2769FA11CD352100063BA5A /* EfficientDefine.h */,
+				C2769FA21CD352100063BA5A /* DetailModelDB.m */,
+				C2769FA31CD352100063BA5A /* DetailModelDB.h */,
+				C2769FA41CD352100063BA5A /* DataHandle.m */,
+				C2769FA51CD352100063BA5A /* DataHandle.h */,
+				C2769FA61CD352100063BA5A /* DatabaseManager.m */,
+				C2769FA71CD352100063BA5A /* DatabaseManager.h */,
 				C203A9021CC3A4B8002C2FB9 /* NetWorkRequestManager.h */,
 				C203A9031CC3A4B8002C2FB9 /* NetWorkRequestManager.m */,
 				C29C61E41CC268F900E44DDC /* PrefixHeader.pch */,
@@ -1367,6 +1466,7 @@
 				C2769F501CD33DDF0063BA5A /* tea.png in Resources */,
 				C2769F3B1CD33DCE0063BA5A /* 222.png in Resources */,
 				C286BB7D1CC4D7BB00A0CD0B /* heart.png in Resources */,
+				C2769FB51CD3586C0063BA5A /* search3.png in Resources */,
 				C29159661CC5E269009FB972 /* SelectHobbyViewController.xib in Resources */,
 				C2E2080E1CD237C80065C956 /* SearchShowTableViewCell.xib in Resources */,
 				C255B5481CCF0904006ACD80 /* MJRefresh.bundle in Resources */,
@@ -1377,6 +1477,8 @@
 				C255B4C21CCF0880006ACD80 /* .gitignore in Resources */,
 				C2769F5F1CD3441F0063BA5A /* DIY3.png in Resources */,
 				C26AA3E91CCBA02300B323AE /* 888.png in Resources */,
+				C2769FB11CD357140063BA5A /* search.png in Resources */,
+				C2769FB31CD3579B0063BA5A /* search2.png in Resources */,
 				C2769F3C1CD33DCE0063BA5A /* 屏幕快照 2016-04-24 下午3.15.31.png in Resources */,
 				C255B4D21CCF0880006ACD80 /* ImageCell.xib in Resources */,
 				C2769F5D1CD3431B0063BA5A /* all1.png in Resources */,
@@ -1389,13 +1491,14 @@
 				C26AA3E31CCB9BE400B323AE /* shoucang.png in Resources */,
 				C291596B1CC5E28A009FB972 /* ModfileViewController.xib in Resources */,
 				C2769F481CD33DDF0063BA5A /* all.png in Resources */,
-				C29159611CC5E255009FB972 /* CollectActionViewController.xib in Resources */,
 				C2769F4F1CD33DDF0063BA5A /* salong.png in Resources */,
 				C26AA3E71CCB9CD200B323AE /* dianhua.png in Resources */,
 				C2769F791CD34DCD0063BA5A /* wenyi3.png in Resources */,
 				C255B4CE1CCF0880006ACD80 /* FooterView.xib in Resources */,
+				C2769F881CD351210063BA5A /* QQLoginViewController.xib in Resources */,
 				C2769F731CD34A130063BA5A /* H2.png in Resources */,
 				C2769F591CD342320063BA5A /* DIY2.png in Resources */,
+				C2769FB71CD35A360063BA5A /* home2.png in Resources */,
 				C291596D1CC5F082009FB972 /* 1.png in Resources */,
 				C255B4CA1CCF0880006ACD80 /* .gitignore in Resources */,
 				C2769F711CD3492E0063BA5A /* DIY66.png in Resources */,
@@ -1406,17 +1509,23 @@
 				C29C61E31CC2681E00E44DDC /* BaseViewController.xib in Resources */,
 				C29C61C01CC25D8900E44DDC /* Assets.xcassets in Resources */,
 				C2769F7B1CD34E280063BA5A /* wenyi6.png in Resources */,
+				C2769F861CD351210063BA5A /* QQViewController.xib in Resources */,
 				C255B4CC1CCF0880006ACD80 /* ContentCell.xib in Resources */,
 				C2769F751CD34CC30063BA5A /* all6.png in Resources */,
 				C29159471CC5DCD5009FB972 /* nav_menu_icon@2x.png in Resources */,
+				C2769FAD1CD355970063BA5A /* home.png in Resources */,
 				C2769F491CD33DDF0063BA5A /* DTY.png in Resources */,
 				C26AA2C91CCB99BA00B323AE /* 2.png in Resources */,
 				C2E72E221CD0AD6C005F8A4D /* SelectCityViewController.xib in Resources */,
 				C203A8FA1CC37A72002C2FB9 /* HomePageCell.xib in Resources */,
 				C29159451CC5D8BF009FB972 /* MenuViewController.xib in Resources */,
+				C2769F9E1CD351C20063BA5A /* CollectActionViewController.xib in Resources */,
 				C255B4D01CCF0880006ACD80 /* HaderView.xib in Resources */,
 				C255B3B41CCEFF8A006ACD80 /* cancelBtn@2x.png in Resources */,
+				C2769FB91CD35AED0063BA5A /* search6.png in Resources */,
+				C2769F9B1CD351C20063BA5A /* CollectTableViewCell.xib in Resources */,
 				C26AA3E51CCB9C6D00B323AE /* laji.png in Resources */,
+				C2769FAF1CD357030063BA5A /* xin.png in Resources */,
 				C255B3D51CCEFF8A006ACD80 /* ShowKindViewController.xib in Resources */,
 				C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
@@ -1426,9 +1535,11 @@
 				C255B4C91CCF0880006ACD80 /* MapViewController.xib in Resources */,
 				C2E72E241CD0AD6C005F8A4D /* SelectTableViewCell.xib in Resources */,
 				C255B4C71CCF0880006ACD80 /* DatailsViewController.xib in Resources */,
+				C2769FBB1CD35B270063BA5A /* search8.png in Resources */,
 				C286BB801CC4DCDE00A0CD0B /* 666.png in Resources */,
 				C203A8F81CC37A69002C2FB9 /* GroupListCell.xib in Resources */,
 				C2769F6D1CD347A90063BA5A /* Party1.png in Resources */,
+				C2769FBD1CD35C2C0063BA5A /* 8.png in Resources */,
 				C2769F7F1CD34EDB0063BA5A /* Ball6.png in Resources */,
 				C255B3B31CCEFF8A006ACD80 /* MapAndKindViewController.xib in Resources */,
 			);
@@ -1497,6 +1608,7 @@
 				C255B3D01CCEFF8A006ACD80 /* CityTableViewCell.m in Sources */,
 				C255B5321CCF0904006ACD80 /* MJIvar.m in Sources */,
 				C255B5511CCF0904006ACD80 /* SDCollectionViewCell.m in Sources */,
+				C2769FA91CD352100063BA5A /* DetailModelDB.m in Sources */,
 				C2E208111CD237EF0065C956 /* SearchShowModel.m in Sources */,
 				C255B5531CCF0904006ACD80 /* UIView+SDExtension.m in Sources */,
 				C255B53B1CCF0904006ACD80 /* MJRefreshBackFooter.m in Sources */,
@@ -1504,6 +1616,7 @@
 				C255B54D1CCF0904006ACD80 /* TAAbstractDotView.m in Sources */,
 				C255B5301CCF0904006ACD80 /* MJConst.m in Sources */,
 				C255B52F1CCF0904006ACD80 /* MJArgument.m in Sources */,
+				C2769F891CD351210063BA5A /* QQLoginViewController.m in Sources */,
 				C255B4C31CCF0880006ACD80 /* DescriptionModel.m in Sources */,
 				C2E72E2B1CD0AD77005F8A4D /* ShowToLocationModel.m in Sources */,
 				C255B4D11CCF0880006ACD80 /* ImageCell.m in Sources */,
@@ -1515,9 +1628,9 @@
 				C255B5431CCF0904006ACD80 /* MJRefreshBackNormalFooter.m in Sources */,
 				C2EA1CCB1CC72867006DA1CC /* SecondaryTableViewController.m in Sources */,
 				C255B5461CCF0904006ACD80 /* MJRefreshNormalHeader.m in Sources */,
+				C2769F9D1CD351C20063BA5A /* CollectActionViewController.m in Sources */,
 				C255B5411CCF0904006ACD80 /* MJRefreshAutoStateFooter.m in Sources */,
 				C255B3D61CCEFF8A006ACD80 /* ShowKindTableViewCell.m in Sources */,
-				C255B52E1CCF0904006ACD80 /* DataBaseManger.m in Sources */,
 				C255B53F1CCF0904006ACD80 /* MJRefreshAutoGifFooter.m in Sources */,
 				C255B5391CCF0904006ACD80 /* NSObject+MJMember.m in Sources */,
 				C255B4CD1CCF0880006ACD80 /* FooterView.m in Sources */,
@@ -1534,6 +1647,7 @@
 				C2E72E2A1CD0AD77005F8A4D /* SelectCityModel.m in Sources */,
 				C2DC05321CCE338400D097F0 /* CycleScrollView.m in Sources */,
 				C29C61EC1CC27A6F00E44DDC /* GroupListModel.m in Sources */,
+				C2769FA81CD352100063BA5A /* UserInfoManager.m in Sources */,
 				C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */,
 				C255B53E1CCF0904006ACD80 /* MJRefreshHeader.m in Sources */,
 				C26893F11CD06A940077F071 /* MyAnnotation.m in Sources */,
@@ -1559,14 +1673,14 @@
 				C255B54A1CCF0904006ACD80 /* UIScrollView+MJExtension.m in Sources */,
 				C2EA1CC81CC7263B006DA1CC /* secondaryModel.m in Sources */,
 				C203A9001CC3A181002C2FB9 /* HomePageListViewController.m in Sources */,
-				C2E208031CD1DD110065C956 /* DictiontyTurnUNIcode.m in Sources */,
 				C255B4CF1CCF0880006ACD80 /* HaderView.m in Sources */,
 				C255B5501CCF0904006ACD80 /* TAPageControl.m in Sources */,
 				C2E2080D1CD237C80065C956 /* SearchShowTableViewCell.m in Sources */,
-				C29159601CC5E255009FB972 /* CollectActionViewController.m in Sources */,
 				C29C61DE1CC267F900E44DDC /* BaseModel.m in Sources */,
+				C2769F9C1CD351C20063BA5A /* collecetModel.m in Sources */,
 				C255B3D41CCEFF8A006ACD80 /* ShowKindViewController.m in Sources */,
 				C29159431CC5D8BF009FB972 /* DrawerViewController.m in Sources */,
+				C2769F871CD351210063BA5A /* QQViewController.m in Sources */,
 				C255B3B81CCEFF8A006ACD80 /* CityModel.m in Sources */,
 				C255B3B61CCEFF8A006ACD80 /* CityViewController.m in Sources */,
 				C255B3D31CCEFF8A006ACD80 /* ShowModel.m in Sources */,
@@ -1578,11 +1692,13 @@
 				C2BB96AA1CC77C4E00090282 /* LocationModel.m in Sources */,
 				C255B5371CCF0904006ACD80 /* NSObject+MJCoding.m in Sources */,
 				C255B5471CCF0904006ACD80 /* MJRefreshStateHeader.m in Sources */,
-				C2E72E311CD0F740005F8A4D /* UNicoderTurnNsstring.m in Sources */,
+				C2769F9A1CD351C20063BA5A /* CollectTableViewCell.m in Sources */,
+				C2769FAA1CD352100063BA5A /* DataHandle.m in Sources */,
 				C255B5381CCF0904006ACD80 /* NSObject+MJKeyValue.m in Sources */,
 				C203A8F31CC37A45002C2FB9 /* GroupListCell.m in Sources */,
 				C255B54E1CCF0904006ACD80 /* TAAnimatedDotView.m in Sources */,
 				C29C61B51CC25D8900E44DDC /* main.m in Sources */,
+				C2769FAB1CD352100063BA5A /* DatabaseManager.m in Sources */,
 				C29159651CC5E269009FB972 /* SelectHobbyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

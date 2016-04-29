@@ -21,6 +21,8 @@
 #import "SecondaryTableViewController.h"
 #import "DatailsViewController.h"
 #import "MapViewController.h"
+#import "QQViewController.h"
+#import "DataHandle.h"
 
 // 添加上拉加载 下拉刷新
 #import "MJRefresh.h"
@@ -41,6 +43,7 @@
 @property(nonatomic,strong)NSString *latitude;
 @property(nonatomic,assign)int page;
 @property(nonatomic,assign)NSInteger cityId;
+@property(nonatomic,strong)NSString *stting;
 
 
 @end
@@ -193,6 +196,11 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.listTable reloadData];
+    
+    
+}
 
 - (void)viewDidLoad {
     self.cityId = 0;
@@ -352,12 +360,14 @@
         cell2.timeIfoLabel.text = [self mystring:@"  " stringByAppding:model.time_info and:@"  "];
         cell2.timeIfoLabel.layer.borderWidth = 0.5;
         cell2.timeIfoLabel.layer.cornerRadius = 5;
-        NSString *string1 = [self mystring:@"  " stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.collected_num] and:@"人收藏  "];
+       // NSString *string1 = [self mystring:@"  " stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.collected_num] and:@"人收藏  "];
         // 给button添加图片
         [cell2.collectedButton setImage:[UIImage imageNamed:@"666.png"] forState:(UIControlStateNormal)];
         // 给button的图片添加位置
         cell2.collectedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
-        [cell2.collectedButton setTitle:string1 forState:(UIControlStateNormal)];
+        self.stting =@"  收藏  ";
+        [cell2.collectedButton setTitle:self.stting forState:(UIControlStateNormal)];
+        [cell2.collectedButton setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
         cell2.collectedButton.layer.borderWidth = 0.5;
         cell2.collectedButton.layer.cornerRadius = 5;
         self.listTable.delaysContentTouches  = NO;
@@ -368,7 +378,25 @@
         cell2.priceLabel.layer.borderWidth = 0.5;
         cell2.priceLabel.layer.cornerRadius = 5;
         // 记录button的状态
-        cell2.isTap = YES;
+        // 判断当前的页面数据是否被收藏过
+        DetailModelDB *db = [[DetailModelDB alloc]init];
+        NSArray *array = [db selectModelWithRserId:[UserInfoManager getUserID]];
+        NSLog(@"+++++++++++++++++%@",[UserInfoManager getUserID]);
+        for (HomePageListModel *model1 in array) {
+            if (model1.leo_id == model.leo_id) {
+                
+                [cell2.collectedButton setImage:[UIImage imageNamed:@"666.png"] forState:(UIControlStateNormal)];
+                // 给button的图片添加位置
+                cell2.collectedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+                self.stting = @"  取消收藏  ";
+                [cell2.collectedButton setTitle:self.stting forState:(UIControlStateNormal)];
+                [cell2.collectedButton setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+            }
+        }
+       // [[NSNotificationCenter defaultCenter]postNotificationName:@"titSting" object:self.stting];
+        
+
+        
         
         return cell2;
     }else{
@@ -386,30 +414,42 @@
 -(void)cokkectedAction:(UIButton *)sender{
     HomePageListModel *model =  self.pageListArray[sender.tag];
     HomePageCell *cell =  (HomePageCell *)[[sender superview] superview];
-    // 判断cell上button的状态
-    if (cell.isTap) {
-        [NetWorkRequestManager requestWithType:POST urlString:HWCOLLECTIONBUTTON parDic:@{@"colects":[NSString stringWithFormat:@"%ld", (long)model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"%@",dic[@"result"]);
-        } error:^(NSError *error) {
-            NSLog(@"失败");
-        }];
-        NSString *string1 = [self mystring:@"  " stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.collected_num + 1] and:@"人收藏  "];
-        [sender setTitle:string1 forState:(UIControlStateNormal)];
-        cell.isTap = NO;
-    }else{
-        [NetWorkRequestManager requestWithType:POST urlString:HWCANCEL parDic:@{@"colects":[NSString stringWithFormat:@"%ld", (long)model.leo_id],@"session_id":@"0000423d7ecd75af788f3763566472ed27f06e"} finish:^(NSData *data) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"%@",dic[@"result"]);
-            
-        } error:^(NSError *error) {
-            NSLog(@"失败");
-            
-        }];
-        NSString *string1 = [self mystring:@"  " stringByAppding:[NSString stringWithFormat:@"%ld",(long)model.collected_num ] and:@"人收藏  "];
-        [sender setTitle:string1 forState:(UIControlStateNormal)];
-        cell.isTap = YES;
+       if (![[UserInfoManager getUserID]isEqualToString:@" "]) {
+        // 处理数据的插入删除
+        DetailModelDB *db = [[DetailModelDB alloc]init];
+        NSArray *array = [db selectModelWithRserId:[UserInfoManager getUserID]];
+        for (HomePageListModel *model1 in array) {
+            if ([model1.title isEqualToString:model.title]) {
+                // 删除
+                [db deleteModelWithTitle:model.title];
+                // 把title改成收藏
+               
+                [cell.collectedButton setImage:[UIImage imageNamed:@"666.png"] forState:(UIControlStateNormal)];
+                // 给button的图片添加位置
+                cell.collectedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+                [cell.collectedButton setTitle:@"  收藏  " forState:(UIControlStateNormal)];
+                [cell.collectedButton setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+
+                return;
+            }
         }
+        [db createTabel];
+        [db insertModelWithModel:model];
+    
+    [cell.collectedButton setImage:[UIImage imageNamed:@"666.png"] forState:(UIControlStateNormal)];
+    // 给button的图片添加位置
+    cell.collectedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+    [cell.collectedButton setTitle:@"  取消收藏  " forState:(UIControlStateNormal)];
+    [cell.collectedButton setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+        
+    }else{
+        // 登陆
+        QQViewController *login = [[QQViewController alloc]init];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+    
+    
     }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
