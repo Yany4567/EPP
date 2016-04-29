@@ -12,4 +12,5 @@
 
 @property(nonatomic,strong)NSString*requestURLString;
 @property(nonatomic,strong)NSString*cityLocation;
+@property(nonatomic,strong)NSString*cutterString;
 @end

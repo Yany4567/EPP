@@ -15,6 +15,10 @@
 #import "DatailsViewController.h"
 #import "MJExtension.h" //xml plist json数据解析封装
 #import "MJRefresh.h" //加载刷新
+#import "AppDelegate.h"
+#import "HomePageListViewController.h"
+#import "MenuViewController.h"
+#import "DrawerViewController.h"
 
 @interface ShowKindViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView*showTabelView;
@@ -33,12 +37,30 @@
       self.page=1;
 
   
-//        self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"<" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
+        self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"^" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
     self.dataArray=[NSMutableArray array];
     
     [self addView];
     [self setupRefresh]; //上拉加载下拉刷新
 
+}
+-(void)rightAction:(UIBarButtonItem*)sender{
+//    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //  获取抽屉对象
+    DrawerViewController *menuController = (DrawerViewController*)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerController;
+    
+    
+        HomePageListViewController*homeVc=[[HomePageListViewController alloc]init];
+        
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVc];
+        
+        
+        [ menuController setRootController:navController animated:YES];
+
+    
 }
 #pragma mark================ 加载刷新============
 - (void)setupRefresh //添加下载刷新
@@ -114,13 +136,13 @@
 //    }];
 //    
     //获取经纬度(nsstring)
-    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
-    double laitude =[userDefaults doubleForKey:@"let"];
-    double longitude =[userDefaults doubleForKey:@"lon"];
+//    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+//    double laitude =[userDefaults doubleForKey:@"let"];
+//    double longitude =[userDefaults doubleForKey:@"lon"];
     //double转nsstring
-    NSString *lat = [NSString stringWithFormat:@"%f",laitude];
-    NSString *lon = [NSString stringWithFormat:@"%f",longitude];
-    NSLog(@"%f88888888888",laitude);
+//    NSString *lat = [NSString stringWithFormat:@"%f",laitude];
+//    NSString *lon = [NSString stringWithFormat:@"%f",longitude];
+//    NSLog(@"%f88888888888",laitude);
     
     //self.requestURLString 种类关键字
     NSString*pageNumber=[NSString stringWithFormat:@"%d",page];
@@ -167,11 +189,7 @@
     
 }
 
-//-(void)rightAction:(UIBarButtonItem*)sender{
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    
-//}
+
 
 
 -(void)addView{

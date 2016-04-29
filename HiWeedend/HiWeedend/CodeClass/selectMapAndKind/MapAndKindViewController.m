@@ -12,6 +12,8 @@
 #import "HobbyCollectionViewCell.h" //items
 #import "ShowKindViewController.h"  //itms跳转页面
 #import "HomePageListViewController.h"
+#import "ResultCityController.h"
+#import "CityViewController.h"
 
 
 
@@ -105,6 +107,9 @@
     UIAlertAction*al=[UIAlertAction actionWithTitle:@"返回 " style:(UIAlertActionStyleDefault) handler:nil ];
     [alert addAction:al];
     [self presentViewController:alert animated:YES completion:nil];
+    
+//    CityViewController*re=[[CityViewController alloc]init];
+//    [self presentViewController:re animated:YES completion:nil];
  
 }
 
@@ -231,7 +236,45 @@
 
     cell.kindLabel.text =_collectAllay[indexPath.row];
 
-      
+
+    
+    if (indexPath.row ==0) {
+        cell.kindImage .image=[UIImage imageNamed:@"all6.png"];
+    }else if(indexPath.row ==1){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"outdoor.png"];
+        
+        
+    }else if(indexPath.row ==2){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"music8.png"];
+        
+    }else if(indexPath.row ==3){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"DIY66.png"];
+        
+    }else if(indexPath.row ==4){
+        
+        cell.kindImage .image=[UIImage imageNamed:@"party1.png"];;
+        
+    }else if(indexPath.row ==5){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"Ball6.png"];
+        
+    }else if(indexPath.row ==6){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"wenyi6.png"];
+        
+    }else if(indexPath.row ==7){
+        
+     cell.kindImage .image=[UIImage imageNamed:@"salong.png"];
+        
+    }else if(indexPath.row ==8){
+        
+ cell.kindImage .image=[UIImage imageNamed:@"tea.png"];
+        
+    }
+
 
     return  cell;
 
@@ -290,8 +333,8 @@
     ShowKindViewController*show=[[ShowKindViewController alloc]init];
   //UINavigationController*naV=[[UINavigationController alloc]initWithRootViewController:show];
     show.requestURLString = string;
-
-        
+//    show.cutterString= 
+    
    [self.navigationController pushViewController:show  animated:YES];
   //[self presentViewController:naV animated:YES completion:nil];
     
