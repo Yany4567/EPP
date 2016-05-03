@@ -149,8 +149,9 @@
     NSLog(@"----------------------------------%@",_cityName);
     _cityID=  [self isEquestString:_cityName];
     NSLog(@"----------------------------------%@",_cityID);
+    [self.cityButton setTitle:self.cityName forState:(UIControlStateNormal)];
 
-    
+  
 }
 
 -(void)addView{
@@ -335,18 +336,26 @@
     
     CityViewController *controller = [[CityViewController alloc] init];
     
-   controller.currentCityString = @"北京";
+//   controller.currentCityString = self.cityName;
+//    if (_cityID==nil) {
+//                     [self.cityButton setTitle:self.cityName forState:(UIControlStateNormal)];
+//        
+//                }else{
+//                [self.cityButton setTitle:self.cityLabel.text forState:(UIControlStateNormal)];
+//                
+//                }
+
     controller.selectString = ^(NSString *string){
         self.cityLabel.text = string;
         self.cityNameString = string;
         
-        if (_cityID==nil) {
-             [self.cityButton setTitle:self.cityName forState:(UIControlStateNormal)];
-            
-        }else{
-        [self.cityButton setTitle:self.cityLabel.text forState:(UIControlStateNormal)];
-        
-        }
+//        if (_cityID==nil) {
+//             [self.cityButton setTitle:self.cityName forState:(UIControlStateNormal)];
+//            
+//        }else{
+    [self.cityButton setTitle:self.cityLabel.text forState:(UIControlStateNormal)];
+//        
+//        }
            [self getlOcation:self.cityNameString];
 
         
@@ -515,7 +524,7 @@
         
     }else{
         
-        [self alreation];
+      //  [self alreation];
         return nil;
     }
     
