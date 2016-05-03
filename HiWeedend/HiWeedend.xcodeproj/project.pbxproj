@@ -277,8 +277,6 @@
 		C255B4BD1CCF0880006ACD80 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		C255B4BE1CCF0880006ACD80 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		C255B4BF1CCF0880006ACD80 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
-		C255B4D51CCF0904006ACD80 /* DataBaseManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManger.h; sourceTree = "<group>"; };
-		C255B4D61CCF0904006ACD80 /* DataBaseManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManger.m; sourceTree = "<group>"; };
 		C255B4D91CCF0904006ACD80 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		C255B4DA1CCF0904006ACD80 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		C255B4DB1CCF0904006ACD80 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -480,8 +478,6 @@
 		C2DC052E1CCE338400D097F0 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		C2DC052F1CCE338400D097F0 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		C2DC05301CCE338400D097F0 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
-		C2E208011CD1DD110065C956 /* DictiontyTurnUNIcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictiontyTurnUNIcode.h; sourceTree = "<group>"; };
-		C2E208021CD1DD110065C956 /* DictiontyTurnUNIcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictiontyTurnUNIcode.m; sourceTree = "<group>"; };
 		C2E208051CD237B10065C956 /* SearchShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchShowController.h; path = ../SearchShowVC/SearchShowController.h; sourceTree = "<group>"; };
 		C2E208061CD237B10065C956 /* SearchShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchShowController.m; path = ../SearchShowVC/SearchShowController.m; sourceTree = "<group>"; };
 		C2E208071CD237B10065C956 /* SearchShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchShowController.xib; path = ../SearchShowVC/SearchShowController.xib; sourceTree = "<group>"; };
@@ -501,8 +497,6 @@
 		C2E72E271CD0AD77005F8A4D /* SelectCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityModel.m; sourceTree = "<group>"; };
 		C2E72E281CD0AD77005F8A4D /* ShowToLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowToLocationModel.h; sourceTree = "<group>"; };
 		C2E72E291CD0AD77005F8A4D /* ShowToLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowToLocationModel.m; sourceTree = "<group>"; };
-		C2E72E2F1CD0F740005F8A4D /* UNicoderTurnNsstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNicoderTurnNsstring.h; sourceTree = "<group>"; };
-		C2E72E301CD0F740005F8A4D /* UNicoderTurnNsstring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNicoderTurnNsstring.m; sourceTree = "<group>"; };
 		C2EA1CC61CC7263B006DA1CC /* secondaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondaryModel.h; sourceTree = "<group>"; };
 		C2EA1CC71CC7263B006DA1CC /* secondaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondaryModel.m; sourceTree = "<group>"; };
 		C2EA1CC91CC72867006DA1CC /* SecondaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryTableViewController.h; sourceTree = "<group>"; };
@@ -700,12 +694,6 @@
 		C255B4D41CCF0904006ACD80 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C2E72E2F1CD0F740005F8A4D /* UNicoderTurnNsstring.h */,
-				C2E72E301CD0F740005F8A4D /* UNicoderTurnNsstring.m */,
-				C255B4D51CCF0904006ACD80 /* DataBaseManger.h */,
-				C255B4D61CCF0904006ACD80 /* DataBaseManger.m */,
-				C2E208011CD1DD110065C956 /* DictiontyTurnUNIcode.h */,
-				C2E208021CD1DD110065C956 /* DictiontyTurnUNIcode.m */,
 				C255B4D71CCF0904006ACD80 /* Lib */,
 				C255B51E1CCF0904006ACD80 /* SDCycleScrollView */,
 			);
