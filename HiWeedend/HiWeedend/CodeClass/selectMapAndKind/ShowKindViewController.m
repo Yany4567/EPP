@@ -481,14 +481,14 @@
         
         return cityIdnumber;
     }else if ([myDictionary[isqueString]  isEqual: @" "]){
-        [self alreation];
+//        [self alreation];
         
         return nil;
         
         
     }else{
         
-        [self alreation];
+//        [self alreation];
         return nil;
     }
     

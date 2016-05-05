@@ -175,6 +175,8 @@
 		C2BB96AC1CC77DF600090282 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB96AB1CC77DF500090282 /* CoreLocation.framework */; };
 		C2BB96AF1CC7B60A00090282 /* RequestWithGET.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */; };
 		C2C349061CC61BF500082B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C349051CC61BF500082B9D /* AppDelegate.m */; };
+		C2CF170C1CDA157A00B07983 /* action.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CF170B1CDA157A00B07983 /* action.png */; };
+		C2CF170E1CDA189F00B07983 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CF170D1CDA189F00B07983 /* Launch Screen.storyboard */; };
 		C2D0FB6A1CD348EF0065C157 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D0FB691CD348EF0065C157 /* 1.jpg */; };
 		C2D7EDBD1CCA4B3B00771D03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EDBC1CCA4B3B00771D03 /* Info.plist */; };
 		C2D7EDE71CCA5FEC00771D03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D7EDE61CCA5FEC00771D03 /* SystemConfiguration.framework */; };
@@ -189,7 +191,6 @@
 		C2E2080D1CD237C80065C956 /* SearchShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E2080B1CD237C80065C956 /* SearchShowTableViewCell.m */; };
 		C2E2080E1CD237C80065C956 /* SearchShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E2080C1CD237C80065C956 /* SearchShowTableViewCell.xib */; };
 		C2E208111CD237EF0065C956 /* SearchShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E208101CD237EF0065C956 /* SearchShowModel.m */; };
-		C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E72DF91CD0ABB3005F8A4D /* Icon.png */; };
 		C2E72E211CD0AD6C005F8A4D /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E1B1CD0AD6C005F8A4D /* SelectCityViewController.m */; };
 		C2E72E221CD0AD6C005F8A4D /* SelectCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E72E1C1CD0AD6C005F8A4D /* SelectCityViewController.xib */; };
 		C2E72E231CD0AD6C005F8A4D /* SelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E72E1F1CD0AD6C005F8A4D /* SelectTableViewCell.m */; };
@@ -444,7 +445,6 @@
 		C29C61BA1CC25D8900E44DDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C29C61BD1CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C29C61BF1CC25D8900E44DDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C29C61C21CC25D8900E44DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C29C61DC1CC267F900E44DDC /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		C29C61DD1CC267F900E44DDC /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		C29C61DF1CC2681E00E44DDC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -464,6 +464,8 @@
 		C2BB96AE1CC7B60A00090282 /* RequestWithGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWithGET.m; sourceTree = "<group>"; };
 		C2C349041CC61BF500082B9D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HiWeedend/Appdelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C2C349051CC61BF500082B9D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HiWeedend/Appdelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C2CF170B1CDA157A00B07983 /* action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action.png; sourceTree = "<group>"; };
+		C2CF170D1CDA189F00B07983 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C2D0FB691CD348EF0065C157 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C2D7EDBC1CCA4B3B00771D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D7EDE61CCA5FEC00771D03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -486,7 +488,6 @@
 		C2E2080C1CD237C80065C956 /* SearchShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchShowTableViewCell.xib; path = ../SearchShowVC/SearchShowTableViewCell.xib; sourceTree = "<group>"; };
 		C2E2080F1CD237EF0065C956 /* SearchShowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchShowModel.h; path = ../SearchShowVC/SearchShowModel.h; sourceTree = "<group>"; };
 		C2E208101CD237EF0065C956 /* SearchShowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchShowModel.m; path = ../SearchShowVC/SearchShowModel.m; sourceTree = "<group>"; };
-		C2E72DF91CD0ABB3005F8A4D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C2E72E1A1CD0AD6C005F8A4D /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
 		C2E72E1B1CD0AD6C005F8A4D /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
 		C2E72E1C1CD0AD6C005F8A4D /* SelectCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCityViewController.xib; sourceTree = "<group>"; };
@@ -1039,6 +1040,7 @@
 			children = (
 				C29159461CC5DCD5009FB972 /* nav_menu_icon@2x.png */,
 				C2D0FB691CD348EF0065C157 /* 1.jpg */,
+				C2CF170B1CDA157A00B07983 /* action.png */,
 				C29C61B21CC25D8900E44DDC /* HiWeedend */,
 				C29C61B11CC25D8900E44DDC /* Products */,
 				D37304D336AA05F3D7704BB0 /* Pods */,
@@ -1068,7 +1070,7 @@
 				C29C61BA1CC25D8900E44DDC /* ViewController.m */,
 				C29C61BC1CC25D8900E44DDC /* Main.storyboard */,
 				C29C61BF1CC25D8900E44DDC /* Assets.xcassets */,
-				C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */,
+				C2CF170D1CDA189F00B07983 /* Launch Screen.storyboard */,
 				C2D7EDBC1CCA4B3B00771D03 /* Info.plist */,
 				C29C61B31CC25D8900E44DDC /* Supporting Files */,
 			);
@@ -1232,7 +1234,6 @@
 			isa = PBXGroup;
 			children = (
 				C2769FBC1CD35C2C0063BA5A /* 8.png */,
-				C2E72DF91CD0ABB3005F8A4D /* Icon.png */,
 				C291596C1CC5F082009FB972 /* 1.png */,
 				C286BB7F1CC4DCDE00A0CD0B /* 666.png */,
 				C286BB7B1CC4D7BB00A0CD0B /* heart.png */,
@@ -1432,7 +1433,6 @@
 				TargetAttributes = {
 					C29C61AF1CC25D8900E44DDC = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = VDNC783TP3;
 					};
 				};
 			};
@@ -1477,6 +1477,7 @@
 				C2769FB11CD357140063BA5A /* search.png in Resources */,
 				C2769FB31CD3579B0063BA5A /* search2.png in Resources */,
 				C2769F3C1CD33DCE0063BA5A /* 屏幕快照 2016-04-24 下午3.15.31.png in Resources */,
+				C2CF170C1CDA157A00B07983 /* action.png in Resources */,
 				C255B4D21CCF0880006ACD80 /* ImageCell.xib in Resources */,
 				C2769F5D1CD3431B0063BA5A /* all1.png in Resources */,
 				C286BB7E1CC4D7BB00A0CD0B /* heartgray.png in Resources */,
@@ -1522,11 +1523,11 @@
 				C255B4D01CCF0880006ACD80 /* HaderView.xib in Resources */,
 				C255B3B41CCEFF8A006ACD80 /* cancelBtn@2x.png in Resources */,
 				C2769FB91CD35AED0063BA5A /* search6.png in Resources */,
+				C2CF170E1CDA189F00B07983 /* Launch Screen.storyboard in Resources */,
 				C2769F9B1CD351C20063BA5A /* CollectTableViewCell.xib in Resources */,
 				C26AA3E51CCB9C6D00B323AE /* laji.png in Resources */,
 				C2769FAF1CD357030063BA5A /* xin.png in Resources */,
 				C255B3D51CCEFF8A006ACD80 /* ShowKindViewController.xib in Resources */,
-				C2E72DFA1CD0ABB3005F8A4D /* Icon.png in Resources */,
 				C2D0FB6A1CD348EF0065C157 /* 1.jpg in Resources */,
 				C29C61BE1CC25D8900E44DDC /* Main.storyboard in Resources */,
 				C26AA3EB1CCBA02A00B323AE /* 9999.png in Resources */,
@@ -1714,14 +1715,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C29C61C11CC25D8900E44DDC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C29C61C21CC25D8900E44DDC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1742,7 +1735,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -1788,7 +1782,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -1816,8 +1811,8 @@
 			baseConfigurationReference = 1E625A8BB053CBD2D3028561 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1837,9 +1832,10 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = con.yanchuang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "33a06cad-952e-4712-9ffe-3c331627eb61";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1848,8 +1844,8 @@
 			baseConfigurationReference = 0DB7B0C8D9F5DAFA1B99D7E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1869,9 +1865,10 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = con.yanchuang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiweekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "33a06cad-952e-4712-9ffe-3c331627eb61";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
